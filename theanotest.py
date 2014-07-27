@@ -169,7 +169,7 @@ class dA(object):
 
         self.params = [self.W, self.b, self.b_prime]
 
-    def get_corrupted_input(self, input, corruption_level):
+    '''def get_corrupted_input(self, input, corruption_level):
         """This function keeps ``1-corruption_level`` entries of the inputs the
         same and zero-out randomly selected subset of size ``coruption_level``
         Note : first argument of theano.rng.binomial is the shape(size) of
@@ -194,7 +194,7 @@ class dA(object):
         return  self.theano_rng.binomial(size=input.shape, n=1,
                                          p=1 - corruption_level,
                                          dtype=theano.config.floatX) * input
-
+    '''
     def get_hidden_values(self, input):
         """ Computes the values of the hidden layer """
         return T.nnet.sigmoid(T.dot(input, self.W) + self.b)
@@ -206,12 +206,12 @@ class dA(object):
         """
         return  T.nnet.sigmoid(T.dot(hidden, self.W_prime) + self.b_prime)
 
-    def get_cost_updates(self, corruption_level, learning_rate):
+    def get_cost_updates(self, learning_rate):
         """ This function computes the cost and the updates for one trainng
         step of the dA """
 
-        tilde_x = self.get_corrupted_input(self.x, corruption_level)
-        y = self.get_hidden_values(tilde_x)
+        #tilde_x = self.get_corrupted_input(self.x, corruption_level)
+        y = self.get_hidden_values(self.x)
         z = self.get_reconstructed_input(y)
         # note : we sum over the size of a datapoint; if we are using
         #        minibatches, L will be a vector, with one entry per
@@ -276,8 +276,7 @@ def test_dA(learning_rate=0.1, training_epochs=15,
     da = dA(numpy_rng=rng, theano_rng=theano_rng, input=x,
             n_visible=28 * 28, n_hidden=500)
 
-    cost, updates = da.get_cost_updates(corruption_level=0.,
-                                        learning_rate=learning_rate)
+    cost, updates = da.get_cost_updates(learning_rate=learning_rate)
 
     train_da = theano.function([index], cost, updates=updates,
          givens={x: train_set_x[index * batch_size:
