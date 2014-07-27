@@ -89,8 +89,9 @@ def test_dA(learning_rate=0.1, training_epochs=15,
     #theano_rng = RandomStreams(rng.randint(2 ** 30))
     autoencoder = ae.Autoencoder(np_rng=rng, n_vis=784, n_hid=500)
     cost, updates = autoencoder.get_cost_updates(learning_rate=0.1)
-    train_ae = function([index], outputs=cost, updates=updates, givens={x: train_set_x[index * batch_size:(index + 1) * batch_size]}, on_unused_input = 'warn', name='train_ae')
-    #train = theano.function([x], cost, updates=updates, on_unused_input='warn') 
+    train_ae = function([x], outputs=cost, updates=updates, on_unused_input='warn')
+    #train_ae = function([index], outputs=cost, updates=updates, givens={x: train_set_x[index * batch_size:(index + 1) * batch_size]}, on_unused_input = 'warn', name='train_ae')
+     
     start_time = time.clock ()
 
     #training

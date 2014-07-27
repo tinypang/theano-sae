@@ -1,0 +1,6 @@
+classical
+electronic
+jazz_blues
+metal_punk
+rock_pop
+world
