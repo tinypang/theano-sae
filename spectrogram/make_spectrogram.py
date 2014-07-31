@@ -15,11 +15,15 @@ import matplotlib.pyplot as plt
 
 def graph_spectrogram(au_file,name):
     sound_info, frame_rate = get_wav_info(au_file)
-    fig=plt.figure(num=None, figsize=(19, 12))
-    plt.subplot(111)
-    plt.title('spectrogram of %r' % au_file)
+    fig=plt.figure(num=None, frameon=False)
+    fig.set_size_inches(19,12)
+    #plt.subplot(111)
+    #plt.title('spectrogram of %r' % au_file)
+    ax = plt.Axes(fig, [0., 0., 1.,1.09])
+    ax.set_axis_off()
+    fig.add_axes(ax)
     spec = plt.specgram(sound_info, Fs=frame_rate)
-    fig.savefig('Spectrograms/spectrogram-%s.png' % os.path.splitext(name)[0],format='png')
+    fig.savefig('Spectrograms/raw-spectrogram-%s.png' % os.path.splitext(name)[0],format='png')
     plt.close(fig)
 
 def get_wav_info(au_file):
@@ -27,6 +31,7 @@ def get_wav_info(au_file):
     frames = au.readframes(-1)
     sound_info = pylab.fromstring(frames, 'Int16')
     frame_rate = au.getframerate()
+    print frame_rate
     au.close()
     return sound_info, frame_rate
 
