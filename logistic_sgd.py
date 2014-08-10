@@ -1,4 +1,39 @@
-t__ = 'restructedtext en'
+"""
+This tutorial introduces logistic regression using Theano and stochastic
+gradient descent.
+
+Logistic regression is a probabilistic, linear classifier. It is parametrized
+by a weight matrix :math:`W` and a bias vector :math:`b`. Classification is
+done by projecting data points onto a set of hyperplanes, the distance to
+which is used to determine a class membership probability.
+
+Mathematically, this can be written as:
+
+.. math::
+  P(Y=i|x, W,b) &= softmax_i(W x + b) \\
+                &= \frac {e^{W_i x + b_i}} {\sum_j e^{W_j x + b_j}}
+
+
+The output of the model or prediction is then done by taking the argmax of
+the vector whose i'th element is P(Y=i|x).
+
+.. math::
+
+  y_{pred} = argmax_i P(Y=i|x,W,b)
+
+
+This tutorial presents a stochastic gradient descent optimization method
+suitable for large datasets, and a conjugate gradient optimization method
+that is suitable for smaller datasets.
+
+
+References:
+
+    - textbooks: "Pattern Recognition and Machine Learning" -
+                 Christopher M. Bishop, section 4.3.2
+
+"""
+__docformat__ = 'restructedtext en'
 
 import cPickle
 import gzip
@@ -147,30 +182,29 @@ def load_data(dataset):
     #the number of rows in the input. It should give the target
     #target to the example with the same index in the input.
 
-    def shared_dataset(data_xy, borrow=True):
-        """ Function that loads the dataset into shared variables
+def shared_dataset(data_xy, borrow=True):
+    """ Function that loads the dataset into shared variables
 
-        The reason we store our dataset in shared variables is to allow
-        Theano to copy it into the GPU memory (when code is run on GPU).
-        Since copying data into the GPU is slow, copying a minibatch everytime
-        is needed (the default behaviour if the data is not in a shared
-        variable) would lead to a large decrease in performance.
-        """
-        data_x, data_y = data_xy
-        shared_x = theano.shared(numpy.asarray(data_x,
-                                               dtype=theano.config.floatX),
-                                 borrow=borrow)
-        shared_y = theano.shared(numpy.asarray(data_y,
-                                               dtype=theano.config.floatX),
-                                 borrow=borrow)
-        # When storing data on the GPU it has to be stored as floats
-        # therefore we will store the labels as ``floatX`` as well
-        # (``shared_y`` does exactly that). But during our computations
-        # we need them as ints (we use labels as index, and if they are
-        # floats it doesn't make sense) therefore instead of returning
-        # ``shared_y`` we will have to cast it to int. This little hack
-        # lets ous get around this issue
-        return shared_x, T.cast(shared_y, 'int32')
+    The reason we store our dataset in shared variables is to allow
+    Theano to copy it into the GPU memory (when code is run on GPU).
+    Since copying data into the GPU is slow, copying a minibatch everytime
+    is needed (the default behaviour if the data is not in a shared
+    variable) would lead to a large decrease in performance.
+    """
+    data_x, data_y = data_xy
+    shared_x = theano.shared(numpy.asarray(data_x,
+                                           dtype=theano.config.floatX),
+                             borrow=borrow)
+    #shared_y = theano.shared(numpy.asarray(data_y,dtype=theano.config.floatX),borrow=borrow)
+    shared_y = numpy.array(data_y)
+    # When storing data on the GPU it has to be stored as floats
+    # therefore we will store the labels as ``floatX`` as well
+    # (``shared_y`` does exactly that). But during our computations
+    # we need them as ints (we use labels as index, and if they are
+    # floats it doesn't make sense) therefore instead of returning
+    # ``shared_y`` we will have to cast it to int. This little hack
+    # lets ous get around this issue
+    return shared_x, shared_y
 
     test_set_x, test_set_y = shared_dataset(test_set)
     valid_set_x, valid_set_y = shared_dataset(valid_set)
