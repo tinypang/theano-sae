@@ -49,11 +49,13 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     #test_set_x, test_set_y = datasets[2]
     
     data, labels = pca('spectrogram/preprocessed_50th',dimx=38,dimy=24,whiten=False)
+    #data, labels = pca('spectrogram/test',dimx=38,dimy=24,whiten=False)
+    
     datasets = split_dataset(data, labels)
     
     train_set_x, train_set_y = shared_dataset(datasets[0])
-    valid_set_x, valid_set_y = shared_dataset(datasets[1])
-    test_set_x, test_set_y = shared_dataset(datasets[2])
+    #valid_set_x, valid_set_y = shared_dataset(datasets[1])
+    #test_set_x, test_set_y = shared_dataset(datasets[2])
     data, labels = [], []
     
 
@@ -66,7 +68,7 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     print '... building the model'
     # construct the stacked denoising autoencoder class
     sda = SdA(numpy_rng=numpy_rng, n_ins=38 * 24,
-              hidden_layers_sizes=[1000, 1000],
+              hidden_layers_sizes=[500, 500],
               n_outs=10)
 
     #########################
@@ -146,7 +148,6 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
 
                 # if we got the best validation score until now
                 if this_validation_loss < best_validation_loss:
-
                     #improve patience if loss improvement is good enough
                     if (this_validation_loss < best_validation_loss *
                         improvement_threshold):
@@ -155,7 +156,6 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
                     # save best validation score and iteration number
                     best_validation_loss = this_validation_loss
                     best_iter = iter
-
                     # test it on the test set
                     test_losses = test_model()
                     test_score = numpy.mean(test_losses)

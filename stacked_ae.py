@@ -220,8 +220,7 @@ class SdA(object):
               givens={
                 self.x: train_set_x[index * batch_size:
                                     (index + 1) * batch_size],
-                self.y: train_set_y[index * batch_size:
-                                    (index + 1) * batch_size]},
+                self.y: train_set_y[index * batch_size:(index + 1) * batch_size]},
               name='train')
 
         test_score_i = theano.function([index], self.errors,
