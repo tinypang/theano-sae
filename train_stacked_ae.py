@@ -48,11 +48,8 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     #valid_set_x, valid_set_y = datasets[1]
     #test_set_x, test_set_y = datasets[2]
     
-    data, labels = pca('spectrogram/preprocessed_50th',dimx=38,dimy=24,whiten=False)
-    #data, labels = pca('spectrogram/test',dimx=38,dimy=24,whiten=False)
-    
+    data, labels = pca('spectrogram/preprocessed_50th_full',dimx=38,dimy=24)
     datasets = split_dataset(data, labels)
-    
     train_set_x, train_set_y = shared_dataset(datasets[0])
     #valid_set_x, valid_set_y = shared_dataset(datasets[1])
     #test_set_x, test_set_y = shared_dataset(datasets[2])
@@ -68,8 +65,8 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     print '... building the model'
     # construct the stacked denoising autoencoder class
     sda = SdA(numpy_rng=numpy_rng, n_ins=38 * 24,
-              hidden_layers_sizes=[500, 500],
-              n_outs=10)
+              hidden_layers_sizes=[912, 912],
+              n_outs=912)
 
     #########################
     # PRETRAINING THE MODEL #
@@ -148,15 +145,18 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
 
                 # if we got the best validation score until now
                 if this_validation_loss < best_validation_loss:
+                    print 'new best validation model found'
                     #improve patience if loss improvement is good enough
                     if (this_validation_loss < best_validation_loss *
                         improvement_threshold):
                         patience = max(patience, iter * patience_increase)
 
                     # save best validation score and iteration number
+                    print 'saving best validation score'
                     best_validation_loss = this_validation_loss
                     best_iter = iter
                     # test it on the test set
+                    print 'testing best model on test data'
                     test_losses = test_model()
                     test_score = numpy.mean(test_losses)
                     print(('     epoch %i, minibatch %i/%i, test error of '

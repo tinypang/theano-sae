@@ -8,13 +8,14 @@ def split_dataset(data, labels,):
         if labels[i] in label_dict:
             labels[i] = label_dict[labels[i]]
         else:
+            print '{0} is a new label'.format(labels[i])
             label_dict[labels[i]] = n
             labels[i] = n
             n +=1
                         
     mapping = open('label_mapping.txt','r+')
     for i in label_dict.keys():
-        mapping.write('{0},{1}'.format(i,label_dict[i]))
+        mapping.write('{0},{1}\n'.format(i,label_dict[i]))
     mapping.close()
 
     trainx,trainy,validx,validy,testx,testy = [],[],[],[],[],[]

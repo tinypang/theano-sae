@@ -86,7 +86,7 @@ def pca(path,dimx,dimy,ncomp=100,whiten=True):
         for i in range(0,len(img)):   #add each feature value to mean dictionary
             meandict[i] += img[i]/1000
         data.append(img)
-        labels.append(filename[0:-49])
+        labels.append(filename[0:-26])
         n+=1
         print n
     pt1 = time.time()
@@ -111,6 +111,6 @@ def pca(path,dimx,dimy,ncomp=100,whiten=True):
     return X, labels
 
 if __name__ == '__main__':
-    pca('./spectrogram/test',380,240,100)
+    pca('./spectrogram/test',38,24)
     #pca('./spectrogram/preprocessed')
 
