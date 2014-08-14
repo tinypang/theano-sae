@@ -16,9 +16,9 @@ from pca_whiten import pca
 from utils import tile_raster_images
 from format_dataset import split_dataset
 
-def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
+def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretraining_epochs=15,
              pretrain_lr=0.001, training_epochs=1000,
-             dataset='None', batch_size=1):
+            batch_size=1,dimx=38,dimy=24,hidlay=[600,300,100],outs=50):
     """
     Demonstrates how to train and test a stochastic denoising autoencoder.
 
@@ -41,20 +41,24 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     :param dataset: path the the pickled dataset
 
     """
+    pcaonoff = False
+    pcancomp = 0
 
-    #datasets = load_data(dataset)
+    log = open('resultslog.txt','a+')
+    log.write('data set is {0}\n'.format(path))
+    log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, training epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}\n".format(dimx,dimy,str(hidlay),outs,batch_size,training_epochs,pretrain_lr,finetune_lr,training_epochs))
+    log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
 
-    #train_set_x, train_set_y = datasets[0]
-    #valid_set_x, valid_set_y = datasets[1]
-    #test_set_x, test_set_y = datasets[2]
-    
-    data, labels = pca('spectrogram/preprocessed_50th_full',dimx=38,dimy=24)
+    data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,whiten=pcaonoff)
     datasets = split_dataset(data, labels)
+    label_dict = datasets[3]
+    for i in label_dict.keys():
+        log.write('{0}:{1}, '.format(i,label_dict[i]))
+    log.write('\n')
     train_set_x, train_set_y = shared_dataset(datasets[0])
     #valid_set_x, valid_set_y = shared_dataset(datasets[1])
     #test_set_x, test_set_y = shared_dataset(datasets[2])
-    data, labels = [], []
-    
+    data, labels = [], []    
 
     # compute number of minibatches for training, validation and testing
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
@@ -64,9 +68,9 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     numpy_rng = numpy.random.RandomState(89677)
     print '... building the model'
     # construct the stacked denoising autoencoder class
-    sda = SdA(numpy_rng=numpy_rng, n_ins=38 * 24,
-              hidden_layers_sizes=[912, 912],
-              n_outs=912)
+    sda = SdA(numpy_rng=numpy_rng, n_ins=dimx * dimy,
+              hidden_layers_sizes=hidlay,
+              n_outs=outs)
 
     #########################
     # PRETRAINING THE MODEL #
@@ -98,6 +102,7 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     print >> sys.stderr, ('The pretraining code for file ' +
                           os.path.split(__file__)[1] +
                           ' ran for %.2fm' % ((end_time - start_time) / 60.))
+    log.write('The pretraining code for file {0} ran for {1:.2f}m\n'.format(os.path.split(__file__)[1],(end_time - start_time) / 60.))
 
     ########################
     # FINETUNING THE MODEL #
@@ -163,6 +168,10 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
                            'best model %f %%') %
                           (epoch, minibatch_index + 1, n_train_batches,
                            test_score * 100.))
+                    log.write(('     epoch %i, minibatch %i/%i, test error of '
+                           'best model %f %%') %
+                          (epoch, minibatch_index + 1, n_train_batches,
+                           test_score * 100.)+'\n')
 
             if patience <= iter:
                 done_looping = True
@@ -175,7 +184,12 @@ def test_SdA(finetune_lr=0.1, pretraining_epochs=15,
     print >> sys.stderr, ('The training code for file ' +
                           os.path.split(__file__)[1] +
                           ' ran for %.2fm' % ((end_time - start_time) / 60.))
-
+    log.write(('Optimization complete with best validation score of %f %%,'
+           'with test performance %f %%') %
+                 (best_validation_loss * 100., test_score * 100.)+'\n')
+    log.write('The training code for file {0} ran for {1:.2f}\n'.format(os.path.split(__file__)[1],((end_time - start_time) / 60.)))
+    log.write('----------\n')
+    log.close()
 
 if __name__ == '__main__':
-    test_SdA()
+    test_SdA(path='spectrogram/test')

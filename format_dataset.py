@@ -15,7 +15,7 @@ def split_dataset(data, labels,):
                         
     mapping = open('label_mapping.txt','r+')
     for i in label_dict.keys():
-        mapping.write('{0},{1}\n'.format(i,label_dict[i]))
+        mapping.write('{0}:{1}\n'.format(i,label_dict[i]))
     mapping.close()
 
     trainx,trainy,validx,validy,testx,testy = [],[],[],[],[],[]
@@ -33,5 +33,5 @@ def split_dataset(data, labels,):
     #print len(validx),len(validy)
     #print len(testx),len(testy)
     print 'data has been split into train, validate and test sets'
-    return [(trainx,trainy), (validx,validy), (testx,testy)]
+    return [(trainx,trainy), (validx,validy), (testx,testy), label_dict]
     

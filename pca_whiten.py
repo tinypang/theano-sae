@@ -34,6 +34,44 @@ def zero_mean(data,meandict):   #normalizes each feature to a zero mean
         for j in range(0,len(data[i])):   #subtract the mean of the feature from the feature value
             data[i][j] = data[i][j]-meandict[j]    
     return data #return mean normalized data
+
+def pca(path,dimx,dimy,ncomp=100,whiten=False):
+    data,labels = [],[] #intiate arrays to store data and labels
+    n = 0   #initiate integer variable to track data import
+    meandict = {}   #initiate dictionary to store the mean of each feature i
+    for i in range(0,dimx*dimy):
+        meandict[i] = 0
+    pt0 = time.time()
+    for filename in os.listdir(path):   #for all images in dataset flatten and append to list containing data for all images 
+        imgfile = path + '/' + filename #create file address from file path and file name
+        img = flatten_img(imgfile)  #flatten image
+        for i in range(0,len(img)):   #add each feature value to mean dictionary
+            meandict[i] += img[i]/1000
+        data.append(img)
+        labels.append(filename[0:-26])
+        n+=1
+        print n
+    pt1 = time.time()
+    print 'resize and import took time {0}'.format(pt1-pt0)
+    #data = zero_mean(data, meandict)    #normalize each feature to a zero mean
+    meandict = []
+    pt2 = time.time()
+    print 'zero mean took time {0}'.format(pt2-pt1)
+    data = np.array(data)   #convert python list of all img data to a numpy array
+    #data = pca_whiten(data) #perform pca whitening on datased
+    #print data.shape
+    pt4 = time.time()
+    print 'import and normalization took time {0}'.format(pt4 - pt0)
+    if whiten == True:   #if data needs to be pca whitened, whiten data
+       pca = RandomizedPCA(n_components=ncomp, whiten=True)  #create pca object to pca whiten features
+       X = pca.fit_transform(data)
+    else:
+       X = data         #else return data as is
+    pt5 = time.time()
+    print 'array cast and pca whitening took time {0}'.format(pt5 - pt2)
+    print 'total time taken {0}'.format(pt5-pt0)
+    return X, labels
+
 '''
 def pca_whiten(x):
     print 'performing pca'
@@ -73,42 +111,7 @@ def pca_whiten(x):
     print 'total time taken was {0}sec'.format(t1 - t0)
     return pca_white               
 '''
-def pca(path,dimx,dimy,ncomp=100,whiten=True):
-    data,labels = [],[] #intiate arrays to store data and labels
-    n = 0   #initiate integer variable to track data import
-    meandict = {}   #initiate dictionary to store the mean of each feature i
-    for i in range(0,dimx*dimy):
-        meandict[i] = 0
-    pt0 = time.time()
-    for filename in os.listdir(path):   #for all images in dataset flatten and append to list containing data for all images 
-        imgfile = path + '/' + filename #create file address from file path and file name
-        img = flatten_img(imgfile)  #flatten image
-        for i in range(0,len(img)):   #add each feature value to mean dictionary
-            meandict[i] += img[i]/1000
-        data.append(img)
-        labels.append(filename[0:-26])
-        n+=1
-        print n
-    pt1 = time.time()
-    print 'resize and import took time {0}'.format(pt1-pt0)
-    data = zero_mean(data, meandict)    #normalize each feature to a zero mean
-    meandict = []
-    pt2 = time.time()
-    print 'zero mean took time {0}'.format(pt2-pt1)
-    data = np.array(data)   #convert python list of all img data to a numpy array
-    #data = pca_whiten(data) #perform pca whitening on datased
-    #print data.shape
-    pt4 = time.time()
-    print 'import and normalization took time {0}'.format(pt4 - pt0)
-    if whiten == True:   #if data needs to be pca whitened, whiten data
-       pca = RandomizedPCA(n_components=ncomp, whiten=True)  #create pca object to pca whiten features
-       X = pca.fit_transform(data)
-    else:
-       X = data         #else return data as is
-    pt5 = time.time()
-    print 'array cast and pca whitening took time {0}'.format(pt5 - pt2)
-    print 'total time taken {0}'.format(pt5-pt0)
-    return X, labels
+
 
 if __name__ == '__main__':
     pca('./spectrogram/test',38,24)
