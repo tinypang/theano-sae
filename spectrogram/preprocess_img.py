@@ -8,7 +8,7 @@ def preprocess_img(filename,name):
     img = Image.open(filename)
     img = img.convert('L')
     img = img.resize(standard_size)
-    img.save('./preprocessed_50th_full/{0}-prep'.format(name[0:-11]),'png')
+    img.save('./gs_full_spectrograms_50th/{0}-prep'.format(name[0:-11]),'png')
  
 def explore(path):
     for filename in os.listdir(path):

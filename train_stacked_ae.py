@@ -110,7 +110,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
 
     # get the training, validation and testing function for the model
     print '... getting the finetuning functions'
-    train_fn, validate_model, test_model = sda.build_finetune_functions(
+    train_fn, validate_model, test_model, pr_mat = sda.build_finetune_functions(
                 datasets=datasets, batch_size=batch_size,
                 learning_rate=finetune_lr)
 
@@ -163,6 +163,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
                     # test it on the test set
                     print 'testing best model on test data'
                     test_losses = test_model()
+                    pr_matrix = pr_mat()
                     test_score = numpy.mean(test_losses)
                     print(('     epoch %i, minibatch %i/%i, test error of '
                            'best model %f %%') %
@@ -178,6 +179,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
                 break
 
     end_time = time.clock()
+    print str(pr_matrix)
     print(('Optimization complete with best validation score of %f %%,'
            'with test performance %f %%') %
                  (best_validation_loss * 100., test_score * 100.))

@@ -213,6 +213,7 @@ class SdA(object):
         updates = []
         for param, gparam in zip(self.params, gparams):
             updates.append((param, param - gparam * learning_rate))
+        
 
         train_fn = theano.function(inputs=[index],
               outputs=self.finetune_cost,
@@ -238,6 +239,31 @@ class SdA(object):
                  self.y: valid_set_y[index * batch_size:
                                      (index + 1) * batch_size]},
                       name='valid')
+        def make_pr_mat:
+            pr_mat = {}
+            for i in xrange(n_test_batches):
+                dict_i = test_score_i = theano.function([index], self.pr_matrix,
+                 givens={
+                   self.x: test_set_x[index * batch_size:
+                                      (index + 1) * batch_size],
+                   self.y: test_set_y[index * batch_size:
+                                      (index + 1) * batch_size]},
+                      name='test')
+                for i in dict_i.keys():
+                    if i in pr_mat:
+                         for j in dict_i[i]:
+                            if j in pr_mat[i]:
+                                pr_mat[i][j]+= 1
+                            else:
+                                pr_mat[i][j] = 0
+                    else:
+                        pr_mat[i] = {}
+                        for j in dict_i[i]:
+                            if j in pr_mat[i]:
+                                pr_mat[i][j]+= 1
+                            else:
+                                pr_mat[i][j] = 0
+            return pr_mat
 
         # Create a function that scans the entire validation set
         def valid_score():
@@ -247,4 +273,4 @@ class SdA(object):
         def test_score():
             return [test_score_i(i) for i in xrange(n_test_batches)]
 
-        return train_fn, valid_score, test_score
+        return train_fn, valid_score, test_score, pr_mat

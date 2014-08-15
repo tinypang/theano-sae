@@ -71,5 +71,5 @@ def explore(path):
 
 if __name__ == '__main__':
     #explore('./test')
-    explore('../gtzan_genre')
+    explore('../GTZAN_genre')
 
