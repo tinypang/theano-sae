@@ -1,0 +1,98 @@
+data set is spectrogram/gs_full_spectrograms_50th
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+data set is spectrogram/gs_full_spectrograms_50th
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:8, classical.:0, country.:1, pop.:5, rock.:2, metal.:6, blues.:4, disco.:3, reggae.:9, hiphop.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+The pretraining code for file train_stacked_ae.py ran for 0.10m
+     epoch 1, minibatch 50/50, test error of best model 92.000000 %
+Optimization complete with best validation score of 92.000000 %,with test performance 92.000000 %
+The training code for file train_stacked_ae.py ran for 0.04
+----------
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+The pretraining code for file train_stacked_ae.py ran for 0.08m
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+The pretraining code for file train_stacked_ae.py ran for 0.09m
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 
+data set is spectrogram/test
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:1, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000
+pca:False, pca components:0
+jazz.:9, classical.:6, country.:4, pop.:2, rock.:1, metal.:8, hiphop.:0, disco.:3, reggae.:5, blues.:7, 

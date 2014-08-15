@@ -125,6 +125,7 @@ class SdA(object):
         # symbolic variable that points to the number of errors made on the
         # minibatch given by self.x and self.y
         self.errors = self.logLayer.errors(self.y)
+        self.conf_matrix = self.logLayer.conf_matrix(self.y)
 
     def pretraining_functions(self, train_set_x, batch_size):
         ''' Generates a list of functions, each of them implementing one
@@ -239,10 +240,10 @@ class SdA(object):
                  self.y: valid_set_y[index * batch_size:
                                      (index + 1) * batch_size]},
                       name='valid')
-        def make_pr_mat:
+        def make_conf_mat():
             pr_mat = {}
             for i in xrange(n_test_batches):
-                dict_i = test_score_i = theano.function([index], self.pr_matrix,
+                dict_i = test_score_i = theano.function([index], self.conf_matrix,
                  givens={
                    self.x: test_set_x[index * batch_size:
                                       (index + 1) * batch_size],
@@ -255,14 +256,14 @@ class SdA(object):
                             if j in pr_mat[i]:
                                 pr_mat[i][j]+= 1
                             else:
-                                pr_mat[i][j] = 0
+                                pr_mat[i][j] = 1
                     else:
                         pr_mat[i] = {}
                         for j in dict_i[i]:
                             if j in pr_mat[i]:
                                 pr_mat[i][j]+= 1
                             else:
-                                pr_mat[i][j] = 0
+                                pr_mat[i][j] = 1
             return pr_mat
 
         # Create a function that scans the entire validation set
@@ -273,4 +274,4 @@ class SdA(object):
         def test_score():
             return [test_score_i(i) for i in xrange(n_test_batches)]
 
-        return train_fn, valid_score, test_score, pr_mat
+        return train_fn, valid_score, test_score, make_conf_mat

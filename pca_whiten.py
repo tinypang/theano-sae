@@ -1,7 +1,7 @@
 from scipy import misc
 import os
 import numpy as np
-import Image
+from PIL import Image
 import matplotlib.pyplot as plt
 from sklearn.decomposition import RandomizedPCA
 from sklearn.decomposition import PCA

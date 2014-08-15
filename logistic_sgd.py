@@ -143,7 +143,14 @@ class LogisticRegression(object):
         else:
             raise NotImplementedError()
 
-    def pr_matrix(self, y):
+    def conf_matrix(self, y):
+        a = T.iscalar("a")
+        result, updates = theano.scan(fn=lambda a, y: a* y,
+                              outputs_info=T.ones_like(y),
+                              sequences=y,
+                              )
+        y_aslist = theano.function(inputs=[a, y], outputs=result, updates=updates)
+        yaslist = y_aslist(1, y)
         # check if y has same dimension of y_pred
         if y.ndim != self.y_pred.ndim:
             raise TypeError('y should have the same shape as self.y_pred',
@@ -151,10 +158,11 @@ class LogisticRegression(object):
         # check if y is of the correct datatype
         if y.dtype.startswith('int'):
             prdict = {}
-            if y in prdict:
-                prdict[y].append[self.ypred]
-            else:
-                 prdict[y] = [self.ypred]                        
+            for y in yaslist:
+                if y in prdict:
+                    prdict[y].append[self.y_pred]
+                else:
+                    prdict[y] = [self.y_pred]                        
             return prdict
         else:
             raise NotImplementedError()

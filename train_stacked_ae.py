@@ -16,6 +16,24 @@ from pca_whiten import pca
 from utils import tile_raster_images
 from format_dataset import split_dataset
 
+def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of int ids
+    pr_mat = {}
+    keys_col = conf_matrix.keys()
+    for i in conf_matrix.keys():
+        pr_mat[i] = {}
+        #calculate recall
+        rowsum = 0
+        for j in conf_matrix[i].keys():
+            rowsum+= conf_matrix[i][j]
+        pr_mat[i]['recall'] = conf_matrix[i][i]/rowsum
+        #calculate precision
+        colsum = 0
+        for k in keys_col:
+            colsum += conf_matrix[k][i]
+        pr_mat[i]['precision']= conf_matrix[i][i]/colsum
+    return pr_mat    
+    
+
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretraining_epochs=15,
              pretrain_lr=0.001, training_epochs=1000,
             batch_size=1,dimx=38,dimy=24,hidlay=[600,300,100],outs=50):
@@ -110,7 +128,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
 
     # get the training, validation and testing function for the model
     print '... getting the finetuning functions'
-    train_fn, validate_model, test_model, pr_mat = sda.build_finetune_functions(
+    train_fn, validate_model, test_model, conf_mat = sda.build_finetune_functions(
                 datasets=datasets, batch_size=batch_size,
                 learning_rate=finetune_lr)
 
@@ -134,9 +152,11 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
 
     done_looping = False
     epoch = 0
+    test_pr = {}
 
     while (epoch < training_epochs) and (not done_looping):
         epoch = epoch + 1
+        test_pr[epoch] = {}
         for minibatch_index in xrange(n_train_batches):
             minibatch_avg_cost = train_fn(minibatch_index)
             iter = (epoch - 1) * n_train_batches + minibatch_index
@@ -163,7 +183,8 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
                     # test it on the test set
                     print 'testing best model on test data'
                     test_losses = test_model()
-                    pr_matrix = pr_mat()
+                    conf_matrix = conf_mat()
+                    test_pr[epoch][minibatch] = pr_mat(conf_matrix)
                     test_score = numpy.mean(test_losses)
                     print(('     epoch %i, minibatch %i/%i, test error of '
                            'best model %f %%') %
@@ -179,7 +200,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
                 break
 
     end_time = time.clock()
-    print str(pr_matrix)
+    print test_pr
     print(('Optimization complete with best validation score of %f %%,'
            'with test performance %f %%') %
                  (best_validation_loss * 100., test_score * 100.))
