@@ -22,7 +22,7 @@ class SdA(object):
     """
 
     def __init__(self, numpy_rng, theano_rng=None, n_ins=912,
-                 hidden_layers_sizes=[912, 912], n_outs=912):
+                 hidden_layers_sizes=[912, 912], n_outs=912,n_classes=10):
         """ This class is made to support a variable number of layers.
 
         :type numpy_rng: numpy.random.RandomState
@@ -42,12 +42,15 @@ class SdA(object):
 
         :type n_outs: int
         :param n_outs: dimension of the output of the network
+        
+        :type n_classes: int
+        :param n_classes: number of classes output can belong to
         """
         self.sigmoid_layers = []
         self.dA_layers = []
         self.params = []
         self.n_layers = len(hidden_layers_sizes)
-
+        self.n_classes = n_classes
         assert self.n_layers > 0
 
         if not theano_rng:
@@ -113,7 +116,7 @@ class SdA(object):
         # We now need to add a logistic layer on top of the MLP
         self.logLayer = LogisticRegression(
                          input=self.sigmoid_layers[-1].output,
-                         n_in=hidden_layers_sizes[-1], n_out=n_outs)
+                         n_in=hidden_layers_sizes[-1], n_out=n_outs, n_classes=self.n_classes) 
 
         self.params.extend(self.logLayer.params)
         # construct a function that implements one step of finetunining
@@ -240,32 +243,22 @@ class SdA(object):
                  self.y: valid_set_y[index * batch_size:
                                      (index + 1) * batch_size]},
                       name='valid')
-        def make_conf_mat():
-            pr_mat = {}
-            for i in xrange(n_test_batches):
-                dict_i = test_score_i = theano.function([index], self.conf_matrix,
+        '''
+        conf_mat_i = theano.function([index], self.conf_matrix,
                  givens={
                    self.x: test_set_x[index * batch_size:
                                       (index + 1) * batch_size],
                    self.y: test_set_y[index * batch_size:
                                       (index + 1) * batch_size]},
-                      name='test')
-                for i in dict_i.keys():
-                    if i in pr_mat:
-                         for j in dict_i[i]:
-                            if j in pr_mat[i]:
-                                pr_mat[i][j]+= 1
-                            else:
-                                pr_mat[i][j] = 1
-                    else:
-                        pr_mat[i] = {}
-                        for j in dict_i[i]:
-                            if j in pr_mat[i]:
-                                pr_mat[i][j]+= 1
-                            else:
-                                pr_mat[i][j] = 1
-            return pr_mat
-
+                      name='conf_mat')
+        '''
+        
+        conf_mat = theano.function([index], self.conf_matrix,
+                 givens={
+                   self.x: test_set_x[index:],
+                   self.y: test_set_y[index:]},
+                      name='conf_mat')
+        
         # Create a function that scans the entire validation set
         def valid_score():
             return [valid_score_i(i) for i in xrange(n_valid_batches)]
@@ -274,4 +267,9 @@ class SdA(object):
         def test_score():
             return [test_score_i(i) for i in xrange(n_test_batches)]
 
-        return train_fn, valid_score, test_score, make_conf_mat
+        # create confusion matrix for entire test set
+        def confusion_matrix():
+            #return [conf_mat_i(i) for i in xrange(n_test_batches)]
+            return conf_mat(0)
+
+        return train_fn, valid_score, test_score, confusion_matrix

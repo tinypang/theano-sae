@@ -48,7 +48,7 @@ def pca(path,dimx,dimy,ncomp=100,whiten=False):
         for i in range(0,len(img)):   #add each feature value to mean dictionary
             meandict[i] += img[i]/1000
         data.append(img)
-        labels.append(filename[0:-26])
+        labels.append(filename[0:-27])
         n+=1
         print n
     pt1 = time.time()

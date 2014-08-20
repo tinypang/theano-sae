@@ -16,6 +16,7 @@ from pca_whiten import pca
 from utils import tile_raster_images
 from format_dataset import split_dataset
 
+'''
 def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of int ids
     pr_mat = {}
     keys_col = conf_matrix.keys()
@@ -32,7 +33,7 @@ def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of 
             colsum += conf_matrix[k][i]
         pr_mat[i]['precision']= conf_matrix[i][i]/colsum
     return pr_mat    
-    
+'''    
 
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretraining_epochs=15,
              pretrain_lr=0.001, training_epochs=1000,
@@ -73,6 +74,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     for i in label_dict.keys():
         log.write('{0}:{1}, '.format(i,label_dict[i]))
     log.write('\n')
+    n_classes = len(label_dict.keys())
     train_set_x, train_set_y = shared_dataset(datasets[0])
     #valid_set_x, valid_set_y = shared_dataset(datasets[1])
     #test_set_x, test_set_y = shared_dataset(datasets[2])
@@ -88,7 +90,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     # construct the stacked denoising autoencoder class
     sda = SdA(numpy_rng=numpy_rng, n_ins=dimx * dimy,
               hidden_layers_sizes=hidlay,
-              n_outs=outs)
+              n_outs=outs,n_classes=n_classes)
 
     #########################
     # PRETRAINING THE MODEL #
@@ -152,11 +154,10 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
 
     done_looping = False
     epoch = 0
-    test_pr = {}
-
+    confusion_matrix = T.imatrix
     while (epoch < training_epochs) and (not done_looping):
         epoch = epoch + 1
-        test_pr[epoch] = {}
+        #test_pr[epoch] = {}
         for minibatch_index in xrange(n_train_batches):
             minibatch_avg_cost = train_fn(minibatch_index)
             iter = (epoch - 1) * n_train_batches + minibatch_index
@@ -183,8 +184,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
                     # test it on the test set
                     print 'testing best model on test data'
                     test_losses = test_model()
-                    conf_matrix = conf_mat()
-                    test_pr[epoch][minibatch] = pr_mat(conf_matrix)
+                    confusion_matrix = conf_mat()
                     test_score = numpy.mean(test_losses)
                     print(('     epoch %i, minibatch %i/%i, test error of '
                            'best model %f %%') %
@@ -200,7 +200,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
                 break
 
     end_time = time.clock()
-    print test_pr
+    print confusion_matrix
     print(('Optimization complete with best validation score of %f %%,'
            'with test performance %f %%') %
                  (best_validation_loss * 100., test_score * 100.))
@@ -215,4 +215,6 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     log.close()
 
 if __name__ == '__main__':
-    test_SdA(path='spectrogram/test')
+    test_SdA(path='spectrogram/gs_full_spectrograms_50th',batch_size=20)
+    #test_SdA(path='spectrogram/test',batch_size=20)
+

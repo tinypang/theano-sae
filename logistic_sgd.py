@@ -45,7 +45,7 @@ import numpy
 
 import theano
 import theano.tensor as T
-
+from theano import shared
 
 class LogisticRegression(object):
     """Multi-class Logistic Regression Class
@@ -56,7 +56,7 @@ class LogisticRegression(object):
     determine a class membership probability.
     """
 
-    def __init__(self, input, n_in, n_out):
+    def __init__(self, input, n_in, n_out, n_classes=10):
         """ Initialize the parameters of the logistic regression
 
         :type input: theano.tensor.TensorType
@@ -71,8 +71,11 @@ class LogisticRegression(object):
         :param n_out: number of output units, the dimension of the space in
                       which the labels lie
 
-        """
+        :type n_classes: int
+        :param n_classes: number of classes output can belong to
 
+        """
+        self.n_classes = n_classes
         # initialize with 0 the weights W as a matrix of shape (n_in, n_out)
         self.W = theano.shared(value=numpy.zeros((n_in, n_out),
                                                  dtype=theano.config.floatX),
@@ -139,31 +142,22 @@ class LogisticRegression(object):
         if y.dtype.startswith('int'):
             # the T.neq operator returns a vector of 0s and 1s, where 1
             # represents a mistake in prediction
-            return T.mean(T.neq(self.y_pred, y))
+            return T.mean(T.eq(self.y_pred, y))
         else:
             raise NotImplementedError()
 
     def conf_matrix(self, y):
-        a = T.iscalar("a")
-        result, updates = theano.scan(fn=lambda a, y: a* y,
-                              outputs_info=T.ones_like(y),
-                              sequences=y,
-                              )
-        y_aslist = theano.function(inputs=[a, y], outputs=result, updates=updates)
-        yaslist = y_aslist(1, y)
         # check if y has same dimension of y_pred
         if y.ndim != self.y_pred.ndim:
             raise TypeError('y should have the same shape as self.y_pred',
                 ('y', target.type, 'y_pred', self.y_pred.type))
         # check if y is of the correct datatype
         if y.dtype.startswith('int'):
-            prdict = {}
-            for y in yaslist:
-                if y in prdict:
-                    prdict[y].append[self.y_pred]
-                else:
-                    prdict[y] = [self.y_pred]                        
-            return prdict
+            def pre_mat(x):    #format input vector as column, # of classes as row and generate matrix matching the two
+                return T.eq(x.dimshuffle(0, 'x'), T.arange(self.n_classes).dimshuffle('x', 0))
+            y_oh = T.cast(pre_mat(y), 'int32')
+            y_pred_oh = T.cast(pre_mat(self.y_pred), 'int32')
+            return T.dot(y_oh.T, y_pred_oh)       
         else:
             raise NotImplementedError()
 
