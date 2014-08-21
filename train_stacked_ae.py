@@ -37,7 +37,7 @@ def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of 
 
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretraining_epochs=15,
              pretrain_lr=0.001, training_epochs=1000,
-            batch_size=1,dimx=38,dimy=24,hidlay=[600,300,100],outs=50):
+            batch_size=1,dimx=38,dimy=24,hidlay=[600,300,100],outs=50,corruption_levels=[.1, .2, .3]):
     """
     Demonstrates how to train and test a stochastic denoising autoencoder.
 
@@ -65,14 +65,16 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
 
     log = open('resultslog.txt','a+')
     log.write('data set is {0}\n'.format(path))
-    log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, training epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}\n".format(dimx,dimy,str(hidlay),outs,batch_size,training_epochs,pretrain_lr,finetune_lr,training_epochs))
+    log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, training epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}\n".format(dimx,dimy,str(hidlay),outs,batch_size,training_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels))
     log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
 
     data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,whiten=pcaonoff)
     datasets = split_dataset(data, labels)
     label_dict = datasets[3]
-    for i in label_dict.keys():
-        log.write('{0}:{1}, '.format(i,label_dict[i]))
+    pairs = zip(label_dict.itervalues(), label_dict.iterkeys())
+    pairs.sort()
+    for i in pairs:
+        log.write(str(i))
     log.write('\n')
     n_classes = len(label_dict.keys())
     train_set_x, train_set_y = shared_dataset(datasets[0])
@@ -110,9 +112,10 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
             c = []
             for batch_index in xrange(n_train_batches):
                 c.append(pretraining_fns[i](index=batch_index,
+                         corruption=corruption_levels[i],
                          lr=pretrain_lr))
             print 'Pre-training layer %i, epoch %d, cost ' % (i, epoch),
-            print numpy.mean(c)            
+            print numpy.mean(c)
             t2 = time.clock()
             print 'epoch took {0} sec'.format(t2-t1)
             t1 = t2
@@ -211,6 +214,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
            'with test performance %f %%') %
                  (best_validation_loss * 100., test_score * 100.)+'\n')
     log.write('The training code for file {0} ran for {1:.2f}\n'.format(os.path.split(__file__)[1],((end_time - start_time) / 60.)))
+    log.write(str(confusion_matrix)+'\n')
     log.write('----------\n')
     log.close()
 

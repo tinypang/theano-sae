@@ -112,7 +112,18 @@ class dA(object):
             self.x = input
 
         self.params = [self.W, self.b, self.b_prime]
+    def get_corrupted_input(self, input, corruption_level):
+        """ This function keeps ``1-corruption_level`` entries of the inputs the same
+        and zero-out randomly selected subset of size ``coruption_level``
+        Note : first argument of theano.rng.binomial is the shape(size) of
+              random numbers that it should produce
+              second argument is the number of trials
+              third argument is the probability of success of any trial
 
+        this will produce an array of 0s and 1s where 1 has a probability of
+        1 - ``corruption_level`` and 0 with ``corruption_level``
+        """
+        return self.theano_rng.binomial(size=input.shape, n=1, p=1 - corruption_level) * input
     def get_hidden_values(self, input):
         """ Computes the values of the hidden layer """
         return T.nnet.sigmoid(T.dot(input, self.W) + self.b)
@@ -124,12 +135,12 @@ class dA(object):
         """
         return  T.nnet.sigmoid(T.dot(hidden, self.W_prime) + self.b_prime)
 
-    def get_cost_updates(self, learning_rate):
+    def get_cost_updates(self, corruption_level, learning_rate):
         """ This function computes the cost and the updates for one trainng
         step of the dA """
 
-        #tilde_x = self.get_corrupted_input(self.x, corruption_level)
-        y = self.get_hidden_values(self.x)
+        tilde_x = self.get_corrupted_input(self.x, corruption_level)
+        y = self.get_hidden_values(tilde_x)
         z = self.get_reconstructed_input(y)
         # note : we sum over the size of a datapoint; if we are using
         #        minibatches, L will be a vector, with one entry per
@@ -151,6 +162,8 @@ class dA(object):
             updates.append((param, param - learning_rate * gparam))
 
         return (cost, updates)
+
+ 
 '''
 def shared_dataset(data_xy):
     """ Function that loads the dataset into shared variables

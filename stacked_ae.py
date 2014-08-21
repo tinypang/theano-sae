@@ -22,7 +22,7 @@ class SdA(object):
     """
 
     def __init__(self, numpy_rng, theano_rng=None, n_ins=912,
-                 hidden_layers_sizes=[912, 912], n_outs=912,n_classes=10):
+                 hidden_layers_sizes=[912, 912], n_outs=912,n_classes=10,corruption_levels=[0.1, 0.1]):
         """ This class is made to support a variable number of layers.
 
         :type numpy_rng: numpy.random.RandomState
@@ -45,6 +45,10 @@ class SdA(object):
         
         :type n_classes: int
         :param n_classes: number of classes output can belong to
+
+        :type corruption_levels: list of float
+        :param corruption_levels: amount of corruption to use for each
+                                  layer
         """
         self.sigmoid_layers = []
         self.dA_layers = []
@@ -151,6 +155,7 @@ class SdA(object):
 
         # index to a [mini]batch
         index = T.lscalar('index')  # index to a minibatch
+        corruption_level = T.scalar('corruption')  # % of corruption to use
         learning_rate = T.scalar('lr')  # learning rate to use
         # number of batches
         n_batches = train_set_x.get_value(borrow=True).shape[0] / batch_size
@@ -160,19 +165,21 @@ class SdA(object):
         batch_end = batch_begin + batch_size
 
         pretrain_fns = []
+
         for dA in self.dA_layers:
             # get the cost and the updates list
-            cost, updates = dA.get_cost_updates(learning_rate)
+            cost, updates = dA.get_cost_updates(corruption_level,
+                                                learning_rate)
             # compile the theano function
             fn = theano.function(inputs=[index,
+                              theano.Param(corruption_level, default=0.2),
                               theano.Param(learning_rate, default=0.1)],
                                  outputs=cost,
                                  updates=updates,
                                  givens={self.x: train_set_x[batch_begin:
                                                              batch_end]})
             # append `fn` to the list of functions
-            pretrain_fns.append(fn)
-
+            pretrain_fns.append(fn) 
         return pretrain_fns
 
     def build_finetune_functions(self, datasets, batch_size, learning_rate):
