@@ -37,7 +37,7 @@ def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of 
 
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretraining_epochs=15,
              pretrain_lr=0.001, training_epochs=1000,
-            batch_size=1,dimx=38,dimy=24,hidlay=[600,300,100],outs=50,corruption_levels=[.1, .2, .3]):
+            batch_size=1,dimx=38,dimy=24,hidlay=[600,300,100],outs=50,corruption_levels=[.1, .2, .3],resultslog='resultslog.txt'):
     """
     Demonstrates how to train and test a stochastic denoising autoencoder.
 
@@ -63,7 +63,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     pcaonoff = False
     pcancomp = 0
 
-    log = open('resultslog.txt','a+')
+    log = open(resultslog,'a+')
     log.write('data set is {0}\n'.format(path))
     log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, training epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}\n".format(dimx,dimy,str(hidlay),outs,batch_size,training_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels))
     log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))

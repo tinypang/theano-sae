@@ -17,3 +17,7 @@ The training code for file train_stacked_ae.py ran for 0.06
  [ 0  0  0  0  0  0  0  0  0 17]
  [ 0  0  0  0  0  0  0  0  0 28]]
 ----------
+data set is spectrogram/gs_full_spectrograms_50th
+Xdim:38, Ydim:24, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, training epochs:1000, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000, corruption levels per layer:[0.1, 0.2, 0.3]
+pca:False, pca components:0
+(0, 'classical')(1, 'country')(2, 'rock')(3, 'disco')(4, 'blues')(5, 'pop')(6, 'metal')(7, 'hiphop')(8, 'jazz')(9, 'reggae')

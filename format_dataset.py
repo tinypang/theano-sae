@@ -12,7 +12,7 @@ def split_dataset(data, labels,):
             label_dict[labels[i]] = n
             labels[i] = n
             n +=1
-                        
+                                
     mapping = open('label_mapping.txt','r+')
     for i in label_dict.keys():
         mapping.write('{0}:{1}\n'.format(i,label_dict[i]))
