@@ -15,6 +15,7 @@ from stacked_ae import SdA
 from pca_whiten import pca
 from utils import tile_raster_images
 from format_dataset import split_dataset
+from import_mpc import import_mpc
 
 '''
 def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of int ids
@@ -37,7 +38,7 @@ def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of 
 
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretraining_epochs=15,
              pretrain_lr=0.001, training_epochs=1000,
-            batch_size=1,dimx=38,dimy=24,hidlay=[600,300,100],outs=50,corruption_levels=[.1, .2, .3],resultslog='resultslog.txt'):
+            batch_size=1,dimx=2,dimy=297,hidlay=[300,200,100],outs=50,corruption_levels=[.1, .2, .3],input_type='mpc',nceps=33,resultslog='resultslog.txt'):
     """
     Demonstrates how to train and test a stochastic denoising autoencoder.
 
@@ -58,17 +59,27 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
 
     :type dataset: string
     :param dataset: path the the pickled dataset
+    
+    :type input_type: string
+    :param dataset: should be 'mpc' or 'spectrogram' determines input type
 
     """
-    pcaonoff = False
-    pcancomp = 0
 
     log = open(resultslog,'a+')
     log.write('data set is {0}\n'.format(path))
     log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, training epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}\n".format(dimx,dimy,str(hidlay),outs,batch_size,training_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels))
-    log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
-
-    data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,whiten=pcaonoff)
+    log.write('input type: {0}'.format(input_type))
+    if input_type == 'spectrogram':
+        pcaonoff = False
+        pcancomp = 0
+        log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
+        data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,whiten=pcaonoff)
+    if input_type == 'mpc':
+        scale = True
+        whiten = False
+        pcancomps = 100
+        log.write('number of mpc coefficients:{0},scale: {1}, whiten: {2}, ncomps{3}'.format(nceps,scale,whiten, pcancomps))
+        data, labels =  import_mpc(path,nceps,scale=scale,whiten=whiten,ncomps=pcancomps)
     datasets = split_dataset(data, labels)
     label_dict = datasets[3]
     pairs = zip(label_dict.itervalues(), label_dict.iterkeys())
@@ -90,7 +101,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     numpy_rng = numpy.random.RandomState(89677)
     print '... building the model'
     # construct the stacked denoising autoencoder class
-    sda = SdA(numpy_rng=numpy_rng, n_ins=dimx * dimy,
+    sda = SdA(numpy_rng=numpy_rng, n_ins=594,
               hidden_layers_sizes=hidlay,
               n_outs=outs,n_classes=n_classes)
 
@@ -219,6 +230,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     log.close()
 
 if __name__ == '__main__':
-    test_SdA(path='spectrogram/gs_full_spectrograms_50th',batch_size=20)
+    #test_SdA(path='spectrogram/gs_full_spectrograms_50th',batch_size=20)
     #test_SdA(path='spectrogram/test',batch_size=20)
+    test_SdA(path='./GTZAN_genre',batch_size=20,input_type='mpc',nceps=33)
 
