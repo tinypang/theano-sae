@@ -21,8 +21,8 @@ class SdA(object):
     the dAs are only used to initialize the weights.
     """
 
-    def __init__(self, numpy_rng, theano_rng=None, n_ins=912,
-                 hidden_layers_sizes=[912, 912], n_outs=912,n_classes=10,corruption_levels=[0.1, 0.1]):
+    def __init__(self, numpy_rng, n_ins,theano_rng=None,
+                 hidden_layers_sizes=[400, 200], n_outs=50,n_classes=10,corruption_levels=[0.1, 0.1]):
         """ This class is made to support a variable number of layers.
 
         :type numpy_rng: numpy.random.RandomState

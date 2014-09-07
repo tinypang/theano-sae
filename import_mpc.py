@@ -6,7 +6,11 @@ import time
 
 def import_mpc(path,nceps=33,scale=True,whiten=False,ncomps=100):
     pt0 = time.time()
-    data, labels = mpcfilter(path,nceps)    #import audio files and extract mpc data and labels
+    data, labels= mpcfilter(path,nceps)    #import audio files and extract mpc data and labels
+    #output = open('gtzan_mpc_data.txt', 'w')
+    #for i in data:
+    #    output.write(str(i))
+    #output.close()
     pt1 = time.time()
     print 'import and mpc coefficient extraction took time {0}'.format(pt1-pt0)
     data = np.array(data)   #convert python list of all img mpc data to a numpy array

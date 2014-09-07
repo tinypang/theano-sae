@@ -92,7 +92,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     #valid_set_x, valid_set_y = shared_dataset(datasets[1])
     #test_set_x, test_set_y = shared_dataset(datasets[2])
     data, labels = [], []    
-
+    
     # compute number of minibatches for training, validation and testing
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
     n_train_batches /= batch_size
@@ -101,9 +101,9 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     numpy_rng = numpy.random.RandomState(89677)
     print '... building the model'
     # construct the stacked denoising autoencoder class
-    sda = SdA(numpy_rng=numpy_rng, n_ins=594,
+    sda = SdA(numpy_rng=numpy_rng, n_ins=dimx*dimy,
               hidden_layers_sizes=hidlay,
-              n_outs=outs,n_classes=n_classes)
+              n_outs=outs,n_classes=n_classes,corruption_levels=corruption_levels)
 
     #########################
     # PRETRAINING THE MODEL #
@@ -141,7 +141,6 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     ########################
     # FINETUNING THE MODEL #
     ########################
-
     # get the training, validation and testing function for the model
     print '... getting the finetuning functions'
     train_fn, validate_model, test_model, conf_mat = sda.build_finetune_functions(
