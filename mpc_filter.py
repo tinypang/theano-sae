@@ -40,7 +40,7 @@ def get_mpc(path,filename,ncep):
             cov_feat = np.append(cov_feat, covvar[i][j])            
     feature_vector = np.append(mean_feat,cov_feat)
     data.append(feature_vector)
-    labels.append(filename[0:-9])
+    labels.append(filename[0:-11])
     
 def mpcfilter(path,ncep=33):
     explore(path,ncep)

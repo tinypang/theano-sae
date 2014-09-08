@@ -64,7 +64,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     :param dataset: should be 'mpc' or 'spectrogram' determines input type
 
     """
-
+    n_ins = dimx*dimy
     log = open(resultslog,'a+')
     log.write('data set is {0}\n'.format(path))
     log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, pretraining epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}, validation improvement threshold:{10}\n".format(dimx,dimy,str(hidlay),outs,batch_size,pretraining_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels,valid_imp_thresh))
@@ -75,12 +75,16 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
         if input_type == 'spectrogram':
             pcaonoff = False
             pcancomp = 0
+            if pcaonoff == True:
+                n_ins = pcancomps
             log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
-            data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,whiten=pcaonoff)
+            data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomps,whiten=pcaonoff)
         if input_type == 'mpc':
             scale = True
             whiten = False
-            pcancomps = 100
+            pcancomps = 300
+            if whiten == True:
+                n_ins = pcancomps
             log.write('number of mpc coefficients:{0},scale: {1}, whiten: {2}, ncomps{3}'.format(nceps,scale,whiten, pcancomps))
             data, labels =  import_mpc(path,nceps,scale=scale,whiten=whiten,ncomps=pcancomps)
         datasets = split_dataset(data, labels)
@@ -104,7 +108,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     numpy_rng = numpy.random.RandomState(89677)
     print '... building the model'
     # construct the stacked denoising autoencoder class
-    sda = SdA(numpy_rng=numpy_rng, n_ins=dimx*dimy,
+    sda = SdA(numpy_rng=numpy_rng, n_ins=n_ins,
               hidden_layers_sizes=hidlay,
               n_outs=outs,n_classes=n_classes,corruption_levels=corruption_levels)
 
@@ -235,5 +239,5 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
 if __name__ == '__main__':
     #test_SdA(path='spectrogram/gs_full_spectrograms_50th',batch_size=20)
     #test_SdA(path='spectrogram/test',batch_size=20)
-    test_SdA(path='./GTZAN_genre',batch_size=20,input_type='mpc',nceps=33)
+    test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300,300],outs=100,corruption_levels=[.35, .35],input_type='mpc',nceps=33,finetune_lr=0.005, pretraining_epochs=100,pretrain_lr=0.0005)
 
