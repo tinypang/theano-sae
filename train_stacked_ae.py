@@ -36,9 +36,9 @@ def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of 
     return pr_mat    
 '''    
 
-def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretraining_epochs=15,
-             pretrain_lr=0.001, training_epochs=1000,
-            batch_size=1,dimx=2,dimy=297,hidlay=[300,200,100],outs=50,corruption_levels=[.1, .2, .3],input_type='mpc',nceps=33,resultslog='resultslog.txt'):
+def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretraining_epochs=125,
+             pretrain_lr=0.0005, training_epochs=2000,
+            batch_size=1,dimx=2,dimy=297,hidlay=[300,300],outs=100,corruption_levels=[.35, .35],input_type='mpc',nceps=33,valid_imp_thresh=0.5,resultslog='resultslog.txt',reinput=None):
     """
     Demonstrates how to train and test a stochastic denoising autoencoder.
 
@@ -67,20 +67,23 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
 
     log = open(resultslog,'a+')
     log.write('data set is {0}\n'.format(path))
-    log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, training epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}\n".format(dimx,dimy,str(hidlay),outs,batch_size,training_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels))
+    log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, pretraining epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}, validation improvement threshold:{10}\n".format(dimx,dimy,str(hidlay),outs,batch_size,pretraining_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels,valid_imp_thresh))
     log.write('input type: {0}'.format(input_type))
-    if input_type == 'spectrogram':
-        pcaonoff = False
-        pcancomp = 0
-        log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
-        data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,whiten=pcaonoff)
-    if input_type == 'mpc':
-        scale = True
-        whiten = False
-        pcancomps = 100
-        log.write('number of mpc coefficients:{0},scale: {1}, whiten: {2}, ncomps{3}'.format(nceps,scale,whiten, pcancomps))
-        data, labels =  import_mpc(path,nceps,scale=scale,whiten=whiten,ncomps=pcancomps)
-    datasets = split_dataset(data, labels)
+    if reinput != None:
+        datasets = reinput    
+    else:    
+        if input_type == 'spectrogram':
+            pcaonoff = False
+            pcancomp = 0
+            log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
+            data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,whiten=pcaonoff)
+        if input_type == 'mpc':
+            scale = True
+            whiten = False
+            pcancomps = 100
+            log.write('number of mpc coefficients:{0},scale: {1}, whiten: {2}, ncomps{3}'.format(nceps,scale,whiten, pcancomps))
+            data, labels =  import_mpc(path,nceps,scale=scale,whiten=whiten,ncomps=pcancomps)
+        datasets = split_dataset(data, labels)
     label_dict = datasets[3]
     pairs = zip(label_dict.itervalues(), label_dict.iterkeys())
     pairs.sort()
@@ -152,7 +155,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     patience = 10 * n_train_batches  # look as this many examples regardless
     patience_increase = 2.  # wait this much longer when a new best is
                             # found
-    improvement_threshold = 0.995  # a relative improvement of this much is
+    improvement_threshold = valid_imp_thresh  # a relative improvement of this much is
                                    # considered significant
     validation_frequency = min(n_train_batches, patience / 2)
                                   # go through this many
@@ -227,6 +230,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.1, pretrain
     log.write(str(confusion_matrix)+'\n')
     log.write('----------\n')
     log.close()
+    return datasets
 
 if __name__ == '__main__':
     #test_SdA(path='spectrogram/gs_full_spectrograms_50th',batch_size=20)
