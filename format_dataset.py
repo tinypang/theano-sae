@@ -1,7 +1,7 @@
 from math import ceil
 
-def split_dataset(data, labels,):
-    print 'splitting data...'
+def relabel_data(labels,labelfile):
+    print 'relabelling data...'
     label_dict = {}
     n = 0
     for i in range(0,len(labels)):
@@ -11,13 +11,16 @@ def split_dataset(data, labels,):
             print '{0} is a new label'.format(labels[i])    #relabel string labels as integer labels
             label_dict[labels[i]] = n
             labels[i] = n
-            n +=1
-                                
-    mapping = open('label_mapping.txt','r+')    #record map[ings between integer label and string labels
+            n +=1                                
+    mapping = open(labelfile,'r+')    #record map[ings between integer label and string labels
     for i in label_dict.keys():
         mapping.write('{0}:{1}\n'.format(i,label_dict[i]))
     mapping.close()
+    return labels
 
+def split_dataset(data, labels):
+    labels =  relabel_data(labels,'label_mapping.txt')
+    print 'splitting data...'
     trainx,trainy,validx,validy,testx,testy = [],[],[],[],[],[]
     for i in range(0,len(data)):    #split data categories equally into 60% train, 10% valid, 30% test
         if i%10 in range(0,6,1):
