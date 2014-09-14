@@ -1,0 +1,67 @@
+data set is ./GTZAN_genre
+Xdim:2, Ydim:297, Hidden Layers:[300, 300], nOutputs:100, Batch size:200, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.5
+input type: mpcnumber of mpc coefficients:33,scale: True, whiten: False, ncomps300(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+The pretraining code for file train_stacked_ae.py ran for 0.78m
+Optimization complete with best validation score of inf %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02
+TensorType(int32, matrix)
+----------
+data set is ./GTZAN_genre
+Xdim:2, Ydim:297, Hidden Layers:[300, 300], nOutputs:100, Batch size:200, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.2, 0.2], validation improvement threshold:0.5
+input type: mpc(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+The pretraining code for file train_stacked_ae.py ran for 0.78m
+Optimization complete with best validation score of inf %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02
+TensorType(int32, matrix)
+----------
+data set is ./GTZAN_genre
+Xdim:2, Ydim:297, Hidden Layers:[300, 300], nOutputs:100, Batch size:200, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.3, 0.3], validation improvement threshold:0.5
+input type: mpc(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+The pretraining code for file train_stacked_ae.py ran for 0.81m
+Optimization complete with best validation score of inf %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.03
+TensorType(int32, matrix)
+----------
+data set is ./GTZAN_genre
+Xdim:2, Ydim:297, Hidden Layers:[400, 200], nOutputs:100, Batch size:200, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.5
+input type: mpc(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+The pretraining code for file train_stacked_ae.py ran for 0.95m
+Optimization complete with best validation score of inf %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02
+TensorType(int32, matrix)
+----------
+data set is ./GTZAN_genre
+Xdim:2, Ydim:297, Hidden Layers:[300, 300], nOutputs:100, Batch size:400, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.5
+input type: mpc(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+The pretraining code for file train_stacked_ae.py ran for 0.51m
+Optimization complete with best validation score of inf %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.01
+TensorType(int32, matrix)
+----------
+data set is ./GTZAN_genre
+Xdim:2, Ydim:297, Hidden Layers:[300, 300], nOutputs:100, Batch size:100, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.4, 0.4], validation improvement threshold:0.5
+input type: mpc(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+The pretraining code for file train_stacked_ae.py ran for 0.83m
+     epoch 1, minibatch 6/6, test error of best model 10.000000 %
+Optimization complete with best validation score of 10.000000 %,with test performance 10.000000 %
+The training code for file train_stacked_ae.py ran for 0.02
+[[ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 29  1]
+ [ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 30  0]
+ [ 0  0  0  0  0  0  0  0 30  0]]
+----------
+data set is ./GTZAN_genre
+Xdim:2, Ydim:297, Hidden Layers:[150, 150], nOutputs:50, Batch size:200, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.2, 0.2], validation improvement threshold:0.5
+input type: mpc(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+The pretraining code for file train_stacked_ae.py ran for 0.55m
+Optimization complete with best validation score of inf %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.01
+TensorType(int32, matrix)
+----------
+------------------------------------------------------------------------------------------------------

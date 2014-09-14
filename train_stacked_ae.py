@@ -16,25 +16,8 @@ from pca_whiten import pca
 from utils import tile_raster_images
 from format_dataset import split_dataset
 from import_mpc import import_mpc
+import PIL.Image 
 
-'''
-def pr_mat(conf_matrix):    #todo integrate label dict to use labels instead of int ids
-    pr_mat = {}
-    keys_col = conf_matrix.keys()
-    for i in conf_matrix.keys():
-        pr_mat[i] = {}
-        #calculate recall
-        rowsum = 0
-        for j in conf_matrix[i].keys():
-            rowsum+= conf_matrix[i][j]
-        pr_mat[i]['recall'] = conf_matrix[i][i]/rowsum
-        #calculate precision
-        colsum = 0
-        for k in keys_col:
-            colsum += conf_matrix[k][i]
-        pr_mat[i]['precision']= conf_matrix[i][i]/colsum
-    return pr_mat    
-'''    
 
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretraining_epochs=125,
              pretrain_lr=0.0005, training_epochs=2000,
@@ -234,6 +217,17 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     log.write(str(confusion_matrix)+'\n')
     log.write('----------\n')
     log.close()
+    
+    for i in range(0,len(sda.sigmoid_layers)):
+        x = sda.sigmoid_layers[i].W.get_value(borrow=True).T
+        tile = x.shape[0]
+        img = x.shape[1]
+        if img == 594:
+            dim = (33,18)
+        else:
+            dim = (30,10)
+        image = PIL.Image.fromarray(tile_raster_images(X=x,img_shape=dim, tile_shape=(int(tile/10),10),tile_spacing=(1,1)))
+        image.save('594_mpc_features_sigmoid_layer_{0}.png'.format(i))
     return datasets
 
 if __name__ == '__main__':

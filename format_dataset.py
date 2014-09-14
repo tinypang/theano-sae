@@ -16,10 +16,10 @@ def relabel_data(labels,labelfile):
     for i in label_dict.keys():
         mapping.write('{0}:{1}\n'.format(i,label_dict[i]))
     mapping.close()
-    return labels
+    return labels,label_dict
 
 def split_dataset(data, labels):
-    labels =  relabel_data(labels,'label_mapping.txt')
+    labels,label_dict =  relabel_data(labels,'label_mapping.txt')
     print 'splitting data...'
     trainx,trainy,validx,validy,testx,testy = [],[],[],[],[],[]
     for i in range(0,len(data)):    #split data categories equally into 60% train, 10% valid, 30% test
