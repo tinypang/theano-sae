@@ -1,0 +1,12 @@
+reggae:9
+classical:7
+country:0
+jazz:1
+metal:4
+pop:6
+disco:8
+hiphop:2
+rock:5
+blues:3
+
+blues.:3

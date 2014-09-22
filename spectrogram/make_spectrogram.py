@@ -30,7 +30,7 @@ def graph_spectrogram(au_file,name):    #function to plot spectrogram figure
     NFFT = int(frame_rate*0.020)  # 20ms window
     noverlap = int(frame_rate*0.010)   #10ms overlap
     spec = plt.specgram(sound_info, NFFT = NFFT,Fs=frame_rate,noverlap=noverlap)  #plot spectrogram with audio data
-    fig.savefig('./full_Spectrograms/{0}-raw-spectrogram-{1}.png'.format(os.path.splitext(name)[0],nframes),format='png')  #save spectrogram
+    fig.savefig('./3sec_spectrograms/{0}-raw-spectrogram-{1}.png'.format(os.path.splitext(name)[0],nframes),format='png')  #save spectrogram
     print name
     plt.close(fig)  #close spectrogram figure
 
@@ -71,5 +71,5 @@ def explore(path):
 
 if __name__ == '__main__':
     #explore('./test')
-    explore('../GTZAN_genre')
+    explore('../audio_snippets/GTZAN_3sec')
 
