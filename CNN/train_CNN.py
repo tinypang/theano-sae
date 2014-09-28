@@ -20,7 +20,7 @@ from format_dataset import split_dataset
 from import_dataset import import_preprocess_data
 
 
-def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancomps=100,
+def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancomps=100,
                     nkerns=[20, 50], batch_size=500):
     """ Demonstrates lenet on MNIST dataset
 
@@ -40,11 +40,11 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
 
     rng = numpy.random.RandomState(23455)
     
-    datasets = load_data('mnist.pkl.gz')
+    #datasets = load_data('mnist.pkl.gz')
     
-    #data, labels = import_preprocess_data(path,dimx=dimx,dimy=dimy,ncomp=pcancomps,pca=False,whiten=False)
-    #datasets = split_dataset(data, labels) 
-    
+    data, labels = import_preprocess_data(path,dimx=dimx,dimy=dimy,ncomp=pcancomps,pca=False,whiten=False,minmax=False)
+    datasets = split_dataset(data, labels,dimx,dimy) 
+    '''
     train_set_x, train_set_y = datasets[0]
     valid_set_x, valid_set_y = datasets[1]
     test_set_x, test_set_y = datasets[2]
@@ -54,7 +54,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
     train_set_x, train_set_y = shared_dataset(datasets[0])
     valid_set_x, valid_set_y = shared_dataset(datasets[1])
     test_set_x, test_set_y = shared_dataset(datasets[2])
-    '''
+   
     # compute number of minibatches for training, validation and testing
     n_train_batches = train_set_x.get_value(borrow=True).shape[0]
     n_valid_batches = valid_set_x.get_value(borrow=True).shape[0]
@@ -78,14 +78,14 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
 
     # Reshape matrix of rasterized images of shape (batch_size,28*28)
     # to a 4D tensor, compatible with our LeNetConvPoolLayer
-    layer0_input = x.reshape((batch_size, 1, dimx, dimy))
+    layer0_input = x.reshape((batch_size, 1, 28, 28))
 
     # Construct the first convolutional pooling layer:
     # filtering reduces the image size to (28-5+1,28-5+1)=(24,24)
     # maxpooling reduces this further to (24/2,24/2) = (12,12)
     # 4D output tensor is thus of shape (batch_size,nkerns[0],12,12)
     layer0 = LeNetConvPoolLayer(rng, input=layer0_input,
-            image_shape=(batch_size, 1, dimx, dimy),
+            image_shape=(batch_size, 1, 28, 28),
             filter_shape=(nkerns[0], 1, 5, 5), poolsize=(2, 2))
 
     # Construct the second convolutional pooling layer
@@ -93,7 +93,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
     # maxpooling reduces this further to (8/2,8/2) = (4,4)
     # 4D output tensor is thus of shape (nkerns[0],nkerns[1],4,4)
     layer1 = LeNetConvPoolLayer(rng, input=layer0.output,
-            image_shape=(batch_size, nkerns[0], (dimx-5+1)/2, (dimy-5+1)/2),
+            image_shape=(batch_size, nkerns[0], 12, 12),
             filter_shape=(nkerns[1], nkerns[0], 5, 5), poolsize=(2, 2))
 
     # the HiddenLayer being fully-connected, it operates on 2D matrices of
@@ -102,14 +102,17 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
     layer2_input = layer1.output.flatten(2)
 
     # construct a fully-connected sigmoidal layer
-    layer2 = HiddenLayer(rng, input=layer2_input, n_in=(nkerns[1] * (dimx/4)-3 * (dimy/4)-3),
+    layer2 = HiddenLayer(rng, input=layer2_input, n_in=nkerns[1] * 4 * 4,
                          n_out=500, activation=T.tanh)
 
     # classify the values of the fully-connected sigmoidal layer
-    layer3 = LogisticRegression(input=layer2.output, n_in=500, n_out=10)
+    layer3 = LogisticRegression(input=layer2.output, n_in=500, n_out=50)
 
     # the cost we minimize during training is the NLL of the model
     cost = layer3.negative_log_likelihood(y)
+
+    #confusion matrix
+    #confusion_mat = layer3.conf_matrix(y)
 
     # create a function to compute the mistakes that are made by the model
     test_model = theano.function([index], layer3.errors(y),
@@ -121,6 +124,13 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
             givens={
                 x: valid_set_x[index * batch_size: (index + 1) * batch_size],
                 y: valid_set_y[index * batch_size: (index + 1) * batch_size]})
+
+    conf_mat = theano.function([index],layer3.conf_matrix(y),
+                 givens={
+                   x: test_set_x[index:],
+                   y: test_set_y[index:]},
+                      name='conf_mat',mode='DebugMode')
+
 
     # create a list of all model parameters to be fit by gradient descent
     params = layer3.params + layer2.params + layer1.params + layer0.params
@@ -141,7 +151,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
           givens={
             x: train_set_x[index * batch_size: (index + 1) * batch_size],
             y: train_set_y[index * batch_size: (index + 1) * batch_size]})
-
+    
     ###############
     # TRAIN MODEL #
     ###############
@@ -164,6 +174,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
     test_score = 0.
     start_time = time.clock()
 
+    confusion_matrix = T.imatrix
     epoch = 0
     done_looping = False
 
@@ -202,6 +213,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
                     # test it on the test set
                     test_losses = [test_model(i) for i in xrange(n_test_batches)]
                     test_score = numpy.mean(test_losses)
+                    confusion_matrix = conf_mat(0)
                     print(('     epoch %i, minibatch %i/%i, test error of best '
                            'model %f %%') %
                           (epoch, minibatch_index + 1, n_train_batches,
@@ -212,6 +224,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
                 break
 
     end_time = time.clock()
+    print confusion_matrix
     print('Optimization complete.')
     print('Best validation score of %f %% obtained at iteration %i,'\
           'with test performance %f %%' %
@@ -221,7 +234,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=57,dimy=36,pcancom
                           ' ran for %.2fm' % ((end_time - start_time) / 60.))
 
 if __name__ == '__main__':
-    evaluate_lenet5('../spectrogram/gs_3sec_spectrograms_33rd',dimx=28,dimy=28)
+    evaluate_lenet5('../spectrogram/3sec_gs_28',dimx=28,dimy=28)
 
 
 def experiment(state, channel):

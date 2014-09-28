@@ -20,14 +20,15 @@ def relabel_data(labels,labelfile):
     mapping.close()
     return labels,label_dict
 
-def split_dataset(data, labels):
+def split_dataset(data, labels,dimx,dimy):
+    size = dimx*dimy
     labels,label_dict =  relabel_data(labels,'label_mapping.txt')
     print 'splitting data...'
     pt1 = time.time()    
-    trainx,trainy,validx,validy,testx,testy = np.empty([0,2052]),[],np.empty([0,2052]),[],np.empty([0,2052]),[]
+    trainx,trainy,validx,validy,testx,testy = np.empty([0,size]),[],np.empty([0,size]),[],np.empty([0,size]),[]
     for i in range(0,len(data)):    #split data categories equally into 60% train, 10% valid, 30% test
         c = data[i]
-        c.shape = (1,2052)
+        c.shape = (1,size)
         if i%10 in range(0,6,1):
             trainx = np.append(trainx,c,axis=0)
             trainy.append(labels[i])

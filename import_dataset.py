@@ -26,12 +26,6 @@ def minmaxscale(data):
     print 'scaling data to interval (0,1) took time {0}'.format(pt2-pt1)
     return data 
 
-def zero_mean(data,meandict):   #normalizes each feature to a zero mean
-    for i in range(0,len(data)):      #for each feature vector
-        for j in range(0,len(data[i])):   #subtract the mean of the feature from the feature value
-            data[i][j] = data[i][j]-meandict[j]    
-    return data #return mean normalized data
-
 def import_data(path, dimx, dimy): 
     data,labels = [],[] #intiate arrays to store data and labels
     n = 0   #initiate integer variable to track data import
@@ -40,7 +34,7 @@ def import_data(path, dimx, dimy):
         imgfile = path + '/' + filename #create file address from file path and file name
         img = flatten_img(imgfile)  #flatten image
         data.append(img)
-        labels.append(filename[0:-27])
+        labels.append(filename[0:-17])
         n+=1
         print n
     pt1 = time.time()
@@ -60,10 +54,11 @@ def pca(data,ncomp=100,whiten=False):
     print 'total time taken {0}'.format(pt5-pt0)
     return X
 
-def import_proprocess_data(path, dimx, dimy, ncomp=100, pca = False, whiten=False):
+def import_proprocess_data(path, dimx, dimy, ncomp=100, pca = False, whiten=False,minmax=False):
     data, labels = import_data(path, dimx, dimy)
     data = np.array(data)   #convert python list of all img data to a numpy array
-    data = minmaxscale(data)
+    if minmax ==True:
+        data = minmaxscale(data)
     if pca ==True:
         data = pca(data,ncomp,whiten)
     return data, labels

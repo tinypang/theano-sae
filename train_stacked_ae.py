@@ -12,7 +12,7 @@ from logistic_sgd import LogisticRegression, shared_dataset
 from mlp import HiddenLayer
 from dA import dA
 from stacked_ae import SdA
-from pca_whiten import pca
+from import_dataset import import_proprocess_data
 from utils import tile_raster_images
 from format_dataset import split_dataset
 from import_mpc import import_mpc
@@ -21,7 +21,7 @@ import PIL.Image
 
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretraining_epochs=125,
              pretrain_lr=0.0005, training_epochs=2000,
-            batch_size=1,dimx=2,dimy=297,hidlay=[300,300],outs=100,corruption_levels=[.35, .35],input_type='mpc',nceps=33,valid_imp_thresh=0.5,resultslog='resultslog.txt',reinput=None):
+            batch_size=1,dimx=2,dimy=297,hidlay=[300,300],outs=100,corruption_levels=[.35, .35],input_type='mpc',nceps=33,valid_imp_thresh=0.995,resultslog='resultslog.txt',reinput=None):
     """
     Demonstrates how to train and test a stochastic denoising autoencoder.
 
@@ -59,9 +59,9 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
             pcaonoff = False
             pcancomp = 0
             if pcaonoff == True:
-                n_ins = pcancomps
+                n_ins = pcancomp
             log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomp))
-            data, labels = pca(path,dimx=dimx,dimy=dimy,ncomp=pcancomps,whiten=pcaonoff)
+            data, labels = import_proprocess_data(path,dimx=dimx,dimy=dimy,ncomp=pcancomp,pca=False,whiten=pcaonoff)
         if input_type == 'mpc':
             scale = True
             whiten = False
@@ -70,7 +70,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
                 n_ins = pcancomps
             log.write('number of mpc coefficients:{0},scale: {1}, whiten: {2}, ncomps{3}'.format(nceps,scale,whiten, pcancomps))
             data, labels =  import_mpc(path,nceps,scale=scale,whiten=whiten,ncomps=pcancomps)
-        datasets = split_dataset(data, labels)
+        datasets = split_dataset(data, labels,dimx, dimy)
     label_dict = datasets[3]
     pairs = zip(label_dict.itervalues(), label_dict.iterkeys())
     pairs.sort()
@@ -225,13 +225,13 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
         if img == 594:
             dim = (33,18)
         else:
-            dim = (30,10)
+            dim = (dimx,dimy)
         image = PIL.Image.fromarray(tile_raster_images(X=x,img_shape=dim, tile_shape=(int(tile/10),10),tile_spacing=(1,1)))
-        image.save('594_mpc_features_sigmoid_layer_{0}.png'.format(i))
+        image.save('{0}_mpc_features_sigmoid_layer_{1}.png'.format(dimx*dimy,i))
     return datasets
 
 if __name__ == '__main__':
     #test_SdA(path='spectrogram/gs_full_spectrograms_50th',batch_size=20)
     #test_SdA(path='spectrogram/test',batch_size=20)
-    test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300,300],outs=100,corruption_levels=[.35, .35],input_type='mpc',nceps=33,finetune_lr=0.005, pretraining_epochs=100,pretrain_lr=0.0005)
+    test_SdA(path='./spectrogram/3sec_50x20_gs',dimx=50,dimy=20,batch_size=20,hidlay=[1000,600,300],outs=100,corruption_levels=[.1, .2,.3],input_type='spectrogram',nceps=33,finetune_lr=0.1, pretraining_epochs=100,pretrain_lr=0.001)
 

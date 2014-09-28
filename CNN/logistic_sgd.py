@@ -56,7 +56,7 @@ class LogisticRegression(object):
     determine a class membership probability.
     """
 
-    def __init__(self, input, n_in, n_out):
+    def __init__(self, input, n_in, n_out,n_classes=10):
         """ Initialize the parameters of the logistic regression
 
         :type input: theano.tensor.TensorType
@@ -91,6 +91,9 @@ class LogisticRegression(object):
 
         # parameters of the model
         self.params = [self.W, self.b]
+        
+        #initialise number of classes to be classfied
+        self.n_classes= n_classes
 
     def negative_log_likelihood(self, y):
         """Return the mean of the negative log-likelihood of the prediction
@@ -140,6 +143,21 @@ class LogisticRegression(object):
             # the T.neq operator returns a vector of 0s and 1s, where 1
             # represents a mistake in prediction
             return T.mean(T.neq(self.y_pred, y))
+        else:
+            raise NotImplementedError()
+
+    def conf_matrix(self, y):
+        # check if y has same dimension of y_pred
+        if y.ndim != self.y_pred.ndim:
+            raise TypeError('y should have the same shape as self.y_pred',
+                ('y', target.type, 'y_pred', self.y_pred.type))
+        # check if y is of the correct datatype
+        if y.dtype.startswith('int'):
+            def pre_mat(x):    #format input vector as column, # of classes as row and generate matrix matching the two
+                return T.eq(x.dimshuffle(0, 'x'), T.arange(self.n_classes).dimshuffle('x', 0))
+            y_oh = T.cast(pre_mat(y), 'int32')
+            y_pred_oh = T.cast(pre_mat(self.y_pred), 'int32')
+            return T.dot(y_oh.T, y_pred_oh)
         else:
             raise NotImplementedError()
 
