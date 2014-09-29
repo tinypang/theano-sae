@@ -64,10 +64,12 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
     n_test_batches /= batch_size
 
     # allocate symbolic variables for the data
+    #theano.config.compute_test_value = 'warn'
     index = T.lscalar()  # index to a [mini]batch
     x = T.matrix('x')   # the data is presented as rasterized images
     y = T.ivector('y')  # the labels are presented as 1D vector of
                         # [int] labels
+    #y.tag.test_value = numpy.random.rand(3000)
 
     ishape = (dimx, dimy)  # this is the size of MNIST images
 
@@ -234,7 +236,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
                           ' ran for %.2fm' % ((end_time - start_time) / 60.))
 
 if __name__ == '__main__':
-    evaluate_lenet5('../spectrogram/3sec_gs_28',dimx=28,dimy=28)
+    evaluate_lenet5('../spectrogram/test',dimx=28,dimy=28)
 
 
 def experiment(state, channel):

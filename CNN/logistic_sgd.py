@@ -147,6 +147,8 @@ class LogisticRegression(object):
             raise NotImplementedError()
 
     def conf_matrix(self, y):
+        if 1 == 1:
+            print 'test'
         # check if y has same dimension of y_pred
         if y.ndim != self.y_pred.ndim:
             raise TypeError('y should have the same shape as self.y_pred',
