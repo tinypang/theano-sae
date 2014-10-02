@@ -1,0 +1,4 @@
+data set is spectrogram/3sec_50x20_gs
+Xdim:2, Ydim:297, Hidden Layers:[600, 300], nOutputs:100, Batch size:20, pretraining epochs:100, pretrain learning rate:0.0005, finetuning learning rate:0.005, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33,scale: True, whiten: False, ncomps0

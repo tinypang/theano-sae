@@ -17,11 +17,10 @@ from CNN import LeNetConvPoolLayer
 import pylab
 from PIL import Image
 from format_dataset import split_dataset
-from import_dataset import import_preprocess_data
+from import_dataset import import_dataset
 
 
-def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancomps=100,
-                    nkerns=[20, 50], batch_size=500):
+def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancomps=100,nceps=33,nkerns=[20, 50], batch_size=500):
     """ Demonstrates lenet on MNIST dataset
 
     :type learning_rate: float
@@ -42,7 +41,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
     
     #datasets = load_data('mnist.pkl.gz')
     
-    data, labels = import_preprocess_data(path,dimx=dimx,dimy=dimy,ncomp=pcancomps,pca=False,whiten=False,minmax=False)
+    data, labels = import_dataset(path,input_type=input_type,dimx=dimx,dimy=dimy,nceps=33,ncomp=pcancomps,pca=False,whiten=False,minmax=True)
     datasets = split_dataset(data, labels,dimx,dimy) 
     '''
     train_set_x, train_set_y = datasets[0]
@@ -131,7 +130,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
                  givens={
                    x: test_set_x[index:],
                    y: test_set_y[index:]},
-                      name='conf_mat',mode='DebugMode')
+                      mode='DebugMode')
 
 
     # create a list of all model parameters to be fit by gradient descent
@@ -176,7 +175,6 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
     test_score = 0.
     start_time = time.clock()
 
-    confusion_matrix = T.imatrix
     epoch = 0
     done_looping = False
 
@@ -215,7 +213,6 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
                     # test it on the test set
                     test_losses = [test_model(i) for i in xrange(n_test_batches)]
                     test_score = numpy.mean(test_losses)
-                    confusion_matrix = conf_mat(0)
                     print(('     epoch %i, minibatch %i/%i, test error of best '
                            'model %f %%') %
                           (epoch, minibatch_index + 1, n_train_batches,
@@ -225,8 +222,9 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
                 done_looping = True
                 break
 
+    #confusion_matrix = conf_mat(0)
     end_time = time.clock()
-    print confusion_matrix
+    #print confusion_matrix
     print('Optimization complete.')
     print('Best validation score of %f %% obtained at iteration %i,'\
           'with test performance %f %%' %
@@ -236,7 +234,7 @@ def evaluate_lenet5(path,learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancom
                           ' ran for %.2fm' % ((end_time - start_time) / 60.))
 
 if __name__ == '__main__':
-    evaluate_lenet5('../spectrogram/test',dimx=28,dimy=28)
+    evaluate_lenet5('../spectrogram/3sec_28x28_gs',input_type='spec',dimx=28,dimy=28)
 
 
 def experiment(state, channel):

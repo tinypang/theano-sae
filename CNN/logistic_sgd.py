@@ -1,38 +1,3 @@
-"""
-This tutorial introduces logistic regression using Theano and stochastic
-gradient descent.
-
-Logistic regression is a probabilistic, linear classifier. It is parametrized
-by a weight matrix :math:`W` and a bias vector :math:`b`. Classification is
-done by projecting data points onto a set of hyperplanes, the distance to
-which is used to determine a class membership probability.
-
-Mathematically, this can be written as:
-
-.. math::
-  P(Y=i|x, W,b) &= softmax_i(W x + b) \\
-                &= \frac {e^{W_i x + b_i}} {\sum_j e^{W_j x + b_j}}
-
-
-The output of the model or prediction is then done by taking the argmax of
-the vector whose i'th element is P(Y=i|x).
-
-.. math::
-
-  y_{pred} = argmax_i P(Y=i|x,W,b)
-
-
-This tutorial presents a stochastic gradient descent optimization method
-suitable for large datasets, and a conjugate gradient optimization method
-that is suitable for smaller datasets.
-
-
-References:
-
-    - textbooks: "Pattern Recognition and Machine Learning" -
-                 Christopher M. Bishop, section 4.3.2
-
-"""
 __docformat__ = 'restructedtext en'
 
 import cPickle
@@ -56,7 +21,7 @@ class LogisticRegression(object):
     determine a class membership probability.
     """
 
-    def __init__(self, input, n_in, n_out,n_classes=10):
+    def __init__(self, input, n_in, n_out, n_classes=10):
         """ Initialize the parameters of the logistic regression
 
         :type input: theano.tensor.TensorType
@@ -72,7 +37,7 @@ class LogisticRegression(object):
                       which the labels lie
 
         """
-
+        self.n_classes = n_classes
         # initialize with 0 the weights W as a matrix of shape (n_in, n_out)
         self.W = theano.shared(value=numpy.zeros((n_in, n_out),
                                                  dtype=theano.config.floatX),
@@ -91,9 +56,6 @@ class LogisticRegression(object):
 
         # parameters of the model
         self.params = [self.W, self.b]
-        
-        #initialise number of classes to be classfied
-        self.n_classes= n_classes
 
     def negative_log_likelihood(self, y):
         """Return the mean of the negative log-likelihood of the prediction
@@ -145,10 +107,8 @@ class LogisticRegression(object):
             return T.mean(T.neq(self.y_pred, y))
         else:
             raise NotImplementedError()
-
+    
     def conf_matrix(self, y):
-        if 1 == 1:
-            print 'test'
         # check if y has same dimension of y_pred
         if y.ndim != self.y_pred.ndim:
             raise TypeError('y should have the same shape as self.y_pred',
@@ -162,6 +122,7 @@ class LogisticRegression(object):
             return T.dot(y_oh.T, y_pred_oh)
         else:
             raise NotImplementedError()
+
 
 
 def load_data(dataset):
@@ -234,8 +195,6 @@ def shared_dataset(data_xy, borrow=True):
     # ``shared_y`` we will have to cast it to int. This little hack
     # lets ous get around this issue
     return shared_x, T.cast(shared_y, 'int32')
-
-
 
 def sgd_optimization_mnist(learning_rate=0.13, n_epochs=1000,
                            dataset='mnist.pkl.gz',

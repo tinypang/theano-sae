@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestClassifier
 from scipy import interp
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc
-import import_dataset as import_data
+from import_dataset import import_dataset
 
 def pltroc_curve(classifier,cv,data,labels,n):
     mean_tpr = 0.0
@@ -45,10 +45,7 @@ def pltroc_curve(classifier,cv,data,labels,n):
 
 def test_classify(path,n,intype='mpc',SVC=False,linSVC=False,RNDforest=True,indata=None,inlabels=None):
     if indata == None:
-        if intype == 'mpc':
-            data, labels = import_mpc(path,33,scale=True,whiten=False)
-        elif intype == 'spec':
-            data, labels = import_data.import_proprocess_data(path,28,28,pca=False,whiten=False,minmax=False)
+        data, labels = import_dataset(path,input_type=intype,nceps=33,pca=False,whiten=False,minmax=False)
         labels, labeldict = relabel_data(labels, 'classifier_label_mapping.txt')
         labels = np.array(labels)
     else:
@@ -79,4 +76,4 @@ def test_classify(path,n,intype='mpc',SVC=False,linSVC=False,RNDforest=True,inda
 
 
 if __name__ == '__main__':
-    test_classify('./spectrogram/3sec_50x20_gs',10,'spec',RNDforest=True)
+    test_classify('./spectrogram/3sec_28x28_gs',5,'spec',linSVC=True)

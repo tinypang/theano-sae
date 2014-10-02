@@ -1,38 +1,3 @@
-"""
-This tutorial introduces logistic regression using Theano and stochastic
-gradient descent.
-
-Logistic regression is a probabilistic, linear classifier. It is parametrized
-by a weight matrix :math:`W` and a bias vector :math:`b`. Classification is
-done by projecting data points onto a set of hyperplanes, the distance to
-which is used to determine a class membership probability.
-
-Mathematically, this can be written as:
-
-.. math::
-  P(Y=i|x, W,b) &= softmax_i(W x + b) \\
-                &= \frac {e^{W_i x + b_i}} {\sum_j e^{W_j x + b_j}}
-
-
-The output of the model or prediction is then done by taking the argmax of
-the vector whose i'th element is P(Y=i|x).
-
-.. math::
-
-  y_{pred} = argmax_i P(Y=i|x,W,b)
-
-
-This tutorial presents a stochastic gradient descent optimization method
-suitable for large datasets, and a conjugate gradient optimization method
-that is suitable for smaller datasets.
-
-
-References:
-
-    - textbooks: "Pattern Recognition and Machine Learning" -
-                 Christopher M. Bishop, section 4.3.2
-
-"""
 __docformat__ = 'restructedtext en'
 
 import cPickle
@@ -45,7 +10,7 @@ import numpy
 
 import theano
 import theano.tensor as T
-from theano import shared
+
 
 class LogisticRegression(object):
     """Multi-class Logistic Regression Class
@@ -70,9 +35,6 @@ class LogisticRegression(object):
         :type n_out: int
         :param n_out: number of output units, the dimension of the space in
                       which the labels lie
-
-        :type n_classes: int
-        :param n_classes: number of classes output can belong to
 
         """
         self.n_classes = n_classes
@@ -142,10 +104,10 @@ class LogisticRegression(object):
         if y.dtype.startswith('int'):
             # the T.neq operator returns a vector of 0s and 1s, where 1
             # represents a mistake in prediction
-            return T.mean(T.eq(self.y_pred, y))
+            return T.mean(T.neq(self.y_pred, y))
         else:
             raise NotImplementedError()
-
+    
     def conf_matrix(self, y):
         # check if y has same dimension of y_pred
         if y.ndim != self.y_pred.ndim:
@@ -157,11 +119,11 @@ class LogisticRegression(object):
                 return T.eq(x.dimshuffle(0, 'x'), T.arange(self.n_classes).dimshuffle('x', 0))
             y_oh = T.cast(pre_mat(y), 'int32')
             y_pred_oh = T.cast(pre_mat(self.y_pred), 'int32')
-            return T.dot(y_oh.T, y_pred_oh)       
+            return T.dot(y_oh.T, y_pred_oh)
         else:
             raise NotImplementedError()
 
-    
+
 
 def load_data(dataset):
     ''' Loads the dataset
@@ -201,6 +163,14 @@ def load_data(dataset):
     #the number of rows in the input. It should give the target
     #target to the example with the same index in the input.
 
+    test_set_x, test_set_y = shared_dataset(test_set)
+    valid_set_x, valid_set_y = shared_dataset(valid_set)
+    train_set_x, train_set_y = shared_dataset(train_set)
+
+    rval = [(train_set_x, train_set_y), (valid_set_x, valid_set_y),
+            (test_set_x, test_set_y)]
+    return rval
+
 def shared_dataset(data_xy, borrow=True):
     """ Function that loads the dataset into shared variables
 
@@ -214,9 +184,9 @@ def shared_dataset(data_xy, borrow=True):
     shared_x = theano.shared(numpy.asarray(data_x,
                                            dtype=theano.config.floatX),
                              borrow=borrow)
-    shared_y = theano.shared(numpy.asarray(data_y,dtype=theano.config.floatX),borrow=borrow)
-    #shared_y = numpy.array(data_y)
-
+    shared_y = theano.shared(numpy.asarray(data_y,
+                                           dtype=theano.config.floatX),
+                             borrow=borrow)
     # When storing data on the GPU it has to be stored as floats
     # therefore we will store the labels as ``floatX`` as well
     # (``shared_y`` does exactly that). But during our computations
@@ -224,16 +194,7 @@ def shared_dataset(data_xy, borrow=True):
     # floats it doesn't make sense) therefore instead of returning
     # ``shared_y`` we will have to cast it to int. This little hack
     # lets ous get around this issue
-    return shared_x,T.cast(shared_y, 'int32')
-
-    test_set_x, test_set_y = shared_dataset(test_set)
-    valid_set_x, valid_set_y = shared_dataset(valid_set)
-    train_set_x, train_set_y = shared_dataset(train_set)
-
-    rval = [(train_set_x, train_set_y), (valid_set_x, valid_set_y),
-            (test_set_x, test_set_y)]
-    return rval
-
+    return shared_x, T.cast(shared_y, 'int32')
 
 def sgd_optimization_mnist(learning_rate=0.13, n_epochs=1000,
                            dataset='mnist.pkl.gz',

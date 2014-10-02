@@ -1,4 +1,3 @@
-
 import numpy
 
 import theano
@@ -21,8 +20,9 @@ class SdA(object):
     the dAs are only used to initialize the weights.
     """
 
-    def __init__(self, numpy_rng, n_ins,theano_rng=None,
-                 hidden_layers_sizes=[400, 200], n_outs=50,n_classes=10,corruption_levels=[0.1, 0.1]):
+    def __init__(self, numpy_rng, theano_rng=None, n_ins=784,
+                 hidden_layers_sizes=[500, 500], n_outs=10,n_classes=10,
+                 corruption_levels=[0.1, 0.1]):
         """ This class is made to support a variable number of layers.
 
         :type numpy_rng: numpy.random.RandomState
@@ -42,19 +42,18 @@ class SdA(object):
 
         :type n_outs: int
         :param n_outs: dimension of the output of the network
-        
-        :type n_classes: int
-        :param n_classes: number of classes output can belong to
 
         :type corruption_levels: list of float
         :param corruption_levels: amount of corruption to use for each
                                   layer
         """
+
         self.sigmoid_layers = []
         self.dA_layers = []
         self.params = []
         self.n_layers = len(hidden_layers_sizes)
         self.n_classes = n_classes
+
         assert self.n_layers > 0
 
         if not theano_rng:
@@ -120,7 +119,7 @@ class SdA(object):
         # We now need to add a logistic layer on top of the MLP
         self.logLayer = LogisticRegression(
                          input=self.sigmoid_layers[-1].output,
-                         n_in=hidden_layers_sizes[-1], n_out=n_outs, n_classes=self.n_classes) 
+                         n_in=hidden_layers_sizes[-1], n_out=n_outs)
 
         self.params.extend(self.logLayer.params)
         # construct a function that implements one step of finetunining
@@ -165,7 +164,6 @@ class SdA(object):
         batch_end = batch_begin + batch_size
 
         pretrain_fns = []
-
         for dA in self.dA_layers:
             # get the cost and the updates list
             cost, updates = dA.get_cost_updates(corruption_level,
@@ -179,36 +177,21 @@ class SdA(object):
                                  givens={self.x: train_set_x[batch_begin:
                                                              batch_end]})
             # append `fn` to the list of functions
-            pretrain_fns.append(fn) 
+            pretrain_fns.append(fn)
+
         return pretrain_fns
 
     def build_finetune_functions(self, datasets, batch_size, learning_rate):
-        '''Generates a function `train` that implements one step of
-        finetuning, a function `validate` that computes the error on
-        a batch from the validation set, and a function `test` that
-        computes the error on a batch from the testing set
 
-        :type datasets: list of pairs of theano.tensor.TensorType
-        :param datasets: It is a list that contain all the datasets;
-                         the has to contain three pairs, `train`,
-                         `valid`, `test` in this order, where each pair
-                         is formed of two Theano variables, one for the
-                         datapoints, the other for the labels
+        #(train_set_x, train_set_y) = datasets[0]
+        #(valid_set_x, valid_set_y) = datasets[1]
+        #(test_set_x, test_set_y) = datasets[2]
 
-        :type batch_size: int
-        :param batch_size: size of a minibatch
-
-        :type learning_rate: float
-        :param learning_rate: learning rate used during finetune stage
-        '''
         (train_set_x, train_set_y) = shared_dataset(datasets[0])
         (valid_set_x, valid_set_y) = shared_dataset(datasets[1])
         (test_set_x, test_set_y) = shared_dataset(datasets[2])
-        '''
-        (train_set_x, train_set_y) = datasets[0]
-        (valid_set_x, valid_set_y) = datasets[1]
-        (test_set_x, test_set_y) = datasets[2]
-        '''
+
+
         # compute number of minibatches for training, validation and testing
         n_valid_batches = valid_set_x.get_value(borrow=True).shape[0]
         n_valid_batches /= batch_size
@@ -224,7 +207,6 @@ class SdA(object):
         updates = []
         for param, gparam in zip(self.params, gparams):
             updates.append((param, param - gparam * learning_rate))
-        
 
         train_fn = theano.function(inputs=[index],
               outputs=self.finetune_cost,
@@ -232,7 +214,8 @@ class SdA(object):
               givens={
                 self.x: train_set_x[index * batch_size:
                                     (index + 1) * batch_size],
-                self.y: train_set_y[index * batch_size:(index + 1) * batch_size]},
+                self.y: train_set_y[index * batch_size:
+                                    (index + 1) * batch_size]},
               name='train')
 
         test_score_i = theano.function([index], self.errors,
@@ -250,22 +233,12 @@ class SdA(object):
                  self.y: valid_set_y[index * batch_size:
                                      (index + 1) * batch_size]},
                       name='valid')
-        '''
-        conf_mat_i = theano.function([index], self.conf_matrix,
-                 givens={
-                   self.x: test_set_x[index * batch_size:
-                                      (index + 1) * batch_size],
-                   self.y: test_set_y[index * batch_size:
-                                      (index + 1) * batch_size]},
-                      name='conf_mat')
-        '''
-        
-        conf_mat = theano.function([index], self.conf_matrix,
-                 givens={
+
+        conf_mat = theano.function([index], self.conf_matrix, givens={
                    self.x: test_set_x[index:],
                    self.y: test_set_y[index:]},
                       name='conf_mat')
-        
+
         # Create a function that scans the entire validation set
         def valid_score():
             return [valid_score_i(i) for i in xrange(n_valid_batches)]
@@ -274,9 +247,8 @@ class SdA(object):
         def test_score():
             return [test_score_i(i) for i in xrange(n_test_batches)]
 
-        # create confusion matrix for entire test set
+         # create confusion matrix for entire test set
         def confusion_matrix():
-            #return [conf_mat_i(i) for i in xrange(n_test_batches)]
             return conf_mat(0)
 
         return train_fn, valid_score, test_score, confusion_matrix
