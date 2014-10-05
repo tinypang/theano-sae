@@ -20,7 +20,7 @@ from format_dataset import split_dataset
 from import_dataset import import_dataset
 
 
-def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancomps=100,nceps=33,nkerns=[20, 50], batch_size=500):
+def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancomps=0,nceps=33,nkerns=[20, 50], batch_size=500, results_log='CNNresults.txt',reinput=None):
     """ Demonstrates lenet on MNIST dataset
 
     :type learning_rate: float
@@ -36,13 +36,27 @@ def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dim
     :type nkerns: list of ints
     :param nkerns: number of kernels on each layer
     """
+    log = open(results_log,'a+')
+    log.write('data set is {0}\n'.format(path))
+    log.write('input type: {0}\n'.format(input_type))
+    log.write('dimx: {0}, dimy: {1}, learning rate: {2}, number of epochs: {3}, number of kernels: {4}, batch size: {5}\n'.format(dimx,dimy,learning_rate,n_epochs,nkerns,batch_size))
 
     rng = numpy.random.RandomState(23455)
-    
+    pca = False
     #datasets = load_data('mnist.pkl.gz')
-    
-    data, labels = import_dataset(path,input_type=input_type,dimx=dimx,dimy=dimy,nceps=33,ncomp=pcancomps,pca=False,whiten=False,minmax=True)
-    datasets = split_dataset(data, labels,dimx,dimy) 
+    if input_type == 'spec':
+        n_ins = dimx*dimy
+    elif input_type == 'mpc':
+        n_ins = (nceps*(nceps+1))/2 + nceps
+        log.write('number of cepstral coefficients: {0}\n'.format(nceps))
+    if pca == True:
+        n_ins = pcancomps
+        log.write('pca components: {0}\n'.format(pcancomps))
+    if reinput != None:
+        datasets = reinput    
+    else:
+        data, labels = import_dataset(path,input_type=input_type,dimx=dimx,dimy=dimy,nceps=33,ncomp=pcancomps,pca=pca,whiten=False,minmax=True)
+        datasets = split_dataset(data, labels,n_ins) 
     '''
     train_set_x, train_set_y = datasets[0]
     valid_set_x, valid_set_y = datasets[1]
@@ -229,9 +243,18 @@ def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dim
     print('Best validation score of %f %% obtained at iteration %i,'\
           'with test performance %f %%' %
           (best_validation_loss * 100., best_iter + 1, test_score * 100.))
+    log.write('Best validation score of %f %% obtained at iteration %i,'\
+          'with test performance %f %%' %
+          (best_validation_loss * 100., best_iter + 1, test_score * 100.)+'\n')
     print >> sys.stderr, ('The code for file ' +
                           os.path.split(__file__)[1] +
                           ' ran for %.2fm' % ((end_time - start_time) / 60.))
+    log.write('The code for file ' +
+                          os.path.split(__file__)[1] +
+                          ' ran for %.2fm' % ((end_time - start_time) / 60.)+'\n')
+    log.write('----------\n')
+    log.close()
+    return datasets
 
 if __name__ == '__main__':
     evaluate_lenet5('../spectrogram/3sec_28x28_gs',input_type='spec',dimx=28,dimy=28)

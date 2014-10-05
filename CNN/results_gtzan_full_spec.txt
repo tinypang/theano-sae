@@ -1,0 +1,3 @@
+data set is ../spectrogram/full_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 200, number of kernels: [20, 50], batch size: 500

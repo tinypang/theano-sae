@@ -1,0 +1,21 @@
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 54.000000 %,with test performance 61.000000 %
+The training code for file train_stacked_ae.pyc ran for 3.52
+[[ 8  1  4  0  3  2  3  5  2  1]
+ [ 4  3  1  1  9  3  0  2  3  3]
+ [ 7  0  8  2  0  0  7  2  1  3]
+ [ 2  0  3 15  1  0  0  6  2  1]
+ [ 0  0  0  0 27  2  2  1  2  0]
+ [ 0  1  2  3  9  8  2  4  1  0]
+ [ 0  0  2  0  2  1 14  1  2  2]
+ [ 7  0  5  2  2  0  6 11  2  1]
+ [ 5  1  2  0  5  0  5  2  6  2]
+ [ 3  0  1  0  0  0  5  1  3 17]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')

@@ -1,0 +1,444 @@
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 54.000000 %,with test performance 61.000000 %
+The training code for file train_stacked_ae.pyc ran for 3.52
+[[ 8  1  4  0  3  2  3  5  2  1]
+ [ 4  3  1  1  9  3  0  2  3  3]
+ [ 7  0  8  2  0  0  7  2  1  3]
+ [ 2  0  3 15  1  0  0  6  2  1]
+ [ 0  0  0  0 27  2  2  1  2  0]
+ [ 0  1  2  3  9  8  2  4  1  0]
+ [ 0  0  2  0  2  1 14  1  2  2]
+ [ 7  0  5  2  2  0  6 11  2  1]
+ [ 5  1  2  0  5  0  5  2  6  2]
+ [ 3  0  1  0  0  0  5  1  3 17]]
+----------
+
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 51.000000 %,with test performance 65.000000 %
+The training code for file train_stacked_ae.py ran for 4.77m
+[[ 3  0  3  9  7  2  2  0  0  3]
+ [ 2  0  2  3 13  3  2  0  0  4]
+ [ 0  0  8  5  4  2  5  0  0  6]
+ [ 2  0  1 25  2  0  0  0  0  0]
+ [ 0  0  0  0 33  1  0  0  0  0]
+ [ 1  0  3  7 14  4  1  0  0  0]
+ [ 0  0  1  1  6  1 13  0  0  2]
+ [ 2  0  3 18  3  2  7  0  0  1]
+ [ 3  0  2  3 10  0  7  0  0  3]
+ [ 1  0  2  2  0  0  6  0  0 19]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[1000, 500, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 82.000000 %,with test performance 82.333333 %
+The training code for file train_stacked_ae.py ran for 0.06m
+[[19  0  0  0 10  0  0  0  0  0]
+ [12  0  0  0 17  0  0  0  0  0]
+ [26  0  0  0  4  0  0  0  0  0]
+ [27  0  0  0  3  0  0  0  0  0]
+ [ 0  0  0  0 34  0  0  0  0  0]
+ [14  0  0  0 16  0  0  0  0  0]
+ [18  0  0  0  6  0  0  0  0  0]
+ [30  0  0  0  6  0  0  0  0  0]
+ [16  0  0  0 12  0  0  0  0  0]
+ [29  0  0  0  1  0  0  0  0  0]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 600, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 50.000000 %,with test performance 60.666667 %
+The training code for file train_stacked_ae.py ran for 1.29m
+[[ 1  0  3 12  3  4  3  0  2  1]
+ [ 0  0  1  6 11  4  0  0  3  4]
+ [ 1  0 13  4  2  2  4  1  2  1]
+ [ 0  0  2 26  1  0  0  0  1  0]
+ [ 0  0  0  1 29  1  0  0  3  0]
+ [ 0  0  2  7 10  7  1  0  3  0]
+ [ 0  0  4  0  2  1 14  0  1  2]
+ [ 0  0  3 16  1  4  5  1  4  2]
+ [ 2  0  1  2  5  3  3  0  9  3]
+ [ 1  0  4  2  0  0  4  0  1 18]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 600, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 53.000000 %,with test performance 61.000000 %
+The training code for file train_stacked_ae.py ran for 0.93m
+[[ 4  2  5  3  2  5  3  1  3  1]
+ [ 1  2  1  2 10  3  2  4  0  4]
+ [ 1  2 11  2  0  3  5  2  1  3]
+ [ 1  1  2 19  0  0  0  4  1  2]
+ [ 0  2  0  0 25  2  3  0  2  0]
+ [ 0  3  0  4  8  8  3  3  1  0]
+ [ 0  1  2  0  1  1 17  0  0  2]
+ [ 1  1  4  7  1  1  7  9  2  3]
+ [ 1  2  2  2  5  1  9  1  3  2]
+ [ 3  0  3  0  0  0  5  0  0 19]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 150], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 54.000000 %,with test performance 61.333333 %
+The training code for file train_stacked_ae.py ran for 0.91m
+[[ 7  1  1  0  3  3  3  7  2  2]
+ [ 2  4  0  2  7  4  1  2  3  4]
+ [ 6  1  4  2  2  1  5  5  0  4]
+ [ 3  0  0 16  1  0  0  5  2  3]
+ [ 0  2  0  0 25  4  1  0  2  0]
+ [ 2  2  0  2  9  8  1  4  2  0]
+ [ 0  0  0  0  0  2 15  1  2  4]
+ [ 7  1  2  3  1  1  6 11  2  2]
+ [ 4  2  0  0  3  0  6  2  8  3]
+ [ 2  0  1  0  0  0  6  1  2 18]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 90.000000 %,with test performance 88.666667 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 34  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 24  0  0  0  0  0]
+ [ 0  0  0  0 36  0  0  0  0  0]
+ [ 0  0  0  0 28  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.0, 0.0, 0.0], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 72.000000 %,with test performance 77.666667 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[15  0  0  0  9  0  0  1  0  4]
+ [ 8  0  0  0 17  0  0  0  0  4]
+ [16  0  0  0  3  0  0  0  0 11]
+ [14  0  0  0  4  0  0  1  0 11]
+ [ 1  0  0  0 33  0  0  0  0  0]
+ [ 9  0  0  0 15  0  0  4  0  2]
+ [ 9  0  0  0  6  0  0  0  0  9]
+ [24  0  0  0  4  0  0  0  0  8]
+ [12  0  0  0 13  0  0  0  0  3]
+ [11  0  0  0  0  0  0  0  0 19]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 54.000000 %,with test performance 61.666667 %
+The training code for file train_stacked_ae.py ran for 0.58m
+[[ 5  2  4  3  3  2  5  0  2  3]
+ [ 2  3  0  2  9  3  1  1  4  4]
+ [ 0  2  5  3  3  1  8  1  1  6]
+ [ 1  1  0 20  2  0  0  1  2  3]
+ [ 0  1  0  0 28  2  1  0  2  0]
+ [ 0  2  0  3 12  6  4  1  2  0]
+ [ 0  0  0  0  1  1 18  0  1  3]
+ [ 1  2  4  7  1  2  8  5  3  3]
+ [ 0  3  2  2  4  0 11  0  4  2]
+ [ 1  0  1  0  0  0  6  0  1 21]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 90.000000 %,with test performance 88.666667 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 34  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 24  0  0  0  0  0]
+ [ 0  0  0  0 36  0  0  0  0  0]
+ [ 0  0  0  0 28  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.3, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 90.000000 %,with test performance 88.666667 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 34  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 24  0  0  0  0  0]
+ [ 0  0  0  0 36  0  0  0  0  0]
+ [ 0  0  0  0 28  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 90.000000 %,with test performance 88.666667 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 29  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 34  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]
+ [ 0  0  0  0 24  0  0  0  0  0]
+ [ 0  0  0  0 36  0  0  0  0  0]
+ [ 0  0  0  0 28  0  0  0  0  0]
+ [ 0  0  0  0 30  0  0  0  0  0]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 63.000000 %,with test performance 69.000000 %
+The training code for file train_stacked_ae.py ran for 0.09m
+[[16  0  0  0  5  0  5  1  0  2]
+ [ 9  0  0  0 13  0  2  0  1  4]
+ [11  0  0  0  1  0  8  0  2  8]
+ [16  0  0  3  2  0  0  3  0  6]
+ [ 0  0  0  0 32  0  1  0  1  0]
+ [14  0  0  1 12  0  3  0  0  0]
+ [ 0  0  0  0  2  0 14  0  0  8]
+ [15  0  0  1  1  0  7  7  1  4]
+ [ 6  0  0  0  9  0  8  0  1  4]
+ [ 3  0  0  0  0  0  7  0  0 20]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 64.000000 %,with test performance 67.666667 %
+The training code for file train_stacked_ae.py ran for 0.07m
+[[17  0  0  0  5  0  5  0  0  2]
+ [ 9  0  0  0 13  0  2  0  1  4]
+ [10  0  0  0  1  0  9  0  2  8]
+ [16  0  0  3  2  0  0  3  0  6]
+ [ 0  0  0  0 32  0  1  0  1  0]
+ [14  0  0  1 12  0  3  0  0  0]
+ [ 0  0  0  0  2  0 14  0  0  8]
+ [14  0  0  1  1  0  7  8  1  4]
+ [ 6  0  0  0  9  0  7  0  2  4]
+ [ 3  0  0  0  0  0  6  0  0 21]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 62.000000 %,with test performance 72.333333 %
+The training code for file train_stacked_ae.py ran for 0.17m
+[[ 8  0  0  0  7  0  4  6  0  4]
+ [ 6  0  0  0 14  0  2  3  0  4]
+ [ 9  0  0  0  1  0 12  0  0  8]
+ [ 9  0  0  4  1  0  1  8  0  7]
+ [ 0  0  0  0 32  0  2  0  0  0]
+ [ 9  0  0  1 13  0  3  4  0  0]
+ [ 1  0  0  0  3  0 13  0  0  7]
+ [10  0  0  5  1  0 11  5  0  4]
+ [ 4  0  0  0  9  0 13  0  0  2]
+ [ 2  0  0  0  0  0  7  0  0 21]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 400], nOutputs:200, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 53.000000 %,with test performance 60.333333 %
+The training code for file train_stacked_ae.py ran for 1.09m
+[[ 6  4  7  2  1  0  5  1  3  0]
+ [ 3  4  0  1  9  3  1  3  2  3]
+ [ 2  3  8  1  1  1  7  2  1  4]
+ [ 1  2  3 19  0  0  0  2  2  1]
+ [ 0  1  0  0 27  1  3  0  2  0]
+ [ 0  2  2  4  9  5  4  3  1  0]
+ [ 0  1  2  0  1  1 17  0  0  2]
+ [ 1  2  3  8  1  0  8  8  4  1]
+ [ 2  3  0  0  5  0  7  2  7  2]
+ [ 3  0  3  0  0  0  5  0  1 18]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 400], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 48.000000 %,with test performance 59.000000 %
+The training code for file train_stacked_ae.py ran for 1.33m
+[[ 6  0  6  5  0  6  3  1  2  0]
+ [ 5  0  0  3 11  4  1  1  1  3]
+ [ 4  0  8  3  0  4  5  2  0  4]
+ [ 2  0  2 25  1  0  0  0  0  0]
+ [ 0  0  0  1 26  3  2  0  2  0]
+ [ 1  0  2  6  7 10  2  2  0  0]
+ [ 0  0  2  0  1  2 15  0  0  4]
+ [ 3  0  1 10  1  3  7  9  1  1]
+ [ 4  0  0  1  6  2  6  1  3  5]
+ [ 3  0  3  0  0  0  3  0  0 21]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 64.000000 %,with test performance 71.333333 %
+The training code for file train_stacked_ae.py ran for 0.09m
+[[ 6  0  0  0  6  0  5  8  0  4]
+ [10  0  0  0 14  0  1  0  0  4]
+ [ 7  0  0  0  1  0  9  0  0 13]
+ [ 6  0  0  3  2  0  1 10  0  8]
+ [ 0  0  0  0 32  0  2  0  0  0]
+ [ 6  0  0  2 12  0  4  5  0  1]
+ [ 1  0  0  0  3  0 15  0  0  5]
+ [ 8  0  0  3  1  0  8 10  0  6]
+ [ 2  0  0  0  9  0 11  1  1  4]
+ [ 1  0  0  0  0  0 10  0  0 19]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[300], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 66.000000 %,with test performance 69.666667 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[19  0  0  0  4  0  3  0  0  3]
+ [ 9  0  0  0 14  0  2  0  0  4]
+ [13  0  0  0  1  0  6  1  0  9]
+ [15  0  0  4  2  0  0  2  0  7]
+ [ 0  0  0  0 31  0  3  0  0  0]
+ [12  0  0  2 12  0  2  1  0  1]
+ [ 4  0  0  0  2  0 10  0  0  8]
+ [15  0  0  2  2  0  7  4  0  6]
+ [ 4  0  0  0  9  0  9  0  0  6]
+ [ 4  0  0  0  0  0  3  0  0 23]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600], nOutputs:300, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 51.000000 %,with test performance 62.333333 %
+The training code for file train_stacked_ae.py ran for 0.45m
+[[13  1  3  0  1  3  1  2  2  3]
+ [ 4  4  0  0  8  2  2  4  2  3]
+ [ 8  1  5  0  0  1  5  5  0  5]
+ [ 5  1  0 10  1  0  0  6  2  5]
+ [ 0  1  0  0 26  2  2  0  3  0]
+ [ 2  2  2  2  9  5  2  6  0  0]
+ [ 0  2  1  0  1  1 14  0  1  4]
+ [10  1  1  1  1  1  7  9  2  3]
+ [ 5  2  0  0  5  0  5  2  5  4]
+ [ 2  0  1  0  0  0  5  0  0 22]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 50.000000 %,with test performance 62.333333 %
+The training code for file train_stacked_ae.py ran for 0.42m
+[[14  1  4  1  1  3  1  0  2  2]
+ [ 6  2  0  0  7  2  1  3  4  4]
+ [ 8  4  7  0  0  1  4  1  1  4]
+ [ 9  1  0 10  0  0  0  3  2  5]
+ [ 0  1  0  0 26  3  1  0  3  0]
+ [ 5  2  2  2  9  5  2  3  0  0]
+ [ 1  2  0  0  1  1 13  0  1  5]
+ [11  1  2  1  1  2  3  8  3  4]
+ [ 6  1  0  0  5  0  5  2  5  4]
+ [ 3  0  2  0  0  0  2  0  0 23]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 47.000000 %,with test performance 62.333333 %
+The training code for file train_stacked_ae.py ran for 0.47m
+[[ 8  1  7  3  1  3  2  3  1  0]
+ [ 2  2  1  2  8  2  1  4  3  4]
+ [ 5  0  6  4  0  3  5  3  1  3]
+ [ 1  1  1 19  0  0  0  5  2  1]
+ [ 0  1  0  0 24  5  2  0  2  0]
+ [ 0  0  2  4  8  7  3  6  0  0]
+ [ 0  1  1  0  2  2 14  0  0  4]
+ [ 3  0  3 10  1  2  4 10  1  2]
+ [ 6  1  0  1  5  0  6  1  4  4]
+ [ 3  0  3  0  0  0  5  0  0 19]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 68.000000 %,with test performance 71.333333 %
+The training code for file train_stacked_ae.py ran for 0.04m
+[[19  0  0  0  6  0  1  0  0  3]
+ [11  0  0  0 13  0  0  1  0  4]
+ [12  0  0  0  1  0  3  1  0 13]
+ [17  0  0  0  2  0  0  2  0  9]
+ [ 0  0  0  0 31  0  3  0  0  0]
+ [18  0  0  0 11  0  1  0  0  0]
+ [ 1  0  0  0  2  0  9  0  0 12]
+ [18  0  0  0  2  0  6  3  0  7]
+ [ 8  0  0  0  9  0  4  0  1  6]
+ [ 6  0  0  0  0  0  1  0  0 23]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 68.000000 %,with test performance 71.333333 %
+The training code for file train_stacked_ae.py ran for 0.04m
+[[20  0  0  0  5  0  1  0  0  3]
+ [11  0  0  0 13  0  1  0  0  4]
+ [13  0  0  0  1  0  4  0  0 12]
+ [18  0  0  0  2  0  0  1  0  9]
+ [ 0  0  0  0 31  0  3  0  0  0]
+ [17  0  0  0 11  0  1  0  0  1]
+ [ 1  0  0  0  3  0  9  0  0 11]
+ [19  0  0  0  2  0  5  3  0  7]
+ [ 8  0  0  0  9  0  4  0  1  6]
+ [ 6  0  0  0  0  0  2  0  0 22]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 53.000000 %,with test performance 63.666667 %
+The training code for file train_stacked_ae.py ran for 1.40m
+[[ 8  5  1  0  0  3  3  5  3  1]
+ [ 2  5  0  0  7  2  1  5  3  4]
+ [ 4  1  5  2  2  2  3  6  2  3]
+ [ 2  2  1 15  0  0  0  6  2  2]
+ [ 0  2  0  0 23  4  2  0  3  0]
+ [ 0  3  1  2  7  8  2  4  3  0]
+ [ 0  4  1  0  1  1 10  1  2  4]
+ [ 3  2  2  5  1  3  3 11  4  2]
+ [ 5  2  0  0  4  0  6  2  6  3]
+ [ 3  1  1  0  0  1  3  2  1 18]]
+----------
+data set is ./spectrogram/full_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+Optimization complete with best validation score of 77.000000 %,with test performance 76.666667 %
+The training code for file train_stacked_ae.py ran for 0.01m
+[[ 0  0  0  0 15  0  0 10  0  4]
+ [ 0  0  0  0 21  0  0  4  0  4]
+ [ 0  0  0  0  7  0  0  9  0 14]
+ [ 0  0  0  0 10  0  0  8  0 12]
+ [ 0  0  0  0 33  0  0  0  0  1]
+ [ 0  0  0  0 19  0  0  8  0  3]
+ [ 0  0  0  0  8  0  0  4  0 12]
+ [ 0  0  0  0 13  0  0 12  0 11]
+ [ 0  0  0  0 14  0  0  7  0  7]
+ [ 0  0  0  0  1  0  0  4  0 25]]
+----------
+------------------------------------------------------------------------------------------------------

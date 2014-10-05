@@ -1,0 +1,446 @@
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.20m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[1000, 500, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.07m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[1000, 500, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.07m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[500, 400, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.04m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[500, 400, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.04m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200, 100], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.02m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.03m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.0, 0.0, 0.0], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.03m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1, 0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.03m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.02m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.3, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.02m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.03m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.02m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[500, 200], nOutputs:200, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[500, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.00m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.00m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400], nOutputs:300, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[400], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.01m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 90.000000 %,with test performance 90.000000 %
+The training code for file train_stacked_ae.pyc ran for 0.00m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')
+Optimization complete with best validation score of 89.000000 %,with test performance 89.666667 %
+The training code for file train_stacked_ae.pyc ran for 0.00m
+[[ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  1  0  0 29]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]
+ [ 0  0  0  0  0  0  0  0  0 30]]
+----------
+------------------------------------------------------------------------------------------------------data set is ./GTZAN_genre
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'met')(1, 'dis')(2, 'ja')(3, 'hiph')(4, 'p')(5, 'regg')(6, 'classic')(7, 'ro')(8, 'count')(9, 'blu')

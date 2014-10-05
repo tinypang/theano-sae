@@ -1,0 +1,528 @@
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[2000, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.400000 %,with test performance 69.066667 %
+The training code for file train_stacked_ae.py ran for 5.56
+[[ 13   0   1  42  92  86  24   0  10  25]
+ [  2  25   4  22  50  55  50   7   4  85]
+ [  0   0  39   7 133  88   7   1   2  10]
+ [  4   0   0  96  86  25  11   0  49  59]
+ [  6   0   6  11 227  30   1   0   1  14]
+ [  0   5  13  15  75 128  25   0   2  36]
+ [  0   3   0   9  83 130  29   0   3  51]
+ [  0  59   4   0  12  46  67  64   0  15]
+ [  2   0   0  66   7   0   3   0 214  24]
+ [  0  20   0  49  47  57  22   0  12  93]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[1000, 5000, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 66.600000 %,with test performance 67.433333 %
+The training code for file train_stacked_ae.py ran for 35.95
+[[ 13   4   2  44  82  91  24   1  11  21]
+ [  2  34   6  25  42  65  40  15   4  71]
+ [  0   0  37   5  99 120   8   1   2  15]
+ [  5   3   0  96  74  32  11   0  53  56]
+ [  5   0  11  11 206  49   3   0   1  10]
+ [  1   5  17  15  67 142  24   0   2  26]
+ [  2   6   2   5  71 133  33   2   3  51]
+ [  0  68   4   0  10  46  19 109   0  11]
+ [  1   1   1  64   4   0   2   0 221  22]
+ [  0  24   0  45  42  61  26   1  15  86]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[1000, 500, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.300000 %,with test performance 67.400000 %
+The training code for file train_stacked_ae.py ran for 2.97
+[[ 27   0   1  42  68 110   2   0  11  32]
+ [  3  37   2  29  42  95   9   1   2  84]
+ [  1   0  31  12 123 106   1   1   2  10]
+ [ 11   0   0 114  58  37   4   0  55  51]
+ [ 16   0   6  19 195  39   0   0   1  20]
+ [  2   4   7  17  61 169   0   0   3  36]
+ [  0   4   0  13  71 164   1   0   4  51]
+ [  0  96   2   1  11  62  24  58   0  13]
+ [  0   0   0  41   2   3   0   0 248  22]
+ [  4  19   0  47  35  80   1   0  16  98]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[1000, 500, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.600000 %,with test performance 68.366667 %
+The training code for file train_stacked_ae.py ran for 3.29
+[[ 23   0   1  47  72 101   0   0  11  38]
+ [  3  37   2  30  43  84   8   3   4  90]
+ [  1   0  27  11 129 103   0   1   2  13]
+ [ 11   0   0 114  62  33   1   0  51  58]
+ [ 14   0   3  20 207  35   0   0   1  16]
+ [  1   4   4  16  75 148   1   0   3  47]
+ [  1   4   0  13  74 150   0   0   4  62]
+ [  0  92   2   0  12  61  19  62   0  19]
+ [  0   0   0  51   4   2   0   0 236  23]
+ [  2  20   0  56  39  70   1   0  17  95]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[500, 400, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.700000 %,with test performance 68.666667 %
+The training code for file train_stacked_ae.py ran for 1.12
+[[ 19   0   1  52  74  98   0   0  14  35]
+ [  3  34   1  35  43  85   5   4   5  89]
+ [  1   0  22  12 132 104   0   1   3  12]
+ [  8   1   0 116  60  32   0   0  57  56]
+ [ 14   0   1  27 207  33   0   0   1  13]
+ [  1   3   3  21  82 144   0   0   4  41]
+ [  1   4   0  18  77 141   0   0   5  62]
+ [  0  90   2   0  12  67  13  63   0  20]
+ [  0   0   0  46   4   1   0   0 244  21]
+ [  1  19   0  58  42  69   0   0  20  91]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[500, 400, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.900000 %,with test performance 68.900000 %
+The training code for file train_stacked_ae.py ran for 1.52
+[[ 13   0   1  52  84  95   0   0  14  34]
+ [  3  31   1  34  44  86   2   6   5  92]
+ [  0   0  21  13 134 104   0   1   2  12]
+ [  7   0   0 112  65  32   0   0  56  58]
+ [  6   0   1  24 218  33   0   0   1  13]
+ [  0   3   3  23  83 143   0   0   3  41]
+ [  1   3   0  17  79 141   1   0   5  61]
+ [  0  83   1   0  13  71  11  64   0  24]
+ [  0   0   0  52   4   2   0   0 238  20]
+ [  1  19   0  58  42  69   0   0  19  92]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 150], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 70.000000 %,with test performance 69.033333 %
+The training code for file train_stacked_ae.py ran for 0.51
+[[ 11   0   0  54  79  90   0   0  13  46]
+ [  3  25   0  30  44  82   0   5   5 110]
+ [  1   0  14  11 130 113   0   1   2  15]
+ [  2   0   0 122  61  27   0   0  51  67]
+ [  5   0   1  22 218  32   0   0   1  17]
+ [  0   1   2  19  80 135   0   0   2  60]
+ [  1   3   0  12  77 138   0   0   3  74]
+ [  0  85   1   0  14  75   4  61   0  27]
+ [  0   0   0  56   4   1   0   0 230  25]
+ [  0  14   0  55  39  61   0   0  18 113]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 70.400000 %,with test performance 68.666667 %
+The training code for file train_stacked_ae.py ran for 0.45
+[[ 18   0   0  50  77  96   1   0  15  36]
+ [  2  32   1  27  46  83   5   4   5  99]
+ [  0   0  19  10 142  99   1   1   2  13]
+ [  8   0   0 110  63  31   0   0  55  63]
+ [  8   0   1  18 221  32   0   0   1  15]
+ [  1   3   3  18  82 140   0   0   2  50]
+ [  0   3   0   7  82 142   1   0   5  68]
+ [  0  86   2   0  14  60  22  59   0  24]
+ [  0   0   0  50   4   1   0   0 236  25]
+ [  1  18   0  47  43  67   1   0  19 104]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300, 250, 125], nOutputs:60, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 70.000000 %,with test performance 68.400000 %
+The training code for file train_stacked_ae.py ran for 0.43
+[[ 24   0   0  53  70  78   2   0  12  54]
+ [  3  34   0  32  41  64   4   5   4 117]
+ [  2   0  19  12 132 102   2   1   2  15]
+ [ 10   0   0 122  54  26   0   0  57  61]
+ [ 19   0   1  24 200  33   0   0   1  18]
+ [  1   3   1  21  87 119   0   0   2  65]
+ [  0   4   0  16  78 119   4   0   4  83]
+ [  0  98   2   0  14  47   9  65   0  32]
+ [  0   0   0  48   3   0   0   0 245  20]
+ [  2  17   0  57  39  54   1   0  14 116]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.2, 0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 70.500000 %,with test performance 68.400000 %
+The training code for file train_stacked_ae.py ran for 0.54
+[[ 21   0   1  52  72 101   1   0  12  33]
+ [  2  29   2  29  43  91   8   4   5  91]
+ [  1   0  21   9 136 104   1   1   2  12]
+ [  9   0   0 117  56  33   1   0  54  60]
+ [ 14   0   2  18 212  35   0   0   1  14]
+ [  1   3   4  19  77 146   0   0   2  47]
+ [  0   3   0   9  78 149   1   0   4  64]
+ [  0  87   2   0  13  60  23  60   0  22]
+ [  0   0   0  50   3   2   0   0 239  22]
+ [  1  17   0  48  43  71   2   0  16 102]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.0, 0.0, 0.0], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 36.200000 %,with test performance 35.300000 %
+The training code for file train_stacked_ae.py ran for 20.78
+[[161  23   6   7  20  19  23   4   6  24]
+ [  9 152   9   5  13  13  48  19   8  28]
+ [  3  13 163   0  30  31  30  10   0   7]
+ [  7  10   3 223   7  14  25   5  28   8]
+ [  4  14  23   1 208  10  21   4   3   8]
+ [  5  16   7   2   8 204  32   3   2  20]
+ [  8  29   9   4  16  31 170  13   5  23]
+ [  0  33   1   0   2   7   5 210   0   9]
+ [  0   6   2  13   4   3   5   0 279   4]
+ [ 13  39   0   6  17  22  25   3   4 171]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1, 0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 70.400000 %,with test performance 68.000000 %
+The training code for file train_stacked_ae.py ran for 0.46
+[[ 41   0   0  34  51 105   0   0  10  52]
+ [  6  36   0  20  38  84   2   4   4 110]
+ [  2   0  19   8 118 121   0   1   2  16]
+ [ 19   0   0 102  50  32   3   0  50  74]
+ [ 20   0   2  17 192  41   1   0   1  22]
+ [  3   4   4  10  61 149   0   0   2  66]
+ [  1   4   0   4  64 151   0   0   4  80]
+ [  0 102   1   0  13  65   9  56   0  21]
+ [  1   0   0  54   2   1   0   0 231  27]
+ [ 10  18   0  35  27  65   0   0  11 134]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 58.700000 %,with test performance 60.300000 %
+The training code for file train_stacked_ae.py ran for 2.93
+[[ 85   0   2  12   7 162   2   0   0  23]
+ [ 10  20   2   3  16 191  13  10   3  36]
+ [  1   0  49   3  23 193  17   1   0   0]
+ [ 10   0   1 171   8  97  28   0   8   7]
+ [  8   0  20   3 122 118  23   0   1   1]
+ [  1   0   4   5   4 276   1   0   1   7]
+ [  1   3   4   4  15 265  13   0   1   2]
+ [  2  14   7   0   2  97  11 132   0   2]
+ [  2   5   0  45   1  23   4   0 235   1]
+ [ 15   7   1   7  10 159  11   1   1  88]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.3, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.800000 %,with test performance 67.400000 %
+The training code for file train_stacked_ae.py ran for 0.52
+[[ 22   1   1  52  64 111   2   0   9  31]
+ [  2  28   2  31  41 102   7   4   1  86]
+ [  1   0  30   9 128 104   2   1   2  10]
+ [  8   0   0 123  49  34   1   0  54  61]
+ [ 14   0   6  22 200  37   0   0   1  16]
+ [  2   3   7  18  63 167   0   0   3  36]
+ [  0   2   0   9  71 160   2   0   4  60]
+ [  0  91   2   1  12  61  23  63   0  14]
+ [  0   0   0  45   3   2   0   0 243  23]
+ [  1  17   0  49  42  77   2   0  12 100]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.900000 %,with test performance 68.100000 %
+The training code for file train_stacked_ae.py ran for 0.44
+[[ 22   0   1  57  71  97   3   0  10  32]
+ [  2  34   2  32  44  83  10   4   2  91]
+ [  1   0  29  10 136  93   2   1   2  13]
+ [  9   0   0 120  52  32   1   0  55  61]
+ [ 16   0   5  22 207  32   0   0   1  13]
+ [  2   3   5  20  82 136   1   0   3  47]
+ [  0   3   0  15  76 143   4   0   4  63]
+ [  0  89   3   0  13  53  24  65   0  20]
+ [  0   0   0  48   3   1   0   0 242  22]
+ [  1  19   0  52  45  67   3   0  15  98]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300, 300, 300], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.300000 %,with test performance 70.100000 %
+The training code for file train_stacked_ae.py ran for 0.93
+[[  2   0   0  42 103  89   0   0  15  42]
+ [  1  18   1  30  51  79   0  20   5  99]
+ [  2   0   4  11 141 108   0   1   5  15]
+ [  2   1   0 101  93  25   0   0  49  59]
+ [  1   0   1  13 234  29   0   0   1  17]
+ [  0   4   1  19  85 138   0   0   2  50]
+ [  1   1   0  12  85 136   0   3   3  67]
+ [  1  66   1   0  13  69   1  85   0  31]
+ [  0   0   0  66   9   2   0   0 216  23]
+ [  0  16   0  58  50  61   0   4  12  99]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 70.000000 %,with test performance 68.100000 %
+The training code for file train_stacked_ae.py ran for 0.89
+[[ 38   0   0  31  35 141   0   0   5  43]
+ [  5   0   0  29  24 176   0   4   1  65]
+ [  2   0  13   9  73 184   0   0   3   3]
+ [  7   0   0 145  31  65   5   0  36  41]
+ [  8   0   2  27 148 105   1   0   1   4]
+ [  5   0   5  12  22 226   0   0   2  27]
+ [  1   0   0  13  32 233   1   0   4  24]
+ [  0   6   1   0  13 174  14  56   0   3]
+ [  0   0   0  55   1   7   0   0 237  16]
+ [  5   0   0  35  11 151   0   0   5  93]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 68.300000 %,with test performance 66.233333 %
+The training code for file train_stacked_ae.py ran for 0.66
+[[ 64   0   0  25  12 154   0   0   3  35]
+ [ 10   4   0  22  20 214   1   5   3  25]
+ [  4   0  28  10  35 209   0   1   0   0]
+ [ 15   0   0 146  19  86  11   0  34  19]
+ [ 14   0   9  20 124 126   2   0   1   0]
+ [  6   0   5   9   6 263   0   0   1   9]
+ [  2   0   0   7  26 265   1   0   4   3]
+ [  0  13   2   0   9 140  19  82   0   2]
+ [  0   0   0  45   1  21   0   0 248   1]
+ [ 14   0   0  31   9 192   0   0   1  53]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.200000 %,with test performance 69.500000 %
+The training code for file train_stacked_ae.py ran for 0.30
+[[  1   0   0  52  83 124   0   0   9  24]
+ [  0  17   2  24  41 115   0   9   2  94]
+ [  0   0   9  10  90 162   0   1   5  10]
+ [  1   0   0 110  72  47   0   0  41  59]
+ [  0   0   4  15 196  74   0   0   1   6]
+ [  0   3   7  15  48 193   0   0   2  31]
+ [  0   2   0   8  58 186   0   0   3  51]
+ [  0  55   1   0  13  93   0  82   0  23]
+ [  0   0   0  73   3   3   0   0 213  24]
+ [  0  14   0  51  36  96   0   0   9  94]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 46.400000 %,with test performance 46.766667 %
+The training code for file train_stacked_ae.py ran for 4.44
+[[122   0   4   5  28  92   4   2   0  36]
+ [  8  36   4   3  35  80  32   6   3  97]
+ [  0   1  97   1  78  95   8   2   0   5]
+ [ 15   2   2 198  25  44  17   1   7  19]
+ [  3   0   8   1 243  24   9   0   0   8]
+ [  3   0   3   1  14 257   4   0   0  17]
+ [  3   6   3   1  45 150  76   0   2  22]
+ [  2  25   4   0  11  53  14 143   0  15]
+ [  6   5   0  35   7  11   6   0 231  15]
+ [ 16   5   0   5  15  52  12   1   0 194]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[500, 200], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.800000 %,with test performance 70.133333 %
+The training code for file train_stacked_ae.py ran for 0.61
+[[  4   0   0  54  76 126   0   0  11  22]
+ [  2   3   2  24  37 138   0   9   5  84]
+ [  0   0   6  11  85 169   0   1   6   9]
+ [  2   0   0 106  67  54   0   0  47  54]
+ [  3   0   1  16 190  78   0   0   1   7]
+ [  0   0   4  15  47 203   0   0   2  28]
+ [  0   1   0  11  51 195   0   0   3  47]
+ [  0  32   1   0  13 122   0  78   0  21]
+ [  0   0   0  68   2   5   0   0 218  23]
+ [  0   4   0  54  27 115   0   0  12  88]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[500, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 69.800000 %,with test performance 70.000000 %
+The training code for file train_stacked_ae.py ran for 0.63
+[[  3   0   0  51  79 125   0   0  13  22]
+ [  2   3   2  23  41 136   0  11   5  81]
+ [  0   0   7  10  91 164   0   1   5   9]
+ [  2   0   0 104  71  50   0   0  48  55]
+ [  3   0   1  16 198  70   0   0   1   7]
+ [  0   1   5  15  48 202   0   0   2  26]
+ [  1   1   0  10  56 190   0   0   3  47]
+ [  0  27   1   0  13 129   0  78   0  19]
+ [  0   0   0  66   3   4   0   0 220  23]
+ [  0   4   0  53  36 109   0   1  12  85]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 57.200000 %,with test performance 58.600000 %
+The training code for file train_stacked_ae.py ran for 0.83
+[[ 87   0   2  11  13 153   1   0   0  26]
+ [  9  19   1   3  19 186  13  10   3  41]
+ [  1   0  61   2  32 173  16   1   0   1]
+ [ 13   0   2 168  15  93  19   0   7  13]
+ [  4   0  20   1 148 108  10   0   1   4]
+ [  0   0   3   5   7 272   2   0   1   9]
+ [  0   1   5   3  20 259  15   1   1   3]
+ [  1  11   6   0   3  89  13 141   0   3]
+ [  2   5   0  46   4  22   4   0 225   8]
+ [ 12   6   0   5  13 148   8   1   1 106]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 67.100000 %,with test performance 66.033333 %
+The training code for file train_stacked_ae.py ran for 0.20
+[[ 31   0   0  40  42 141   0   0   1  38]
+ [ 10   0   0  34  15 181   0   8   4  52]
+ [  1   0  36  11  52 185   0   1   1   0]
+ [  3   0   1 187  18  86   0   1  18  16]
+ [  1   0   9  24 127 131   1   0   1   2]
+ [  2   0   9  16  17 239   0   0   2  14]
+ [  0   0   2  14  25 252   0   0   2  13]
+ [  0   1   3   0   9 134   4 111   0   5]
+ [  0   0   0  70   1  12   0   0 228   5]
+ [  9   0   0  51  10 169   0   0   1  60]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 54.200000 %,with test performance 54.533333 %
+The training code for file train_stacked_ae.py ran for 1.39
+[[103   0   5   4  13 141   0   2   0  25]
+ [ 12  26   2   4  22 158   7  10   2  61]
+ [  4   0  65   1  53 150  10   1   0   3]
+ [ 15   0   2 166  18  85  15   0  15  14]
+ [  6   0  18   0 183  78   4   0   1   6]
+ [  2   0   6   4   9 263   1   0   0  14]
+ [  0   4   7   2  32 233  15   1   2  12]
+ [  0  16   7   0   4  69  12 153   0   6]
+ [  3   1   0  25   4  14   2   0 248  19]
+ [ 13   8   0   2  14 115   5   0   1 142]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 54.200000 %,with test performance 54.433333 %
+The training code for file train_stacked_ae.py ran for 1.23
+[[103   0   5   4  13 141   0   2   0  25]
+ [ 12  26   2   4  22 158   7  10   2  61]
+ [  4   0  66   1  53 149  10   1   0   3]
+ [ 15   0   2 166  18  86  15   0  15  13]
+ [  6   0  18   0 183  78   4   0   1   6]
+ [  2   0   6   4   9 263   1   0   0  14]
+ [  0   4   7   2  32 232  16   1   2  12]
+ [  0  16   7   0   4  69  12 153   0   6]
+ [  3   1   0  25   4  14   2   0 248  19]
+ [ 13   8   0   2  14 114   5   0   1 143]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 52.100000 %,with test performance 52.733333 %
+The training code for file train_stacked_ae.py ran for 1.41
+[[101   1   4   6  20 131   2   2   0  26]
+ [ 11  28   2   3  25 147  11  11   2  64]
+ [  0   0  67   1  59 146  10   1   0   3]
+ [ 11   0   2 187  20  71  16   0  11  12]
+ [  6   0  19   1 194  65   4   0   1   6]
+ [  2   0   6   4  10 262   1   0   0  14]
+ [  0   5   5   2  34 217  26   1   2  16]
+ [  0  15   8   0   4  67  14 154   0   5]
+ [  3   0   0  24   3  15   2   0 249  20]
+ [ 12  10   0   2  18 101   7   0   0 150]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 46.000000 %,with test performance 47.166667 %
+The training code for file train_stacked_ae.py ran for 2.38
+[[110   0   3   8  34 109   3   1   0  25]
+ [  8  48   4   3  36 109  21  12   4  59]
+ [  0   0  83   0  73 111  15   1   0   4]
+ [  7   1   1 216  25  49   9   1   9  12]
+ [  4   0  12   3 228  40   5   0   1   3]
+ [  1   1   3   2  13 261   2   0   0  16]
+ [  0  10   5   3  44 172  52   3   3  16]
+ [  1  18   5   0   8  40  18 172   0   5]
+ [  3   2   0  27   4  11   3   0 251  15]
+ [ 12  17   0   4  23  71   8   1   0 164]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 55.000000 %,with test performance 55.200000 %
+The training code for file train_stacked_ae.py ran for 1.07
+[[101   0   4   3  13 144   0   1   0  27]
+ [ 12  25   2   2  23 160   6  10   2  62]
+ [  3   0  65   1  52 152  10   1   0   3]
+ [ 12   1   2 160  21  92  15   0  13  14]
+ [  7   0  19   0 179  80   4   0   1   6]
+ [  2   0   6   4  10 263   1   0   0  13]
+ [  0   4   7   1  31 238  11   1   3  12]
+ [  0  17   8   0   4  74  11 147   0   6]
+ [  3   0   0  24   4  14   2   0 247  22]
+ [ 11   9   0   1  16 112   5   0   0 146]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 41.700000 %,with test performance 42.533333 %
+The training code for file train_stacked_ae.py ran for 4.80
+[[123   2   3   8  53  66   4   2   2  30]
+ [  6  75   3   5  61  69  14  13   6  52]
+ [  0   0  80   1 129  64   6   3   0   4]
+ [  5   1   1 237  32  29   4   1  11   9]
+ [  2   0   6   3 261  19   3   0   0   2]
+ [  2   1   2   2  20 253   5   0   1  13]
+ [  2  19   3   2  76 118  61   6   3  18]
+ [  2  17   2   0  14  20   7 199   0   6]
+ [  2   5   0  25   5   4   3   0 264   8]
+ [ 10  19   0   6  39  48   4   2   1 171]]
+----------
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 53.900000 %,with test performance 54.333333 %
+The training code for file train_stacked_ae.py ran for 0.49
+[[ 97   1   5   4  20 136   1   1   0  28]
+ [  8  25   3   2  24 161   9  10   1  61]
+ [  1   0  76   1  55 139  11   1   0   3]
+ [ 12   1   2 170  21  81  16   1  11  15]
+ [  4   0  21   0 186  75   5   0   1   4]
+ [  1   0   6   4  11 263   1   0   0  13]
+ [  0   4   8   2  31 229  21   1   2  10]
+ [  0  18   8   0   4  71  16 144   0   6]
+ [  3   0   0  25   3  14   3   0 248  20]
+ [  9   6   0   2  20 115   7   0   1 140]]
+----------
+------------------------------------------------------------------------------------------------------

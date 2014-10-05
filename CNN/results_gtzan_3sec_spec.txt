@@ -1,0 +1,58 @@
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 200, number of kernels: [20, 50], batch size: 500
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 200, number of kernels: [20, 50], batch size: 500
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 200, number of kernels: [20, 50], batch size: 500
+Best validation score of 52.700000 % obtained at iteration 1968,with test performance 54.133333 %
+The code for file train_CNN.py ran for 72.61m
+----------
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 100, number of kernels: [20, 50], batch size: 500
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 100, number of kernels: [20, 50], batch size: 500
+Best validation score of 53.700000 % obtained at iteration 1200,with test performance 56.400000 %
+The code for file train_CNN.py ran for 38.33m
+----------
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.05, number of epochs: 200, number of kernels: [20, 50], batch size: 500
+Best validation score of 53.100000 % obtained at iteration 2220,with test performance 54.466667 %
+The code for file train_CNN.py ran for 74.21m
+----------
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.005, number of epochs: 200, number of kernels: [20, 50], batch size: 500
+Best validation score of 73.700000 % obtained at iteration 2364,with test performance 74.033333 %
+The code for file train_CNN.py ran for 73.37m
+----------
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.0005, number of epochs: 200, number of kernels: [20, 50], batch size: 500
+Best validation score of 85.500000 % obtained at iteration 2388,with test performance 84.100000 %
+The code for file train_CNN.py ran for 71.36m
+----------
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.05, number of epochs: 100, number of kernels: [20, 50], batch size: 500
+Best validation score of 60.300000 % obtained at iteration 1188,with test performance 60.766667 %
+The code for file train_CNN.py ran for 36.32m
+----------
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 200, number of kernels: [20, 50], batch size: 200
+Best validation score of 53.500000 % obtained at iteration 4710,with test performance 55.666667 %
+The code for file train_CNN.py ran for 86.57m
+----------
+data set is ../spectrogram/3sec_28x28_gs
+input type: spec
+dimx: 28, dimy: 28, learning rate: 0.1, number of epochs: 200, number of kernels: [20, 50], batch size: 100
+Best validation score of 54.600000 % obtained at iteration 4140,with test performance 55.700000 %
+The code for file train_CNN.py ran for 101.00m
+----------
+------------------------------------------------------------------------------------------------------

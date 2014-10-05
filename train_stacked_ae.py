@@ -14,7 +14,7 @@ from dA import dA
 from stacked_ae import SdA
 from import_dataset import import_dataset
 from utils import tile_raster_images
-from format_dataset import split_dataset
+from format_dataset import split_dataset, split_dataset_ismirg
 from import_dataset import import_dataset
 import PIL.Image 
 
@@ -47,26 +47,33 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     log.write('data set is {0}\n'.format(path))
     log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, pretraining epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}, validation improvement threshold:{10},dataset type:{11}\n".format(dimx,dimy,str(hidlay),outs,batch_size,pretraining_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels,valid_imp_thresh,input_type))
     log.write('input type: {0}'.format(input_type))
-    if reinput != None:
-        datasets = reinput    
-    else:
-        pcaonoff = False
-        whiten = False
-        pcancomps = 0
-        minmax = True
-        log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomps))
+    
+    pcaonoff = False
+    whiten = False
+    pcancomps = 0
+    minmax = True
+    log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomps))
 
+    if reinput != None:
+        datasets = reinput   
+        if input_type == 'spec':
+            n_ins = dimx*dimy
+        elif input_type == 'mpc':
+            n_ins = (nceps*(nceps+1))/2 + nceps
+        if (whiten == True | pcaonoff == True):
+            n_ins = pcancomps 
+    else:
         if input_type == 'spec':
             data, labels = import_dataset(path,input_type='spec',dimx=dimx,dimy=dimy,ncomp=pcancomps,pca=pcaonoff,whiten=pcaonoff,minmax=minmax)
             n_ins = dimx*dimy
         elif input_type == 'mpc':
-            log.write('number of mpc coefficients:{0},scale: {1}, whiten: {2}, ncomps{3}'.format(nceps,scale,whiten, pcancomps))
-            data, labels =  import_dataset(path,input_type='mpc',nceps=nceps,pca=pcaonoff,whiten=whiten,ncomps=pcancomps,minmax=minmax)
+            log.write('number of mpc coefficients:{0}, minmaxscale: {1}, whiten: {2}, ncomps{3}'.format(nceps,minmax,whiten, pcancomps))
+            data, labels =  import_dataset(path,input_type='mpc',nceps=nceps,pca=pcaonoff,whiten=whiten,ncomp=pcancomps,minmax=minmax)
             n_ins = (nceps*(nceps+1))/2 + nceps
 
         if (whiten == True | pcaonoff == True):
             n_ins = pcancomps        
-        datasets = split_dataset(data,labels,n_ins)
+        datasets = split_dataset_ismirg(data,labels,n_ins)
 
     label_dict = datasets[3]
     pairs = zip(label_dict.itervalues(), label_dict.iterkeys())
@@ -75,7 +82,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
         log.write(str(i))
     log.write('\n')
     n_classes = len(label_dict.keys())
-    print train_set_x[0].eval(), train_set_y[0].eval()
+    train_set_x, train_set_y = shared_dataset(datasets[0])
     #valid_set_x, valid_set_y = shared_dataset(datasets[1])
     #test_set_x, test_set_y = shared_dataset(datasets[2])
     data, labels = [], []    
@@ -88,7 +95,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     numpy_rng = numpy.random.RandomState(89677)
     print '... building the model'
     # construct the stacked denoising autoencoder class
-    sda = SdA(numpy_rng=numpy_rng, n_ins=n_ins,n_classes=10,
+    sda = SdA(numpy_rng=numpy_rng, n_ins=n_ins,n_classes=n_classes,
               hidden_layers_sizes=hidlay,
               n_outs=outs)
 
@@ -201,7 +208,7 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     log.write(('Optimization complete with best validation score of %f %%,'
            'with test performance %f %%') %
                  (best_validation_loss * 100., test_score * 100.)+'\n')
-    log.write('The training code for file {0} ran for {1:.2f}\n'.format(os.path.split(__file__)[1],((end_time - start_time) / 60.)))
+    log.write('The training code for file {0} ran for {1:.2f}m\n'.format(os.path.split(__file__)[1],((end_time - start_time) / 60.)))
     log.write(str(confusion_matrix)+'\n')
     log.write('----------\n')
     log.close()
@@ -212,16 +219,22 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
         img = x.shape[1]
         if img == 594:
             dim = (33,18)
-        if img == 784:
+        elif img == 784:
             dim = (28,28)
         else:
             h = 50
             w = img/h
             dim = (w,h)
         image = PIL.Image.fromarray(tile_raster_images(X=x,img_shape=dim, tile_shape=(int(tile/10),10),tile_spacing=(1,1)))
-        image.save('{0}_mpc_features_sigmoid_layer_{1}.png'.format(dimx*dimy,i))
+        if input_type == 'spec':
+            image.save('./feature_maps/{0:.0f}_{1}_{2}_{3}_features_sigmoid_layer_{4}.png'.format(time.time(),path[14:18],input_type,dimx*dimy,i))
+        else:
+            if path[0:4] == './au':
+                image.save('./feature_maps/{0:.0f}_3sec_{1}_{2}_features_sigmoid_layer_{3}.png'.format(time.time(),input_type,dimx*dimy,i))
+            else:
+                image.save('./feature_maps/{0:.0f}_full_{1}_{2}_features_sigmoid_layer_{3}.png'.format(time.time(),input_type,dimx*dimy,i))
     return datasets
 
 if __name__ == '__main__':
-    test_SdA(path='./spectrogram/3sec_50x20_gs',input_type='spec',dimx=50,dimy=20,batch_size=20,hidlay=[1000,600,300],outs=100,corruption_levels=[.1, .2,.3],nceps=33,finetune_lr=0.1, pretraining_epochs=50,pretrain_lr=0.001)
+    test_SdA(path='./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs',input_type='spec',dimx=50,dimy=20,batch_size=20,hidlay=[600,300,100],outs=50,corruption_levels=[.35, .35, .35],nceps=33,finetune_lr=0.1, pretraining_epochs=50,pretrain_lr=0.001)
 

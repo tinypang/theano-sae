@@ -1,0 +1,17 @@
+data set is ./audio_snippets/GTZAN_3sec
+Xdim:33, Ydim:18, Hidden Layers:[2000, 500, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+Optimization complete with best validation score of 64.000000 %,with test performance 64.533333 %
+The training code for file train_stacked_ae.pyc ran for 13.26
+[[ 76   1   2  16  12 147   0   1   3  35]
+ [ 11  15   1  13  18 188   9  11   3  35]
+ [  4   0  36   5  25 200  15   1   1   0]
+ [ 16   0   0 105  29  86  28   0  43  23]
+ [ 18   0  17  12 115 127   5   0   1   1]
+ [  6   0   5   6   4 261   2   0   2  13]
+ [  2   1   2   3  20 261   9   0   5   5]
+ [  1  22   7   0   4  97   9 125   0   2]
+ [  0   2   1  29   1  23   0   0 259   1]
+ [ 29   8   0  20   5 170   4   0   1  63]]
+----------

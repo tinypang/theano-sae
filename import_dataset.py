@@ -9,6 +9,8 @@ import time
 import math
 from sklearn.preprocessing import MinMaxScaler
 from mpc_filter import mpcfilter
+import re
+import sys
 
 def import_spec(path, dimx, dimy): 
     data,labels = [],[] #intiate arrays to store data and labels
@@ -18,7 +20,10 @@ def import_spec(path, dimx, dimy):
         imgfile = path + '/' + filename #create file address from file path and file name
         img = flatten_img(imgfile)  #flatten image
         data.append(img)
-        labels.append(filename[0:-17])
+        #labels.append(filename[0:-17]) #gtzan 3sec
+        #labels.append(filename[0:-15]) #gtzan full
+        #labels.append(re.split('\.', filename, maxsplit=1)) #gtzan
+        labels.append(re.split('-', filename, maxsplit=1)[0])  #ismirg
         n+=1
         print n
     pt1 = time.time()
