@@ -10,9 +10,8 @@ import math
 from sklearn.preprocessing import MinMaxScaler
 from mpc_filter import mpcfilter
 import re
-import sys
 
-def import_spec(path, dimx, dimy): 
+def import_spec(path, dimx, dimy,dataset): 
     data,labels = [],[] #intiate arrays to store data and labels
     n = 0   #initiate integer variable to track data import
     pt0 = time.time()
@@ -20,19 +19,21 @@ def import_spec(path, dimx, dimy):
         imgfile = path + '/' + filename #create file address from file path and file name
         img = flatten_img(imgfile)  #flatten image
         data.append(img)
-        #labels.append(filename[0:-17]) #gtzan 3sec
-        #labels.append(filename[0:-15]) #gtzan full
-        #labels.append(re.split('\.', filename, maxsplit=1)) #gtzan
-        labels.append(re.split('-', filename, maxsplit=1)[0])  #ismirg
+        if dataset == 'gtzan':
+            labels.append(re.split('\.', filename, maxsplit=1)[0]) #gtzan
+        elif dataset == 'ismir':
+            labels.append(re.split('-', filename, maxsplit=1)[0])  #ismirg
+        else:
+            print 'unrecognised dataset type'
         n+=1
         print n
     pt1 = time.time()
     print 'flatten and import took time {0}'.format(pt1-pt0)
     return data, labels
 
-def import_mpc(path,nceps=33):
+def import_mpc(path,dataset,nceps=33):
     pt0 = time.time()
-    data, labels= mpcfilter(path,nceps)    #import audio files and extract mpc data and labels
+    data, labels= mpcfilter(path,nceps,dataset)    #import audio files and extract mpc data and labels
     pt1 = time.time()
     print 'import and mpc coefficient extraction took time {0}'.format(pt1-pt0)
     data = np.array(data)   #convert python list of all img mpc data to a numpy array
@@ -66,13 +67,13 @@ def pca(data,ncomp=100,whiten=False):
     print 'total time taken {0}'.format(pt5-pt0)
     return X
 
-def import_dataset(path,input_type,nceps=33,dimx=0, dimy=0, ncomp=100, pca = False, whiten=False,minmax=False):
+def import_dataset(path,input_type,dataset,nceps=33,dimx=0, dimy=0, ncomp=100, pca = False, whiten=False,minmax=False):
     if input_type == 'spec':
-        data, labels = import_spec(path, dimx, dimy)
+        data, labels = import_spec(path, dimx, dimy,dataset)
     elif input_type == 'mpc':
-        data, labels = import_mpc(path,nceps)
+        data, labels = import_mpc(path,nceps,dataset)
     else:
-        'incorrect input type given; choose from "spec" or "mpc"'
+        'incorrect dataset type given; choose from "spec" or "mpc"'
     data = np.array(data,dtype='float')   #convert python list of all img data to a numpy array
     if minmax ==True:
         data = minmaxscale(data)
@@ -84,4 +85,3 @@ def import_dataset(path,input_type,nceps=33,dimx=0, dimy=0, ncomp=100, pca = Fal
 if __name__ == '__main__':
     pca('./spectrogram/test',38,24)
     #pca('./spectrogram/preprocessed')
-

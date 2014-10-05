@@ -16,9 +16,9 @@ from mlp import HiddenLayer
 from CNN import LeNetConvPoolLayer
 import pylab
 from PIL import Image
-from format_dataset import split_dataset
+from format_dataset import split_dataset, split_dataset_ismirg
 from import_dataset import import_dataset
-
+import re
 
 def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dimy=28,pcancomps=0,nceps=33,nkerns=[20, 50], batch_size=500, results_log='CNNresults.txt',reinput=None):
     """ Demonstrates lenet on MNIST dataset
@@ -41,22 +41,32 @@ def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dim
     log.write('input type: {0}\n'.format(input_type))
     log.write('dimx: {0}, dimy: {1}, learning rate: {2}, number of epochs: {3}, number of kernels: {4}, batch size: {5}\n'.format(dimx,dimy,learning_rate,n_epochs,nkerns,batch_size))
 
+    ismir = re.compile('.*ismir.*') #identify dataset for label determination purposes
+    gtzan = re.compile('.*GTZAN.*')
+    if ismir.match(path) != None:
+        dataset = 'ismir'
+    elif gtzan.match(path) != None:
+        dataset = 'gtzan'
+    else:
+        print 'unrecognised dataset type'
+        sys.exit()
+
     rng = numpy.random.RandomState(23455)
     pca = False
-    #datasets = load_data('mnist.pkl.gz')
+    whiten = False
+    minmax = True
+    
     if input_type == 'spec':
         n_ins = dimx*dimy
+        log.write('minmaxscale: {0}, whiten: {1}, ncomps{2}'.format(minmax,whiten, pcancomps))
     elif input_type == 'mpc':
         n_ins = (nceps*(nceps+1))/2 + nceps
-        log.write('number of cepstral coefficients: {0}\n'.format(nceps))
-    if pca == True:
-        n_ins = pcancomps
-        log.write('pca components: {0}\n'.format(pcancomps))
+        log.write('number of mpc coefficients:{0}, minmaxscale: {1}, whiten: {2}, ncomps{3}'.format(nceps,minmax,whiten, pcancomps)) 
     if reinput != None:
         datasets = reinput    
     else:
-        data, labels = import_dataset(path,input_type=input_type,dimx=dimx,dimy=dimy,nceps=33,ncomp=pcancomps,pca=pca,whiten=False,minmax=True)
-        datasets = split_dataset(data, labels,n_ins) 
+        data, labels = import_dataset(path,input_type=input_type,dataset=dataset,dimx=dimx,dimy=dimy,nceps=33,ncomp=pcancomps,pca=pca,whiten=whiten,minmax=minmax)
+        datasets = split_dataset_ismirg(data, labels,n_ins) 
     '''
     train_set_x, train_set_y = datasets[0]
     valid_set_x, valid_set_y = datasets[1]
@@ -257,7 +267,7 @@ def evaluate_lenet5(path,input_type, learning_rate=0.1, n_epochs=200,dimx=28,dim
     return datasets
 
 if __name__ == '__main__':
-    evaluate_lenet5('../spectrogram/3sec_28x28_gs',input_type='spec',dimx=28,dimy=28)
+    evaluate_lenet5('../spectrogram/ISMIR_genre/ismirg_3sec_28x28_gs',input_type='spec',dimx=28,dimy=28)
 
 
 def experiment(state, channel):

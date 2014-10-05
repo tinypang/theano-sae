@@ -17,7 +17,7 @@ from utils import tile_raster_images
 from format_dataset import split_dataset, split_dataset_ismirg
 from import_dataset import import_dataset
 import PIL.Image 
-
+import re
 
 def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretraining_epochs=125,
              pretrain_lr=0.0005, training_epochs=2000,
@@ -48,12 +48,22 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     log.write("Xdim:{0}, Ydim:{1}, Hidden Layers:{2}, nOutputs:{3}, Batch size:{4}, pretraining epochs:{5}, pretrain learning rate:{6}, finetuning learning rate:{7}, training epochs:{8}, corruption levels per layer:{9}, validation improvement threshold:{10},dataset type:{11}\n".format(dimx,dimy,str(hidlay),outs,batch_size,pretraining_epochs,pretrain_lr,finetune_lr,training_epochs,corruption_levels,valid_imp_thresh,input_type))
     log.write('input type: {0}'.format(input_type))
     
-    pcaonoff = False
+    ismir = re.compile('.*ismir.*') #identify dataset for label determination purposes
+    gtzan = re.compile('.*GTZAN.*')
+    if ismir.match(path) != None:
+        dataset = 'ismir' 
+    elif gtzan.match(path) != None:
+        dataset = 'gtzan'
+    else:
+        print 'unrecognised dataset type'
+        sys.exit()
+
+    pca = False
     whiten = False
     pcancomps = 0
     minmax = True
-    log.write('pca:{0}, pca components:{1}\n'.format(pcaonoff,pcancomps))
-
+    log.write('pca:{0}, pca components:{1}\n'.format(pca,pcancomps))
+    '''
     if reinput != None:
         datasets = reinput   
         if input_type == 'spec':
@@ -64,16 +74,31 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
             n_ins = pcancomps 
     else:
         if input_type == 'spec':
-            data, labels = import_dataset(path,input_type='spec',dimx=dimx,dimy=dimy,ncomp=pcancomps,pca=pcaonoff,whiten=pcaonoff,minmax=minmax)
+            data, labels = import_dataset(path,input_type='spec',dataset=dataset,dimx=dimx,dimy=dimy,ncomp=pcancomps,pca=pcaonoff,whiten=pcaonoff,minmax=minmax)
             n_ins = dimx*dimy
         elif input_type == 'mpc':
             log.write('number of mpc coefficients:{0}, minmaxscale: {1}, whiten: {2}, ncomps{3}'.format(nceps,minmax,whiten, pcancomps))
-            data, labels =  import_dataset(path,input_type='mpc',nceps=nceps,pca=pcaonoff,whiten=whiten,ncomp=pcancomps,minmax=minmax)
+            data, labels =  import_dataset(path,input_type='mpc',dataset=dataset,nceps=nceps,pca=pcaonoff,whiten=whiten,ncomp=pcancomps,minmax=minmax)
             n_ins = (nceps*(nceps+1))/2 + nceps
 
         if (whiten == True | pcaonoff == True):
             n_ins = pcancomps        
         datasets = split_dataset_ismirg(data,labels,n_ins)
+    '''
+    if input_type == 'spec':
+        n_ins = dimx*dimy
+        log.write('minmaxscale: {0}, whiten: {1}, ncomps{2}'.format(minmax,whiten, pcancomps))
+    elif input_type == 'mpc':
+        n_ins = (nceps*(nceps+1))/2 + nceps
+        log.write('number of mpc coefficients:{0}, minmaxscale: {1}, whiten: {2}, ncomps{3}'.format(nceps,minmax,whiten, pcancomps))
+    if pca == True:
+        n_ins = pcancomps
+        log.write('pca components: {0}\n'.format(pcancomps))
+    if reinput != None:
+        datasets = reinput
+    else:
+        data, labels = import_dataset(path,input_type=input_type,dataset=dataset,dimx=dimx,dimy=dimy,nceps=33,ncomp=pcancomps,pca=pca,whiten=whiten,minmax=minmax)
+        datasets = split_dataset_ismirg(data, labels,n_ins)
 
     label_dict = datasets[3]
     pairs = zip(label_dict.itervalues(), label_dict.iterkeys())
@@ -236,5 +261,5 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
     return datasets
 
 if __name__ == '__main__':
-    test_SdA(path='./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs',input_type='spec',dimx=50,dimy=20,batch_size=20,hidlay=[600,300,100],outs=50,corruption_levels=[.35, .35, .35],nceps=33,finetune_lr=0.1, pretraining_epochs=50,pretrain_lr=0.001)
-
+    test_SdA(path='./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs',input_type='spec',dimx=50,dimy=20,batch_size=20,hidlay=[600,300,100],outs=50,corruption_levels=[.3, .2, .1],nceps=33,finetune_lr=0.1, pretraining_epochs=25,pretrain_lr=0.001)
+    #test_SdA(path='./audio_snippets/GTZAN_3sec',input_type='mpc',dimx=33,dimy=18,batch_size=20,hidlay=[400,200,100],outs=50,corruption_levels=[.0, .0, .0],nceps=33,finetune_lr=0.1, pretraining_epochs=100,pretrain_lr=0.001)

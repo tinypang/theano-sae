@@ -119,7 +119,7 @@ class SdA(object):
         # We now need to add a logistic layer on top of the MLP
         self.logLayer = LogisticRegression(
                          input=self.sigmoid_layers[-1].output,
-                         n_in=hidden_layers_sizes[-1], n_out=n_outs)
+                         n_in=hidden_layers_sizes[-1], n_out=n_outs, n_classes=n_classes)
 
         self.params.extend(self.logLayer.params)
         # construct a function that implements one step of finetunining

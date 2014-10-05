@@ -5,7 +5,6 @@ import time
 def relabel_data(labels,labelfile):
     print 'relabelling data...'
     label_dict = {}
-    count = {}
     n = 0
     for i in range(0,len(labels)):
         if labels[i] in label_dict:
@@ -14,7 +13,7 @@ def relabel_data(labels,labelfile):
             print '{0} is a new label'.format(labels[i])    #relabel string labels as integer labels
             label_dict[labels[i]] = n
             labels[i] = n
-            n +=1
+            n +=1                                
     mapping = open(labelfile,'r+')    #record mappings between integer label and string labels
     for i in label_dict.keys():
         mapping.write('{0}:{1}\n'.format(i,label_dict[i]))
@@ -25,7 +24,7 @@ def split_dataset(data, labels,size):
     labels,label_dict =  relabel_data(labels,'label_mapping.txt')
     print 'splitting data...'
     pt1 = time.time()    
-    trainx,trainy,validx,validy,testx,testy = np.empty([0,size]),[],np.empty([0,size]),[],np.empty([0,size]),[]
+    trainx,trainy,validx,validy,testx,testy = [],[],[],[],[],[] #create empty arrays/lists for sets
     for i in range(0,len(data)):    #split data categories equally into 60% train, 10% valid, 30% test
         if i%10 in range(0,6,1):
             trainx.append(data[i])
@@ -36,12 +35,14 @@ def split_dataset(data, labels,size):
         else:                       #assign 30% of data into test set
             testx.append(data[i])
             testy.append(labels[i])
-        data[i] = 0
+    trainx = np.array(trainx)
+    validx = np.array(validx)
+    testx = np.array(testx)
     pt2 = time.time()
     print 'data has been split into train size {0}, validate size {1} and test size {2} sets'.format(trainx.shape[0],validx.shape[0],testx.shape[0])
     print 'it took {0}sec'.format(pt2-pt1)
-    return [(trainx,trainy), (validx,validy), (testx,testy), label_dict]    #return split data and label mapping
- 
+    return [(trainx,trainy), (validx,validy), (testx,testy), label_dict]
+
 def split_dataset_ismirg(data, labels,size):
     labels,label_dict =  relabel_data(labels,'label_mapping.txt')   #relabel data
     count = {}
@@ -63,12 +64,11 @@ def split_dataset_ismirg(data, labels,size):
             testx.append(data[j])
             testy.append(labels[j])
         count[labels[j]] +=1    #update split index
-        data[j] = 0             #clear categorised data 
     trainx = np.array(trainx)
     validx = np.array(validx)
     testx = np.array(testx)
     pt2 = time.time()
     print 'data has been split into train size {0}, validate size {1} and test size {2} sets'.format(trainx.shape[0],validx.shape[0],testx.shape[0])
     print 'it took {0}sec'.format(pt2-pt1)
-    return [(trainx,trainy), (validx,validy), (testx,testy), label_dict]    #return split data and label mapping
- 
+    return [(trainx,trainy), (validx,validy), (testx,testy), label_dict]
+

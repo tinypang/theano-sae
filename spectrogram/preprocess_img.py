@@ -8,7 +8,7 @@ def preprocess_img(filename,name):
     img = Image.open(filename)
     img = img.convert('L')
     #img = img.resize(standard_size)
-    img.save('./3sec_50x20_gs/{0}-prep'.format(name[0:-16]),'png')
+    img.save('./ISMIR_genre/ismirg_3sec_28x28_gs/{0}'.format(name),'png')
  
 def explore(path):
     n = 0
@@ -18,4 +18,4 @@ def explore(path):
         print n
 
 if __name__ == '__main__':
-    explore('./3sec_50x20')
+    explore('./ISMIR_genre/ismirg_3sec_28x28')
