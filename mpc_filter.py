@@ -17,22 +17,28 @@ labels = []
 
 def explore(path,ncep,dataset):
     global n
-    sounds = glob.glob(path + '/*.au')  #find all files with .au file extension
+    if dataset == 'gtzan':
+        sounds = glob.glob(path + '/*.au')  #find all files with .au file extension
+    elif dataset == 'ismir':
+        sounds = glob.glob(path + '/*.wav')  #find all files with .wave file extension
+    else:
+        print 'unrecognised dataset type'
+        sys.exit()
     for filename in os.listdir(path):   #for all files in the given directory
         if sounds.count(path + '/' + filename) != 0:    #if the file ends in .au, graph it's spectrogram
             get_mpc(path + '/' + filename,filename,ncep,dataset)            
             n+=1
             print n
         else:                       #if the file is a folder, recursively explore it
-            explore(path + '/' + filename,ncep)
-
-def get_audio_info(filepath):
-    data, fs, enc = auread(filepath)
-    #data, fs, enc = wavread(filepath)
-    return data, fs
+            explore(path + '/' + filename,ncep,dataset)
 
 def get_mpc(path,filename,ncep,dataset):
-    signal, rate = get_audio_info(path)
+    if dataset == 'gtzan':
+        signal, rate, enc = auread(path)
+    elif dataset == 'ismir':
+        signal, rate, enc = wavread(path)
+    else:
+        print 'unrecognised dataset type'
     mfcc_feat,mpc_feat,spectrum  = mfcc(signal,fs=rate,nfft=512,nceps=ncep,nwin=512)
     feat = mpc_feat[:,:ncep]
     mean_feat = np.mean(feat, axis=0)

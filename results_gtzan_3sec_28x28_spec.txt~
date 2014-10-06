@@ -1,0 +1,4 @@
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')

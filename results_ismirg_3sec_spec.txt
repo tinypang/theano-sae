@@ -1,0 +1,395 @@
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 38.934426 %,with test performance 37.694823 %
+The training code for file train_stacked_ae.py ran for 149.03m
+[[ 632  338  519  435    2   12   53  112]
+ [ 149 1905  485 1677    0    2   30   23]
+ [ 144  493 2585  459    1    2   43   26]
+ [  70  393  129 5742    0    5   36    6]
+ [  19    7   78   34   15    4    0    6]
+ [  55   27   43   39    1   49    1   46]
+ [  57  116   89  126    0    0  202    2]
+ [ 150  118  129  112    2   10   14  326]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[1000, 500, 200], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 40.704918 %,with test performance 40.190736 %
+The training code for file train_stacked_ae.py ran for 25.63m
+[[ 600  335  602  369    0   14   73  110]
+ [ 179 1723  587 1713    0    0   54   15]
+ [ 152  533 2579  423    0    2   41   23]
+ [ 105  408  179 5603    0    6   70   10]
+ [  23    5   85   32    7    4    0    7]
+ [  86   33   40   24    0   41    3   34]
+ [  48  107  134  124    0    1  175    3]
+ [ 199  121  168   74    0   10   21  268]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 600, 200], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 38.081967 %,with test performance 37.520436 %
+The training code for file train_stacked_ae.py ran for 36.97m
+[[ 631  362  612  331    3   18   51   95]
+ [ 149 2093  594 1389    1    1   28   16]
+ [ 132  474 2742  343    1    3   34   24]
+ [  87  609  189 5459    0    3   31    3]
+ [  18   12   83   25   14    6    0    5]
+ [  60   35   41   29    0   62    1   33]
+ [  43  114  138  110    0    0  182    5]
+ [ 165  113  174   75    3   15   11  305]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 600, 200], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 38.295082 %,with test performance 37.820163 %
+The training code for file train_stacked_ae.py ran for 33.45m
+[[ 599  397  586  378    1   20   35   87]
+ [ 130 2040  524 1533    0    3   28   13]
+ [ 123  522 2677  375    1    3   31   21]
+ [  76  516  166 5590    0    3   25    5]
+ [  19   11   81   28   12    6    0    6]
+ [  59   35   37   37    0   64    1   28]
+ [  46  118  127  130    0    0  169    2]
+ [ 172  112  174   92    3   15   11  282]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 150], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 36.786885 %,with test performance 36.844687 %
+The training code for file train_stacked_ae.py ran for 61.74m
+[[ 848  307  501  276    8    5   93   65]
+ [ 315 2104  460 1259    4    3   97   29]
+ [ 235  450 2630  343    5    2   66   22]
+ [ 157  574  113 5450    4    0   76    7]
+ [  26   14   58   30   28    1    3    3]
+ [  70   31   48   36    2   39    8   27]
+ [  82   87   76   82    0    0  265    0]
+ [ 201   97  186   81   12   10   30  244]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 37.655738 %,with test performance 37.798365 %
+The training code for file train_stacked_ae.py ran for 27.20m
+[[ 525  305  672  312    6    6  100  177]
+ [ 170 1957  584 1428    1    4   92   35]
+ [ 111  450 2700  372    0    2   97   21]
+ [  81  482  150 5580    0    3   72   13]
+ [  15   13   78   28   22    1    1    5]
+ [  49   26   58   18    2   32    4   72]
+ [  46  107   74   95    0    0  266    4]
+ [ 120   85  194   78    4    5   22  353]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.2, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 37.819672 %,with test performance 37.242507 %
+The training code for file train_stacked_ae.py ran for 28.65m
+[[ 743  293  442  381    7   18   56  163]
+ [ 247 1865  469 1581    2    3   67   37]
+ [ 190  477 2558  428    3    3   66   28]
+ [ 126  412   77 5710    0    6   41    9]
+ [  24   10   68   32   19    2    0    8]
+ [  57   18   31   29    1   59    2   64]
+ [  82   92   63  119    0    1  232    3]
+ [ 178   69  123  102    4   17   12  356]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.0, 0.0, 0.0], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 39.409836 %,with test performance 39.171662 %
+The training code for file train_stacked_ae.py ran for 16.96m
+[[ 481  366  486  517    5    8   71  169]
+ [  98 1745  471 1877    2    0   57   21]
+ [ 132  469 2510  557    3    4   51   27]
+ [  59  318  101 5864    0    4   24   11]
+ [  17    8   65   42   21    1    2    7]
+ [  36   54   25   41    1   34    2   68]
+ [  42  113   84  159    0    0  188    6]
+ [ 117  128  122  128    3   11   12  340]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 39.147541 %,with test performance 38.855586 %
+The training code for file train_stacked_ae.py ran for 22.38m
+[[ 547  333  635  376    3   15   82  112]
+ [ 156 1756  619 1659    0    2   59   20]
+ [ 115  429 2735  410    1    2   45   16]
+ [  83  392  181 5643    0    5   67   10]
+ [  15    6   84   34   11    0    2   11]
+ [  51   22   76   36    1   33    2   40]
+ [  44  101  125  111    0    0  210    1]
+ [ 157   91  190   91    3    9   15  305]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 37.491803 %,with test performance 37.297003 %
+The training code for file train_stacked_ae.py ran for 37.63m
+[[ 798  284  513  278    4    9   70  147]
+ [ 267 1993  561 1373    2    1   48   26]
+ [ 196  468 2663  340    0    3   57   26]
+ [ 175  520  137 5452    0    3   87    7]
+ [  31   11   72   26   14    0    0    9]
+ [  97   20   29   16    0   47    4   48]
+ [  68  102  115   86    0    0  216    5]
+ [ 219  107  129   45    3    4   10  344]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.3, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 39.868852 %,with test performance 38.572207 %
+The training code for file train_stacked_ae.py ran for 34.38m
+[[ 644  330  654  285    1   13   41  135]
+ [ 210 1909  699 1403    0    1   21   28]
+ [ 135  460 2773  313    0    3   32   37]
+ [ 106  603  174 5417    0    7   53   21]
+ [  14    9   86   27    7    6    0   14]
+ [  81   22   45   18    0   48    2   45]
+ [  53  118  115  101    0    0  196    9]
+ [ 210  123  162   51    0   10    5  300]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 37.262295 %,with test performance 36.953678 %
+The training code for file train_stacked_ae.py ran for 45.56m
+[[ 836  265  443  314    5   13   98  129]
+ [ 327 1902  452 1473    1    4   93   19]
+ [ 268  474 2567  351    2    1   67   23]
+ [ 136  432  103 5643    1    4   53    9]
+ [  31   10   72   27   16    3    0    4]
+ [  75   21   40   26    3   50    2   44]
+ [  78   95   65   91    0    1  255    7]
+ [ 214   83  134   76    2   13   17  322]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 37.868852 %,with test performance 37.923706 %
+The training code for file train_stacked_ae.py ran for 30.02m
+[[ 604  262  746  280    6   25   71  109]
+ [ 185 1785  791 1431    0    4   51   24]
+ [ 112  334 2916  336    2    4   37   12]
+ [  88  451  251 5518    1    4   61    7]
+ [  23    8   84   22   22    4    0    0]
+ [  51   24   74   15    2   74    1   20]
+ [  53   85  152   95    0    1  195   11]
+ [ 141   92  224   66    6   23   10  299]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600, 300], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 39.344262 %,with test performance 38.871935 %
+The training code for file train_stacked_ae.py ran for 23.51m
+[[ 593  246  731  344    5   24   45  115]
+ [ 200 1530  805 1647    0    8   53   28]
+ [ 110  316 2885  384    2    4   33   19]
+ [  97  301  270 5651    0    2   54    6]
+ [  18    5   87   29   17    4    0    3]
+ [  43   20   56   27    0   68    2   45]
+ [  52   80  163  100    0    1  188    8]
+ [ 141   88  207   83    4   19   14  305]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 41.639344 %,with test performance 41.662125 %
+The training code for file train_stacked_ae.py ran for 14.60m
+[[ 576  286  588  519    1    1   53   79]
+ [ 189 1462  571 1997    0    0   42   10]
+ [ 150  516 2463  565    0    1   35   23]
+ [  89  279  143 5821    0    0   44    5]
+ [  22   10   85   36    4    1    1    4]
+ [ 100   20   55   44    0    7    3   32]
+ [  44   97   99  166    0    0  177    9]
+ [ 233  102  168  127    0    2   14  215]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 400], nOutputs:200, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 40.163934 %,with test performance 40.114441 %
+The training code for file train_stacked_ae.py ran for 22.76m
+[[ 619  300  561  428    2   12   53  128]
+ [ 183 1565  596 1852    0    2   49   24]
+ [ 143  469 2596  482    1    3   38   21]
+ [ 113  321  145 5746    0    2   39   15]
+ [  20   10   78   34   12    2    0    7]
+ [  84   29   39   32    0   31    3   43]
+ [  60  107  104  155    0    0  158    8]
+ [ 207  104  154   96    0   11    7  282]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 400], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 37.950820 %,with test performance 37.825613 %
+The training code for file train_stacked_ae.py ran for 38.81m
+[[ 751  258  612  287    1   16   54  124]
+ [ 291 1876  673 1347    0    1   58   25]
+ [ 152  361 2848  334    0    2   38   18]
+ [ 152  601  207 5356    1    5   41   18]
+ [  23   10   78   27   17    1    0    7]
+ [  77   23   47   19    0   40    1   54]
+ [  83   91   92  106    0    0  211    9]
+ [ 201   79  168   63    2    6    9  333]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[300, 100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 41.377049 %,with test performance 41.711172 %
+The training code for file train_stacked_ae.py ran for 6.45m
+[[ 601  284  525  388    0    0   97  208]
+ [ 222 1455  600 1874    0    0   79   41]
+ [ 169  487 2521  478    0    1   54   43]
+ [ 142  329  127 5646    0    1  110   26]
+ [  26    9   81   36    1    0    1    9]
+ [  74   24   47   21    0    1    4   90]
+ [  59  108   98  134    0    0  175   18]
+ [ 189  107  140   78    0    1   30  316]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[300], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 41.639344 %,with test performance 41.171662 %
+The training code for file train_stacked_ae.py ran for 6.29m
+[[ 744  236  591  367    2    4   60   99]
+ [ 274 1242  737 1929    0    0   67   22]
+ [ 193  352 2651  484    0    2   51   20]
+ [ 178  246  153 5732    0    5   60    7]
+ [  26   10   78   32   11    0    1    5]
+ [ 133   11   42   16    0   18    3   38]
+ [  77  104   87  145    0    0  171    8]
+ [ 305   64  161   74    0    1   10  246]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600], nOutputs:300, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 40.803279 %,with test performance 40.893733 %
+The training code for file train_stacked_ae.py ran for 20.27m
+[[ 672  174  747  364    4    1   52   89]
+ [ 228 1108  984 1885    0    0   52   14]
+ [ 141  255 2840  472    1    2   28   14]
+ [ 133  203  207 5778    0    4   50    6]
+ [  22    5   82   32   16    3    1    2]
+ [ 107    7   79   19    0   25    1   23]
+ [  69   73  151  127    0    1  164    7]
+ [ 241   58  204   83    1    5    8  261]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[600], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 43.032787 %,with test performance 42.730245 %
+The training code for file train_stacked_ae.py ran for 8.50m
+[[ 664  247  638  395    1    2   61   95]
+ [ 238 1193  758 2004    0    0   62   16]
+ [ 169  394 2558  575    0    2   38   17]
+ [ 167  258  150 5738    0    2   56   10]
+ [  28    8   81   32    9    1    1    3]
+ [ 143   12   51   16    0    9    2   28]
+ [  62  116  105  155    0    0  143   11]
+ [ 310   72  166   82    1    2   12  216]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 42.229508 %,with test performance 41.956403 %
+The training code for file train_stacked_ae.py ran for 9.58m
+[[ 693  229  605  427    0    5   58   86]
+ [ 253 1213  686 2041    0    0   60   18]
+ [ 170  384 2549  579    0    3   50   18]
+ [ 146  232  133 5806    0    2   56    6]
+ [  25   11   75   35   10    0    1    6]
+ [ 133   12   43   23    0   17    3   30]
+ [  72  120   82  157    0    1  155    5]
+ [ 296   63  154   97    1    6   16  228]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 44.213115 %,with test performance 44.021798 %
+The training code for file train_stacked_ae.py ran for 6.12m
+[[ 666  214  635  439    0    2   38  109]
+ [ 297 1061  752 2096    0    0   43   22]
+ [ 176  386 2495  638    0    2   35   21]
+ [ 186  235  163 5744    0    2   36   15]
+ [  32    9   75   37    5    0    0    5]
+ [ 149   13   41   17    0    5    2   34]
+ [  69  120   97  179    0    0  115   12]
+ [ 308   63  173   91    1    1   23  201]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 44.983607 %,with test performance 44.403270 %
+The training code for file train_stacked_ae.py ran for 5.11m
+[[ 678  207  650  429    0    0   37  102]
+ [ 297 1026  795 2086    0    0   43   24]
+ [ 188  379 2502  637    0    1   25   21]
+ [ 205  241  171 5719    0    0   29   16]
+ [  35    9   76   37    2    0    0    4]
+ [ 156   13   40   17    0    3    2   30]
+ [  69  113  112  177    0    0  107   14]
+ [ 327   72  167   86    0    1   23  185]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[500], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 41.918033 %,with test performance 41.297003 %
+The training code for file train_stacked_ae.py ran for 9.55m
+[[ 758  256  561  379    1    2   59   87]
+ [ 295 1369  654 1871    0    0   65   17]
+ [ 199  440 2559  494    1    2   39   19]
+ [ 172  307  143 5699    0    2   54    4]
+ [  29   10   72   33   10    1    1    7]
+ [ 136   13   43   18    0   17    3   31]
+ [  83  121   83  142    0    1  153    9]
+ [ 320   68  149   77    1    3   17  226]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[100], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 43.540984 %,with test performance 43.242507 %
+The training code for file train_stacked_ae.py ran for 1.98m
+[[ 663  291  571  444    0    2   30  102]
+ [ 214 1388  617 1998    0    0   30   24]
+ [ 162  565 2364  605    1    0   32   24]
+ [ 172  339  118 5714    0    0   27   11]
+ [  36   11   73   38    1    0    1    3]
+ [ 145   18   35   31    0    2    1   29]
+ [  81  128   77  189    0    0  102   15]
+ [ 281  100  166   99    0    1   12  202]]
+----------
+------------------------------------------------------------------------------------------------------

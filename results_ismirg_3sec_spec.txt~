@@ -1,0 +1,52 @@
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 65.311475 %,with test performance 65.291553 %
+The training code for file train_stacked_ae.py ran for 3.51m
+[[   0    0    0 2103    0    0    0    0    0    0]
+ [   0    0    0 4271    0    0    0    0    0    0]
+ [   0    0    0 3753    0    0    0    0    0    0]
+ [   0    0    0 6381    0    0    0    0    0    0]
+ [   0    0    0  163    0    0    0    0    0    0]
+ [   0    0    0  261    0    0    0    0    0    0]
+ [   0    0    0  592    0    0    0    0    0    0]
+ [   0    0    0  861    0    0    0    0    0    0]
+ [   0    0    0    0    0    0    0    0    0    0]
+ [   0    0    0    0    0    0    0    0    0    0]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[1000, 500, 200], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 65.311475 %,with test performance 65.291553 %
+The training code for file train_stacked_ae.py ran for 1.26m
+[[   0    0    0 2103    0    0    0    0    0    0]
+ [   0    0    0 4271    0    0    0    0    0    0]
+ [   0    0    0 3753    0    0    0    0    0    0]
+ [   0    0    0 6381    0    0    0    0    0    0]
+ [   0    0    0  163    0    0    0    0    0    0]
+ [   0    0    0  261    0    0    0    0    0    0]
+ [   0    0    0  592    0    0    0    0    0    0]
+ [   0    0    0  861    0    0    0    0    0    0]
+ [   0    0    0    0    0    0    0    0    0    0]
+ [   0    0    0    0    0    0    0    0    0    0]]
+----------
+data set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
+Xdim:50, Ydim:20, Hidden Layers:[800, 600, 200], nOutputs:50, Batch size:50, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+Optimization complete with best validation score of 65.311475 %,with test performance 65.291553 %
+The training code for file train_stacked_ae.py ran for 1.11m
+[[   0    0    0 2103    0    0    0    0    0    0]
+ [   0    0    0 4271    0    0    0    0    0    0]
+ [   0    0    0 3753    0    0    0    0    0    0]
+ [   0    0    0 6381    0    0    0    0    0    0]
+ [   0    0    0  163    0    0    0    0    0    0]
+ [   0    0    0  261    0    0    0    0    0    0]
+ [   0    0    0  592    0    0    0    0    0    0]
+ [   0    0    0  861    0    0    0    0    0    0]
+ [   0    0    0    0    0    0    0    0    0    0]
+ [   0    0    0    0    0    0    0    0    0    0]]
+----------
+
