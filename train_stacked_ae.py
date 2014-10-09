@@ -243,23 +243,17 @@ def test_SdA(path='spectrogram/preprocessed_50th_full',finetune_lr=0.005, pretra
         tile = x.shape[0]
         img = x.shape[1]
         if img == 594:
-            dim = (33,18)
+            dim = (18,33)
         elif img == 784:
             dim = (28,28)
         else:
-            h = 50
+            h = 20
             w = img/h
-            dim = (w,h)
+            dim = (h,w)
         image = PIL.Image.fromarray(tile_raster_images(X=x,img_shape=dim, tile_shape=(int(tile/10),10),tile_spacing=(1,1)))
-        if input_type == 'spec':
-            image.save('./feature_maps/{0:.0f}_{1}_{2}_{3}_features_sigmoid_layer_{4}.png'.format(time.time(),path[14:18],input_type,dimx*dimy,i))
-        else:
-            if path[0:4] == './au':
-                image.save('./feature_maps/{0:.0f}_3sec_{1}_{2}_features_sigmoid_layer_{3}.png'.format(time.time(),input_type,dimx*dimy,i))
-            else:
-                image.save('./feature_maps/{0:.0f}_full_{1}_{2}_features_sigmoid_layer_{3}.png'.format(time.time(),input_type,dimx*dimy,i))
+        image.save('./feature_maps/ismirg_3sec_detail_mpc/{0:.0f}_{1}_{2}_{3}_features_layer_{4}.png'.format(time.time(),dataset,input_type,dimx*dimy,i))
     return datasets
 
 if __name__ == '__main__':
-    test_SdA(path='./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs',input_type='spec',dimx=50,dimy=20,batch_size=20,hidlay=[600,300,100],outs=50,corruption_levels=[.3, .2, .1],nceps=33,finetune_lr=0.1, pretraining_epochs=25,pretrain_lr=0.001)
+    test_SdA(path='./audio_snippets/ismir_test',input_type='mpc',dimx=33,dimy=18,batch_size=20,hidlay=[400,200,100],outs=50,corruption_levels=[.2, .2, .2],nceps=33,finetune_lr=0.1, pretraining_epochs=25,pretrain_lr=0.001,training_epochs=2000)
     #test_SdA(path='./audio_snippets/GTZAN_3sec',input_type='mpc',dimx=33,dimy=18,batch_size=20,hidlay=[400,200,100],outs=50,corruption_levels=[.0, .0, .0],nceps=33,finetune_lr=0.1, pretraining_epochs=100,pretrain_lr=0.001)

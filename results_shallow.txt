@@ -1,0 +1,77 @@
+dataset: ./spectrogram/GTZAN_genre/3sec_50x20_gs, input type: spec, number of folds:10
+(0, 'metal')(1, 'country')(2, 'pop')(3, 'classical')(4, 'rock')(5, 'blues')(6, 'hiphop')(7, 'reggae')(8, 'disco')(9, 'jazz')
+RndForest scores were [ 0.304  0.313  0.312  0.286  0.314  0.321  0.322  0.31   0.283  0.294] and average was 0.3059
+Classification took 16.479642868sec
+SVC scores were [ 0.33   0.321  0.334  0.338  0.343  0.331  0.323  0.33   0.331  0.338] and average was 0.3319
+Classification took 1433.07520604sec
+LinearSVC scores were [ 0.33   0.315  0.335  0.306  0.323  0.351  0.332  0.337  0.325  0.321] and average was 0.3275
+Classification took 1861.17197514sec
+Logistic regression scores were [ 0.358  0.35   0.344  0.33   0.357  0.365  0.341  0.353  0.343  0.347] and average was 0.3488
+Classification took 435.638000965sec
+------------------------------------
+dataset: ./spectrogram/GTZAN_genre/full_50x20_gs, input type: spec, number of folds:10
+(0, 'country')(1, 'rock')(2, 'reggae')(3, 'classical')(4, 'metal')(5, 'blues')(6, 'hiphop')(7, 'jazz')(8, 'disco')(9, 'pop')
+RndForest scores were [ 0.3   0.26  0.27  0.25  0.27  0.3   0.28  0.32  0.24  0.29] and average was 0.278
+Classification took 1.46390581131sec
+SVC scores were [ 0.31  0.31  0.31  0.31  0.34  0.34  0.32  0.31  0.29  0.35] and average was 0.319
+Classification took 14.5217030048sec
+LinearSVC scores were [ 0.3   0.27  0.29  0.25  0.31  0.32  0.35  0.24  0.34  0.31] and average was 0.298
+Classification took 96.5585720539sec
+Logistic regression scores were [ 0.36  0.29  0.32  0.35  0.37  0.37  0.38  0.25  0.39  0.33] and average was 0.341
+Classification took 24.4997580051sec
+------------------------------------
+dataset: ./spectrogram/GTZAN_genre/3sec_28x28_gs, input type: spec, number of folds:10
+(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+RndForest scores were [ 0.319  0.308  0.287  0.294  0.311  0.314  0.297  0.308  0.297  0.318] and average was 0.3053
+Classification took 15.2140660286sec
+SVC scores were [ 0.321  0.344  0.331  0.337  0.329  0.332  0.351  0.329  0.334  0.323] and average was 0.3331
+Classification took 1251.20407891sec
+LinearSVC scores were [ 0.311  0.364  0.356  0.385  0.353  0.366  0.34   0.35   0.359  0.327] and average was 0.3511
+Classification took 1557.2772162sec
+Logistic regression scores were [ 0.361  0.375  0.352  0.388  0.358  0.374  0.378  0.373  0.369  0.367] and average was 0.3695
+Classification took 306.395833015sec
+------------------------------------
+dataset: ./audio_snippets/GTZAN_3sec, input type: mpc, number of folds:10
+(0, 'blues')(1, 'rock')(2, 'hiphop')(3, 'jazz')(4, 'reggae')(5, 'pop')(6, 'disco')(7, 'metal')(8, 'classical')(9, 'country')
+RndForest scores were [ 0.535  0.519  0.517  0.537  0.557  0.542  0.522  0.541  0.519  0.515] and average was 0.5304
+Classification took 21.0980918407sec
+SVC scores were [ 0.178  0.191  0.172  0.165  0.183  0.18   0.181  0.18   0.163  0.176] and average was 0.1769
+Classification took 1370.398803sec
+LinearSVC scores were [ 0.592  0.622  0.636  0.626  0.613  0.607  0.641  0.619  0.604  0.606] and average was 0.6166
+Classification took 1147.54137802sec
+Logistic regression scores were [ 0.539  0.526  0.565  0.55   0.549  0.534  0.562  0.527  0.535  0.549] and average was 0.5436
+Classification took 120.064690828sec
+------------------------------------
+dataset: ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs, input type: spec, number of folds:3
+(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+RndForest scores were [ 0.48715816  0.48867251  0.48859744] and average was 0.488142701304
+Classification took 29.1876180172sec
+Logistic regression scores were [ 0.49077834  0.49806723  0.49358912] and average was 0.494144894945
+Classification took 390.236911058sec
+LinearSVC scores were [ 0.52844773  0.50354749  0.53122247] and average was 0.521072562452
+Classification took 2123.52430201sec
+SVC scores were [ 0.48226603  0.4834369   0.4850739 ] and average was 0.483592278018
+Classification took 9296.18479609sec
+------------------------------------
+dataset: ./spectrogram/ISMIR_genre/ismirg_3sec_28x28_gs, input type: spec, number of folds:3
+(0, 'rock')(1, 'world')(2, 'electronic')(3, 'classical')(4, 'pop')(5, 'punk')(6, 'jazz')(7, 'metal')
+RndForest scores were [ 0.4861546   0.48940647  0.48480399] and average was 0.486788353675
+Classification took 25.6222040653sec
+Logistic regression scores were [ 0.47666341  0.47922885  0.47594577] and average was 0.477279342906
+Classification took 275.87727499sec
+LinearSVC scores were [ 0.51731898  0.49703968  0.51754515] and average was 0.51063460429
+Classification took 1718.17928195sec
+SVC scores were [ 0.47548924  0.47521652  0.47736505] and average was 0.476023600862
+Classification took 8060.50610399sec
+------------------------------------
+dataset: ./audio_snippets/ismir_genre_training_3sec, input type: mpc, number of folds:3
+(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+RndForest scores were [ 0.70582192  0.70401722  0.70366564] and average was 0.704501593463
+Classification took 35.0897688866sec
+Logistic regression scores were [ 0.50567515  0.50555365  0.5121617 ] and average was 0.507796832891
+Classification took 119.183943987sec
+LinearSVC scores were [ 0.61066536  0.6128101   0.61097245] and average was 0.611482635966
+Classification took 1219.991786sec
+SVC scores were [ 0.45890411  0.46117336  0.45994225] and average was 0.46000657397
+Classification took 6181.05369997sec
+------------------------------------

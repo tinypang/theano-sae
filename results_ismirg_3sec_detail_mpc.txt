@@ -1,0 +1,286 @@
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:4000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 17.287582 %,with test performance 17.393906 %
+The training code for file train_stacked_ae.py ran for 517.97m
+[[3055  107   54   36  282  194    7   18]
+ [ 108 5844   12   10  314   88    1    4]
+ [  48    7  693    6   28   66   11    2]
+ [  62   23    9  434   27   33    3    1]
+ [ 336  347   31   35 3343  167    6    6]
+ [ 255   79   51   20  147 1508   17   26]
+ [  10    1    9    2    0   18  220    1]
+ [  28    0    1    2   15   26    1   90]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.15, 0.15, 0.15], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.967320 %,with test performance 44.961915 %
+The training code for file train_stacked_ae.py ran for 6.56m
+[[2333  483   36    0  622  279    0    0]
+ [ 106 5524    0    0  717   34    0    0]
+ [ 125   52  240    0   47  397    0    0]
+ [ 159  183    0    0  185   65    0    0]
+ [ 863 1668   49    0 1491  200    0    0]
+ [ 731  329  200    0  313  530    0    0]
+ [   5    4   71    0    0  181    0    0]
+ [  89   14   10    0    8   42    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.25, 0.25, 0.25], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.477124 %,with test performance 44.700762 %
+The training code for file train_stacked_ae.py ran for 9.04m
+[[2418  464   54    0  552  265    0    0]
+ [ 129 5452    0    1  765   34    0    0]
+ [ 125   48  259    0   51  378    0    0]
+ [ 175  176    0    1  172   68    0    0]
+ [ 948 1568   49    1 1499  206    0    0]
+ [ 759  306  210    2  290  536    0    0]
+ [   6    3   82    0    3  167    0    0]
+ [  91   14   11    0    5   42    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.18, 0.18, 0.18], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.705882 %,with test performance 44.347116 %
+The training code for file train_stacked_ae.py ran for 8.07m
+[[2390  482   45    1  601  234    0    0]
+ [ 111 5563    0    1  678   28    0    0]
+ [ 137   52  234    1   49  388    0    0]
+ [ 164  195    0    3  167   63    0    0]
+ [ 894 1629   49    2 1510  187    0    0]
+ [ 760  316  181    2  313  531    0    0]
+ [   6    4   58    0    0  193    0    0]
+ [  89   14   10    0    8   42    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:50, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.754902 %,with test performance 45.054407 %
+The training code for file train_stacked_ae.py ran for 8.69m
+[[2443  458   47    0  560  245    0    0]
+ [ 133 5370    0    0  852   26    0    0]
+ [ 135   48  285    0   52  341    0    0]
+ [ 180  171    0    0  179   62    0    0]
+ [ 987 1520   50    0 1531  183    0    0]
+ [ 795  287  237    0  313  471    0    0]
+ [   7    3  116    0    1  134    0    0]
+ [  92   14   15    0    5   37    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:50, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:1000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.754902 %,with test performance 45.054407 %
+The training code for file train_stacked_ae.py ran for 9.04m
+[[2443  458   47    0  560  245    0    0]
+ [ 133 5370    0    0  852   26    0    0]
+ [ 135   48  285    0   52  341    0    0]
+ [ 180  171    0    0  179   62    0    0]
+ [ 987 1520   50    0 1531  183    0    0]
+ [ 795  287  237    0  313  471    0    0]
+ [   7    3  116    0    1  134    0    0]
+ [  92   14   15    0    5   37    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:100, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.689542 %,with test performance 44.483134 %
+The training code for file train_stacked_ae.py ran for 10.41m
+[[2270  477   37    1  636  332    0    0]
+ [ 107 5573    0    1  660   40    0    0]
+ [ 115   51  148    0   46  501    0    0]
+ [ 152  190    0    2  171   77    0    0]
+ [ 841 1651   42    2 1507  228    0    0]
+ [ 689  323   91    3  292  705    0    0]
+ [   5    3   32    0    0  221    0    0]
+ [  83   14    7    0    7   52    0    0]]
+----------
+------------------------------------------------------------------------------------------------------data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 17.679739 %,with test performance 18.498368 %
+The training code for file train_stacked_ae.py ran for 216.76m
+[[2999  107   64   34  342  190    3   14]
+ [ 107 5802   11   11  367   77    1    5]
+ [  48   15  679    6   34   61   14    4]
+ [  67   27    7  419   39   29    2    2]
+ [ 334  345   31   37 3382  133    4    5]
+ [ 270   86   86   27  166 1415   22   31]
+ [   4    1   18    1    1   35  201    0]
+ [  26    0    3    1   19   26    1   87]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 17.679739 %,with test performance 18.498368 %
+The training code for file train_stacked_ae.py ran for 126.49m
+[[2999  107   64   34  342  190    3   14]
+ [ 107 5802   11   11  367   77    1    5]
+ [  48   15  679    6   34   61   14    4]
+ [  67   27    7  419   39   29    2    2]
+ [ 334  345   31   37 3382  133    4    5]
+ [ 270   86   86   27  166 1415   22   31]
+ [   4    1   18    1    1   35  201    0]
+ [  26    0    3    1   19   26    1   87]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 17.679739 %,with test performance 18.498368 %
+The training code for file train_stacked_ae.py ran for 103.56m
+[[2999  107   64   34  342  190    3   14]
+ [ 107 5802   11   11  367   77    1    5]
+ [  48   15  679    6   34   61   14    4]
+ [  67   27    7  419   39   29    2    2]
+ [ 334  345   31   37 3382  133    4    5]
+ [ 270   86   86   27  166 1415   22   31]
+ [   4    1   18    1    1   35  201    0]
+ [  26    0    3    1   19   26    1   87]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 42.598039 %,with test performance 42.519042 %
+The training code for file train_stacked_ae.py ran for 5.44m
+[[2248  455   64   33  663  290    0    0]
+ [ 101 5606    1   23  618   32    0    0]
+ [ 115   50  348    6   47  295    0    0]
+ [ 152  156   28  102  133   21    0    0]
+ [ 734 1587   51   37 1620  242    0    0]
+ [ 603  307  209   16  325  641    2    0]
+ [   6    3   68    0    0  183    1    0]
+ [  70   13    8    1   10   61    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.15, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 45.049020 %,with test performance 44.815016 %
+The training code for file train_stacked_ae.py ran for 3.66m
+[[2357  484   41    0  603  268    0    0]
+ [ 106 5526    0    0  714   35    0    0]
+ [ 127   52  264    0   47  371    0    0]
+ [ 160  184    0    0  182   66    0    0]
+ [ 880 1653   50    0 1491  197    0    0]
+ [ 737  327  223    0  309  507    0    0]
+ [   5    4   90    0    0  162    0    0]
+ [  89   14   11    0    8   41    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.25, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 18.039216 %,with test performance 19.232862 %
+The training code for file train_stacked_ae.py ran for 137.73m
+[[2944  126   54   39  348  225    3   14]
+ [  99 5800   19   24  360   74    0    5]
+ [  63    8  644    6   56   67   15    2]
+ [  78   19    4  398   44   42    3    4]
+ [ 312  392   41   34 3371  116    2    3]
+ [ 248  100   80   29  197 1406   24   19]
+ [  10    0   10    2    4   35  200    0]
+ [  20    6    8    1    8   32    2   86]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 45.277778 %,with test performance 45.065288 %
+The training code for file train_stacked_ae.py ran for 4.32m
+[[2190  490   43    0  657  373    0    0]
+ [  91 5525    0    0  723   42    0    0]
+ [ 110   53  352    0   49  297    0    0]
+ [ 145  184    0    0  192   71    0    0]
+ [ 799 1698   52    0 1494  228    0    0]
+ [ 618  332  282    0  333  538    0    0]
+ [   5    3  146    0    0  107    0    0]
+ [  82   13   15    0    9   44    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.1, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.313725 %,with test performance 44.347116 %
+The training code for file train_stacked_ae.py ran for 6.12m
+[[2345  496   58    1  650  203    0    0]
+ [  99 5546    4    1  720   11    0    0]
+ [ 132   52  275    0   56  346    0    0]
+ [ 164  185    2    1  189   51    0    0]
+ [ 847 1643   54    1 1575  151    0    0]
+ [ 749  319  210    3  333  489    0    0]
+ [   6    3   88    0    1  163    0    0]
+ [  88   14   11    0   10   40    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.3, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.836601 %,with test performance 44.341676 %
+The training code for file train_stacked_ae.py ran for 5.96m
+[[2283  474   60    2  610  324    0    0]
+ [ 102 5559    0    1  677   42    0    0]
+ [ 111   49  242    0   48  411    0    0]
+ [ 162  190    0    1  166   73    0    0]
+ [ 841 1633   49    1 1518  229    0    0]
+ [ 654  320  194    3  304  628    0    0]
+ [   4    2   69    0    1  185    0    0]
+ [  83   14    8    0    7   51    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.1], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 45.277778 %,with test performance 45.136017 %
+The training code for file train_stacked_ae.py ran for 3.84m
+[[2296  486   49    0  584  338    0    0]
+ [ 110 5487    0    0  737   47    0    0]
+ [ 117   50  338    0   48  308    0    0]
+ [ 158  181    0    0  181   72    0    0]
+ [ 886 1660   53    0 1449  223    0    0]
+ [ 669  327  279    0  313  515    0    0]
+ [   5    3  151    0    3   99    0    0]
+ [  84   14   20    0    6   39    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.3], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 45.522876 %,with test performance 45.299238 %
+The training code for file train_stacked_ae.py ran for 3.75m
+[[2250  493   50    0  591  369    0    0]
+ [  96 5485    2    0  749   49    0    0]
+ [ 114   52  332    0   44  319    0    0]
+ [ 152  178    0    0  185   77    0    0]
+ [ 850 1686   52    0 1443  240    0    0]
+ [ 637  330  276    0  314  546    0    0]
+ [   4    3  149    0    1  104    0    0]
+ [  82   14   20    0    7   40    0    0]]
+----------
+data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 400], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')(1, 'classical')(2, 'metal')(3, 'jazz')(4, 'world')(5, 'rock')(6, 'punk')(7, 'pop')
+Optimization complete with best validation score of 44.836601 %,with test performance 44.575626 %
+The training code for file train_stacked_ae.py ran for 5.74m
+[[2245  490   62    0  649  307    0    0]
+ [ 103 5552    0    1  698   27    0    0]
+ [ 109   52  364    0   54  281    1    0]
+ [ 159  187    0    2  177   67    0    0]
+ [ 815 1675   52    1 1521  207    0    0]
+ [ 646  327  294    5  326  505    0    0]
+ [   4    2  143    3    4  105    0    0]
+ [  82   13   17    0    9   42    0    0]]
+----------
+------------------------------------------------------------------------------------------------------

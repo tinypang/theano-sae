@@ -61,4 +61,90 @@ Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pre
 input type: specdata set is ./spectrogram/ISMIR_genre/ismirg_3sec_50x20_gs
 Xdim:50, Ydim:20, Hidden Layers:[600, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.2, 0.1], validation improvement threshold:0.995,dataset type:spec
 input type: specpca:False, pca components:0
-minmaxscale: True, whiten: False, ncomps0
+minmaxscale: True, whiten: False, ncomps0data set is ./audio_snippets/ismir_genre_training_3sec
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0data set is ./audio_snippets/test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcdata set is ./audio_snippets/test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcdata set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'classical')
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'classical')(1, 'electronic')
+Optimization complete with best validation score of 30.000000 %,with test performance 30.000000 %
+The training code for file train_stacked_ae.py ran for 0.03m
+[[  0 255]
+ [  0 590]]
+----------
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'classical')(1, 'electronic')
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'classical')(1, 'electronic')
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')
+Optimization complete with best validation score of 0.000000 %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[423]]
+----------
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')
+Optimization complete with best validation score of 0.000000 %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[423]]
+----------
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')
+Optimization complete with best validation score of 0.000000 %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[423]]
+----------
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')
+Optimization complete with best validation score of 0.000000 %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[423]]
+----------
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')
+Optimization complete with best validation score of 0.000000 %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[423]]
+----------
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')
+Optimization complete with best validation score of 0.000000 %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[423]]
+----------
+data set is ./audio_snippets/ismir_test
+Xdim:33, Ydim:18, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:mpc
+input type: mpcpca:False, pca components:0
+number of mpc coefficients:33, minmaxscale: True, whiten: False, ncomps0(0, 'electronic')
+Optimization complete with best validation score of 0.000000 %,with test performance 0.000000 %
+The training code for file train_stacked_ae.py ran for 0.02m
+[[423]]
+----------

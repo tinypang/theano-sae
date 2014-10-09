@@ -1,0 +1,477 @@
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[2000, 1000, 500], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 65.800000 %,with test performance 68.233333 %
+The training code for file train_stacked_ae.py ran for 3.47m
+[[193   0   0  52   1   0  17  10  17  10]
+ [  7   5  25  34  13   1 149  60   5   1]
+ [  0   3 204  27  19   0  22  25   0   0]
+ [ 20   2  70 140  15   3   8  36   6   0]
+ [  4   6  89  57  43   2  21  76   1   1]
+ [ 24   3  91 125  23   1   6  20   4   3]
+ [  1   2  13   4   2   0 253  22   3   0]
+ [ 10   9  26  40  16   0  98  91  10   0]
+ [ 54   3  29  72  16   0  55  52  17   2]
+ [ 56   6   1  32  17   0  95  70  17   6]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[1000, 500, 200], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 65.200000 %,with test performance 68.233333 %
+The training code for file train_stacked_ae.py ran for 1.23m
+[[199   0   0  57   0   0  16  13   9   6]
+ [ 10  10  24  34  10   0 148  62   2   0]
+ [  0  11 196  36  11   0  21  25   0   0]
+ [ 22   5  65 149  14   1   6  32   6   0]
+ [  6  18  86  60  42   2  19  66   0   1]
+ [ 28   6  92 124  24   0   7  18   1   0]
+ [  2   2   9   5   4   0 253  24   1   0]
+ [ 11  16  27  45  10   0  94  91   6   0]
+ [ 58   9  25  76  18   0  52  51  11   0]
+ [ 62  12   1  35  15   0  87  73  13   2]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[400, 400, 400], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 59.700000 %,with test performance 59.966667 %
+The training code for file train_stacked_ae.py ran for 2.79m
+[[182   0   1  50   3  10   7   5  20  22]
+ [  5  43  13  34  35   6  89  33  11  31]
+ [  0   1 142  59  55   3  22  11   6   1]
+ [  2   1  22 194  41   7   9  12   8   4]
+ [  2   1  27  51 124  10  17  31   5  32]
+ [  7   0  33  95  89  37   4   6   5  24]
+ [  1  17   2   7  14   0 231   8  13   7]
+ [  4  31   9  56  31   4  47  67  19  32]
+ [ 21   8  11  94  30   3  26  22  50  35]
+ [ 28  20   0  26  17  12  28  14  24 131]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[600, 300, 150], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 59.100000 %,with test performance 58.066667 %
+The training code for file train_stacked_ae.py ran for 5.53m
+[[217   0   1  30   1  20   1   5  20   5]
+ [  9  93  15  15  18   8  49  59  18  16]
+ [  1  16 168  32  24  18  11  21   8   1]
+ [ 10   1  45 149  29  19   8  16  21   2]
+ [  5  18  31  19  94  24  10  54  23  22]
+ [ 13  13  43  53  48  74   4  15  30   7]
+ [  3  37   4   5   5   1 201  30  10   4]
+ [  4  50  12  36  17   5  24 102  27  23]
+ [ 35  14  21  51  19  17  15  50  56  22]
+ [ 27  26   0  17  25  20  14  30  37 104]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 59.300000 %,with test performance 61.133333 %
+The training code for file train_stacked_ae.py ran for 3.92m
+[[175   0   1  59   3  13   3   5  20  21]
+ [  5  51  15  32  29   5  93  33   6  31]
+ [  0   8 131  61  46   4  36  11   2   1]
+ [  2   0  31 197  39   3  11  11   2   4]
+ [  1   6  25  48 115  11  18  32   5  39]
+ [  9   4  30  97  79  35  10   8   6  22]
+ [  1  16   2  10   9   1 240   8   6   7]
+ [  6  35  11  66  28   1  56  57   8  32]
+ [ 24  12  14 101  35   2  31  22  31  28]
+ [ 24  18   0  35  16  11  30  12  20 134]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.2, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 57.900000 %,with test performance 60.133333 %
+The training code for file train_stacked_ae.py ran for 4.85m
+[[159   0   1  60   2  18   9   4  22  25]
+ [  4  54  26  40  19   7  90  26  10  24]
+ [  0   3 169  65  22  14  19   4   3   1]
+ [  1   1  38 196  26  12   9   5   8   4]
+ [  0   8  44  52 107  20  15  17   9  28]
+ [  6   1  41  97  50  64   6   6   5  24]
+ [  1  17  16  13   6   0 234   3   5   5]
+ [  4  39  21  64  22   5  52  50  11  32]
+ [ 19  11  25  97  24   8  26  13  37  40]
+ [ 19  25   0  33  22  15  29   9  22 126]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.0, 0.0, 0.0], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 68.200000 %,with test performance 69.100000 %
+The training code for file train_stacked_ae.py ran for 0.45m
+[[185   0   0  68   0   0  16   6  23   2]
+ [  7   5  26  47   3   0 149  53  10   0]
+ [  0   1 203  50   4   0  22  20   0   0]
+ [ 19   1  58 181   3   0   9  19  10   0]
+ [  5   3  86  95  20   0  23  63   5   0]
+ [ 23   3  90 143  14   0   7  16   4   0]
+ [  1   3  19   7   0   0 246  20   4   0]
+ [  7   5  29  61   4   0 115  63  16   0]
+ [ 52   0  27  90  10   0  57  38  24   2]
+ [ 54  10   2  47  11   0  91  55  30   0]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 60.000000 %,with test performance 61.266667 %
+The training code for file train_stacked_ae.py ran for 2.66m
+[[175   0   1  58   2   7  11   7  25  14]
+ [  4  39  14  36  32   4 102  27   6  36]
+ [  0   0 134  67  49   5  34  10   0   1]
+ [  2   1  25 197  37   6  16   9   3   4]
+ [  1   2  28  50 117   8  21  35   7  31]
+ [  9   0  38 102  75  31   7   8   6  24]
+ [  1   8   2  14  11   1 251   4   2   6]
+ [  5  20   9  60  27   0  72  58  14  35]
+ [ 22   6  10  97  32   3  46  19  34  31]
+ [ 25  17   0  33  16  10  36   8  29 126]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2, 0.2, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 58.000000 %,with test performance 58.633333 %
+The training code for file train_stacked_ae.py ran for 5.14m
+[[183   0   1  49   3  16   4   4  20  20]
+ [  3  54  16  31  28   9  83  37  17  22]
+ [  0   0 159  56  37  16  17   6   8   1]
+ [  3   1  30 193  37   8   9   8   8   3]
+ [  4   5  32  41 138  14  10  19   9  28]
+ [  6   1  39  86  73  53   6   5  13  18]
+ [  1  16   6  11  13   1 223  15   8   6]
+ [  5  27  17  49  37   8  44  65  19  29]
+ [ 23   6  15  86  31   9  26  27  50  27]
+ [ 24  15   0  26  24  22  27  20  19 123]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3, 0.3, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 60.500000 %,with test performance 62.666667 %
+The training code for file train_stacked_ae.py ran for 4.24m
+[[180   0   0  66   2   2  11   3  13  23]
+ [  4  25  21  47  19   3 123  28   6  24]
+ [  0   0 153  78  28   3  31   5   1   1]
+ [  0   0  42 203  22   5  14   5   4   5]
+ [  1   3  44  68  92   4  24  30   1  33]
+ [ 11   1  58 104  69  15   6   8   4  24]
+ [  1   6  10  12   6   0 253   6   2   4]
+ [  4  15  14  76  20   1  86  45   7  32]
+ [ 27   3  17  98  30   2  46  12  28  37]
+ [ 28   9   0  35  22   6  40  11  23 126]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 58.700000 %,with test performance 61.366667 %
+The training code for file train_stacked_ae.py ran for 5.07m
+[[183   0   1  53   2   8   9   2  17  25]
+ [  5  34  26  44  16   8  97  32   9  29]
+ [  0   2 174  67  15   9  23   7   2   1]
+ [  6   2  44 192  22   6  12   6   4   6]
+ [  3   2  50  77  80  11  11  30   7  29]
+ [  9   1  64  99  50  36   4   7   6  24]
+ [  1  10  11  15   4   0 243   5   6   5]
+ [  5  21  20  69  21   2  61  57  13  31]
+ [ 29   4  25  82  28   4  37  15  36  40]
+ [ 31  10   0  26  18  14  37  15  25 124]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300, 100], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 59.100000 %,with test performance 61.400000 %
+The training code for file train_stacked_ae.py ran for 4.97m
+[[181   0   1  55   2   8   8   2  18  25]
+ [  6  33  26  44  17   7  97  32   9  29]
+ [  0   2 166  75  14   9  23   7   3   1]
+ [  4   2  42 196  22   6  12   6   4   6]
+ [  3   2  50  79  81  10  10  29   8  28]
+ [  8   1  59 103  49  38   3   7   7  25]
+ [  1  10  10  16   4   0 238   6   8   7]
+ [  4  21  18  72  20   2  59  59  13  32]
+ [ 28   5  25  84  28   4  34  13  40  39]
+ [ 31  11   0  26  20  12  36  13  25 126]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[400, 200, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2, 0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 65.900000 %,with test performance 66.133333 %
+The training code for file train_stacked_ae.py ran for 0.63m
+[[180   1   0  73   0   0  21   4  11  10]
+ [  4   4  32  50   6   1 154  40   4   5]
+ [  0   0 214  45   2   1  33   5   0   0]
+ [  3   0  66 184   8   5  14  16   2   2]
+ [  1   2  91  85  35   0  25  49   5   7]
+ [ 19   0  95 117  29  10   7   7   8   8]
+ [  1   0  10  17   1   0 264   6   1   0]
+ [  4   5  30  78   5   0 107  60   5   6]
+ [ 33   4  28 103  16   0  56  26  24  10]
+ [ 40  15   0  41  17   1  70  52  23  41]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300], nOutputs:100, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 66.900000 %,with test performance 68.166667 %
+The training code for file train_stacked_ae.py ran for 0.41m
+[[181   0   0  68   0   0  20  11  18   2]
+ [  5   1  26  48   2   0 161  49   6   2]
+ [  0   0 208  42   0   0  33  17   0   0]
+ [  8   0  64 192   2   0  12  15   7   0]
+ [  2   5  93  89  10   0  37  60   3   1]
+ [ 19   3 100 142   6   2   9  15   3   1]
+ [  1   0  13  11   0   0 261  13   1   0]
+ [  5   2  28  63   2   0 112  75  13   0]
+ [ 44   2  28  96   6   0  63  37  23   1]
+ [ 46  15   2  53   4   0  93  62  23   2]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 300], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 66.800000 %,with test performance 68.200000 %
+The training code for file train_stacked_ae.py ran for 0.32m
+[[184   0   0  66   0   0  20  12  13   5]
+ [  5   1  26  44   2   0 161  52   7   2]
+ [  0   1 211  37   0   0  30  21   0   0]
+ [ 12   0  68 177   3   1  13  19   7   0]
+ [  2   6  93  82  15   0  37  62   1   2]
+ [ 20   3  99 132  12   5   9  15   3   2]
+ [  1   0  12   9   0   0 261  15   2   0]
+ [  6   3  29  59   3   0 110  77  12   1]
+ [ 47   2  29  92   7   0  63  39  20   1]
+ [ 47  15   2  51   6   0  94  61  21   3]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[400, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 58.800000 %,with test performance 60.300000 %
+The training code for file train_stacked_ae.py ran for 2.29m
+[[183   0   1  50   2   7   9   4  20  24]
+ [  5  39  24  36  17   3 100  37  12  27]
+ [  0   3 167  60  28   7  24   5   5   1]
+ [  5   0  35 199  23   5  12  10   3   8]
+ [  2   5  42  52  93  10  16  37   6  37]
+ [ 12   0  54  91  61  37   5   6   9  25]
+ [  1  11   9  11   5   0 243   7   8   5]
+ [  5  23  15  62  19   2  67  65  10  32]
+ [ 21   8  19  92  25   3  33  19  37  43]
+ [ 32  20   0  21  13   7  31  18  30 128]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35, 0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 59.300000 %,with test performance 59.600000 %
+The training code for file train_stacked_ae.py ran for 1.96m
+[[207   0   1  28   3  12   5   4  20  20]
+ [  6  61  20  23  17   7  88  29  14  35]
+ [  0   3 156  49  40   7  29  10   5   1]
+ [  8   1  48 148  24  23  14   7  12  15]
+ [  5   3  34  41 106  13  17  35  10  36]
+ [ 13   0  43  67  69  55   7   7  12  27]
+ [  1  18   3   8   4   0 238   5  13  10]
+ [  5  43  11  47  20   5  54  56  21  38]
+ [ 26  14  13  62  33   9  35  19  46  43]
+ [ 37  24   0  17  10  10  28   7  28 139]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[700, 400], nOutputs:200, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 66.200000 %,with test performance 68.033333 %
+The training code for file train_stacked_ae.py ran for 1.13m
+[[175   0   0  72   0   0  22  11  15   5]
+ [  5   1  29  47   2   0 163  45   7   1]
+ [  0   0 216  44   0   0  29  11   0   0]
+ [  8   0  66 181   5   2  14  18   6   0]
+ [  1   4  94  89  14   0  34  61   2   1]
+ [ 16   2  99 144   8   4   8  11   5   3]
+ [  1   0  13  12   0   0 263  10   1   0]
+ [  3   3  31  65   2   0 111  72  12   1]
+ [ 39   2  32 101   6   0  62  30  24   4]
+ [ 45   9   0  54   6   0  96  56  25   9]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[700, 400], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 66.000000 %,with test performance 67.800000 %
+The training code for file train_stacked_ae.py ran for 1.29m
+[[168   0   0  74   0   0  23  10  15  10]
+ [  5   0  27  50   3   0 169  40   5   1]
+ [  0   0 218  44   0   0  32   6   0   0]
+ [  4   0  72 185   4   2  15  12   5   1]
+ [  1   2  94  88  20   0  39  51   1   4]
+ [  9   1  94 140  17   9   8  10   7   5]
+ [  1   0  12  12   0   0 264  10   1   0]
+ [  3   4  33  70   2   0 116  61  10   1]
+ [ 25   2  30 103   8   0  67  29  31   5]
+ [ 36  12   0  55   9   2  94  53  29  10]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[300, 100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1, 0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 66.400000 %,with test performance 66.566667 %
+The training code for file train_stacked_ae.py ran for 0.67m
+[[160   1   1  69   1   0  22   7  21  18]
+ [  5   7  28  44   3   1 158  48   4   2]
+ [  0   0 216  37   0   0  37  10   0   0]
+ [  2   0  73 179   6   3  14  17   4   2]
+ [  1   6  94  83  28   0  29  52   2   5]
+ [  8   0  91 126  22  14  10  14   9   6]
+ [  0   0  12  14   0   0 265   7   2   0]
+ [  3   9  33  62   4   0 108  73   5   3]
+ [ 19   4  33  91  14   0  64  29  34  12]
+ [ 26  17   1  43  14   6  83  56  27  27]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[300], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 60.600000 %,with test performance 61.333333 %
+The training code for file train_stacked_ae.py ran for 1.68m
+[[159   1   1  54   3   8  10  12  32  20]
+ [  3  80  23  35   6   4  88  43   9   9]
+ [  0  12 177  45  13  11  22  17   3   0]
+ [  1   4  45 192  16   9   9  10  12   2]
+ [  1  22  43  55  56  14  16  62  14  17]
+ [  8  11  68  92  28  53   5  11  15   9]
+ [  0  39   5  12   3   0 224  10   6   1]
+ [  5  61  18  55  10   3  44  86   7  11]
+ [ 17  25  20  85  20   5  25  34  52  17]
+ [ 19  48   0  26  15  18  30  24  39  81]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[700], nOutputs:300, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 58.900000 %,with test performance 62.300000 %
+The training code for file train_stacked_ae.py ran for 7.19m
+[[158   0   1  56   1   8   9   8  28  31]
+ [  3  58  20  42   7   5 102  42   6  15]
+ [  0   8 168  60  12   8  26  16   1   1]
+ [  2   2  43 193  13  11  12  12   9   3]
+ [  1  13  48  68  56  14  18  49   8  25]
+ [  7   3  68  96  39  44   7   6   9  21]
+ [  0  19   8  13   2   0 234  14   7   3]
+ [  4  45  19  64  11   3  56  76   7  15]
+ [ 16  12  17  98  17   6  30  29  48  27]
+ [ 22  41   0  31   9  13  30  23  35  96]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.0], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 65.200000 %,with test performance 65.933333 %
+The training code for file train_stacked_ae.py ran for 1.14m
+[[137   0   1  79   0   3  13   8  38  21]
+ [  3  20  24  45   1   3 146  40  13   5]
+ [  0   4 189  58   2   3  32  11   1   0]
+ [  0   1  54 197   5   4  15   6  14   4]
+ [  1  11  68  93  24   5  33  45  10  10]
+ [  3   2  82 122  12  27   8  13  20  11]
+ [  0   2   9  10   1   0 262   7   9   0]
+ [  3  22  25  67   5   1  88  68  18   3]
+ [ 10   7  26 107   7   1  45  26  61  10]
+ [ 15  26   0  41   6   9  69  35  62  37]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.1], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 60.000000 %,with test performance 61.066667 %
+The training code for file train_stacked_ae.py ran for 3.66m
+[[162   0   1  52   1  14   6  12  33  19]
+ [  3  66  17  32   8   7  82  60  12  13]
+ [  0  11 174  47   9  14  20  23   2   0]
+ [  1   1  39 185  10  15  11  14  19   5]
+ [  1  17  44  57  45  19  15  66  15  21]
+ [  7   5  59  82  23  61   7  25  18  13]
+ [  0  27   3   9   2   1 226  18  12   2]
+ [  4  41  15  49  10   2  46 106  16  11]
+ [ 13  15  20  76  15   6  21  52  62  20]
+ [ 21  34   0  21   8  14  32  35  54  81]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 58.900000 %,with test performance 61.033333 %
+The training code for file train_stacked_ae.py ran for 4.73m
+[[170   1   1  47   1  12   5  14  34  15]
+ [  3  85  18  25  10   7  72  49  19  12]
+ [  0  14 153  45  16  23  17  21  11   0]
+ [  1   2  36 163  13  24   9  15  32   5]
+ [  3  18  37  38  55  21  14  60  31  23]
+ [  8   6  50  68  27  74   5  21  27  14]
+ [  1  36   0   9   4   2 215  15  14   4]
+ [  5  45  11  42  12   4  40 102  27  12]
+ [ 17  20  20  66  20   8  21  42  67  19]
+ [ 24  34   0  16  12  15  29  28  57  85]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.3], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 58.300000 %,with test performance 60.966667 %
+The training code for file train_stacked_ae.py ran for 4.64m
+[[167   0   1  54   2   7   8   9  25  27]
+ [  3  36  23  36  10   6 111  45   9  21]
+ [  0   5 189  40  11  12  25  17   0   1]
+ [  2   1  52 177  13  13  13  11   9   9]
+ [  1   9  54  58  59  14  20  53   6  26]
+ [  8   3  71  87  30  52   7  13   8  21]
+ [  1   7   6   8   3   0 251  11   9   4]
+ [  4  25  20  58  11   3  65  87   7  20]
+ [ 17   6  25  88  21   3  31  32  41  36]
+ [ 25  19   0  28   9  14  38  24  31 112]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[500], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.35], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 58.300000 %,with test performance 59.600000 %
+The training code for file train_stacked_ae.py ran for 3.84m
+[[178   0   1  48   2   8   7   9  23  24]
+ [  3  57  22  35  10   7  92  45   5  24]
+ [  0   6 186  40  11  16  20  19   1   1]
+ [  3   2  49 173  14  17  11  12  11   8]
+ [  1  10  48  53  59  20  20  53   9  27]
+ [  8   3  65  76  34  65   4  15   9  21]
+ [  1  16   3   9   3   0 241  12  10   5]
+ [  4  34  18  55  10   3  54  91   9  22]
+ [ 18  11  24  81  20   8  25  31  46  36]
+ [ 25  25   0  24  10  16  30  23  31 116]]
+----------
+data set is ./spectrogram/GTZAN_genre/3sec_28x28_gs
+Xdim:28, Ydim:28, Hidden Layers:[100], nOutputs:50, Batch size:20, pretraining epochs:25, pretrain learning rate:0.001, finetuning learning rate:0.1, training epochs:2000, corruption levels per layer:[0.2], validation improvement threshold:0.995,dataset type:spec
+input type: specpca:False, pca components:0
+minmaxscale: True, whiten: False, ncomps0(0, 'metal')(1, 'jazz')(2, 'pop')(3, 'disco')(4, 'reggae')(5, 'hiphop')(6, 'classical')(7, 'country')(8, 'rock')(9, 'blues')
+Optimization complete with best validation score of 64.700000 %,with test performance 65.133333 %
+The training code for file train_stacked_ae.py ran for 0.54m
+[[157   0   0  73   1   2  11   9  16  31]
+ [  3  11  26  49   6   2 144  38  10  11]
+ [  0   3 195  46   7   1  40   8   0   0]
+ [  2   0  56 194   9   4  16   9   7   3]
+ [  1   2  65  90  48   2  34  41   2  15]
+ [  6   0  78 121  36  17   9   5   8  20]
+ [  0   1  10  16   1   0 264   6   1   1]
+ [  4  13  25  71   9   1  94  65  11   7]
+ [ 20   9  24 104  14   0  53  22  33  21]
+ [ 23  25   0  40  11   8  70  31  30  62]]
+----------
+------------------------------------------------------------------------------------------------------

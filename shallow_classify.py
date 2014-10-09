@@ -57,9 +57,9 @@ def test_classify(path,n,intype='mpc',SVC=False,linSVC=False,RNDforest=True,logR
             dataset = 'gtzan'
         else:
             print 'unrecognised dataset type'
-            sys.exit(
+            sys.exit()
         data, labels = import_dataset(path,input_type=intype,nceps=33,pca=False,whiten=False,minmax=True,dataset=dataset)
-        labels, labeldict = relabel_data(labels, 'classifier_label_mapping.txt')
+        labels, label_dict = relabel_data(labels, 'classifier_label_mapping.txt')
         pairs = zip(label_dict.itervalues(), label_dict.iterkeys())
         pairs.sort()
         for i in pairs:
@@ -73,31 +73,48 @@ def test_classify(path,n,intype='mpc',SVC=False,linSVC=False,RNDforest=True,logR
     svc = svm.SVC()
     linearsvc = svm.LinearSVC()
     rndforest = RandomForestClassifier()
-    logregression = LogisticRegression(class_weight=auto)   #weight classes according to class frequency in dataset
+    logregression = LogisticRegression(class_weight='auto')   #weight classes according to class frequency in dataset
     if RNDforest == True:
         print 'cross validating random forest'
+        t1 = time.time()
         rndforest_scores =  cross_validation.cross_val_score(rndforest, data, labels, cv=skf)
         #pltroc_curve(rndforest,crossv,data,labels,n)
+        t2 = time.time()
+        print 'Classification took {0}sec'.format(t2-t1)
         print 'RndForest scores were {0} and average was {1}'.format(rndforest_scores, np.mean(rndforest_scores))
         log.write('RndForest scores were {0} and average was {1}\n'.format(rndforest_scores, np.mean(rndforest_scores)))
-    if SVC == True:
-        print 'cross validating svc'
-        svc_scores =  cross_validation.cross_val_score(svc, data, labels, cv=skf)
-        #pltroc_curve(svc,crossv,data,labels,n)
-        print 'SVC scores were {0} and average was {1}'.format(svc_scores, np.mean(svc_scores))
-        log.write('SVC scores were {0} and average was {1}\n'.format(svc_scores, np.mean(svc_scores)))
-    if linSVC == True:
-        print 'cross validating linear svc'
-        linearsvc_scores =  cross_validation.cross_val_score(linearsvc, data, labels, cv=skf)
-        #pltroc_curve(linearsvc,crossv,data,labels,n)
-        print 'LinearSVC scores were {0} and average was {1}'.format(linearsvc_scores, np.mean(linearsvc_scores))
-        log.write('LinearSVC scores were {0} and average was {1}\n'.format(linearsvc_scores, np.mean(linearsvc_scores)))
+        log.write('Classification took {0}sec\n'.format(t2-t1))
     if logR == True:
         print 'cross validating logistic regression'
+        t1 = time.time()
         logR_scores =  cross_validation.cross_val_score(logregression, data, labels, cv=skf)
         #pltroc_curve(linearsvc,crossv,data,labels,n)
+        t2 = time.time()
+        print 'Classification took {0}sec'.format(t2-t1)
         print 'Logistic regression were {0} and average was {1}'.format(logR_scores, np.mean(logR_scores))
         log.write('Logistic regression scores were {0} and average was {1}\n'.format(logR_scores, np.mean(logR_scores)))
+        log.write('Classification took {0}sec\n'.format(t2-t1))
+    if linSVC == True:
+        print 'cross validating linear svc'
+        t1 = time.time()
+        linearsvc_scores =  cross_validation.cross_val_score(linearsvc, data, labels, cv=skf)
+        #pltroc_curve(linearsvc,crossv,data,labels,n)
+        t2 = time.time()
+        print 'Classification took {0}sec'.format(t2-t1)
+        print 'LinearSVC scores were {0} and average was {1}'.format(linearsvc_scores, np.mean(linearsvc_scores))
+        log.write('LinearSVC scores were {0} and average was {1}\n'.format(linearsvc_scores, np.mean(linearsvc_scores)))
+        log.write('Classification took {0}sec\n'.format(t2-t1))
+    if SVC == True:
+        print 'cross validating svc'
+        t1 = time.time()
+        svc_scores =  cross_validation.cross_val_score(svc, data, labels, cv=skf)
+        #pltroc_curve(svc,crossv,data,labels,n)
+        t2 = time.time()
+        print 'Classification took {0}sec'.format(t2-t1)
+        print 'SVC scores were {0} and average was {1}'.format(svc_scores, np.mean(svc_scores))
+        log.write('SVC scores were {0} and average was {1}\n'.format(svc_scores, np.mean(svc_scores)))
+        log.write('Classification took {0}sec\n'.format(t2-t1))
+    log.write('------------------------------------\n')
     log.close()
     return data,labels
 

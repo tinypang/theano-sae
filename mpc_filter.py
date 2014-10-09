@@ -44,12 +44,14 @@ def get_mpc(path,filename,ncep,dataset):
     mean_feat = np.mean(feat, axis=0)
     covvar = np.cov(feat,rowvar=0)
     cov_feat = []
-    #cov_feat = np.empty([0,0])
     for i in range(0,covvar.shape[0]):
         for j in range(0,i+1):
             cov_feat.append(covvar[i][j])
-    cov_feat = np.array(cov_feat)
-    feature_vector = np.append(mean_feat,cov_feat)
+    mean_feat = mean_feat.tolist()
+    feature_vector = []
+    feature_vector.extend(mean_feat)
+    feature_vector.extend(cov_feat)
+    feature_vector = np.array(feature_vector)
     data.append(feature_vector)
     if dataset == 'ismir':
         labels.append(re.split('-', filename, maxsplit=1)[0])

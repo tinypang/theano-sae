@@ -1,0 +1,7 @@
+dataset: ./spectrogram/GTZAN_genre/3sec_50x20_gs, input type: spec, number of folds:3
+dataset: ./spectrogram/GTZAN_genre/3sec_50x20_gs, input type: spec, number of folds:3
+(0, 'metal')(1, 'country')(2, 'pop')(3, 'classical')(4, 'rock')(5, 'blues')(6, 'hiphop')(7, 'reggae')(8, 'disco')(9, 'jazz')
+dataset: ./spectrogram/GTZAN_genre/3sec_50x20_gs, input type: spec, number of folds:3
+(0, 'metal')(1, 'country')(2, 'pop')(3, 'classical')(4, 'rock')(5, 'blues')(6, 'hiphop')(7, 'reggae')(8, 'disco')(9, 'jazz')
+RndForest scores were [ 0.28922156  0.2996997   0.28798799] and average was 0.292303081525
+Classification took 3.30375599861sec
