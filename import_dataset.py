@@ -10,6 +10,7 @@ import math
 from sklearn.preprocessing import MinMaxScaler
 from mpc_filter import mpcfilter
 import re
+import sys
 
 def import_spec(path, dimx, dimy,dataset): 
     data,labels = [],[] #intiate arrays to store data and labels
@@ -25,6 +26,7 @@ def import_spec(path, dimx, dimy,dataset):
             labels.append(re.split('-', filename, maxsplit=1)[0])  #ismirg
         else:
             print 'unrecognised dataset type'
+            sys.exit()
         n+=1
         print n
     pt1 = time.time()

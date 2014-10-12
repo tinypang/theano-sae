@@ -1,6 +1,6 @@
 import train_stacked_ae as t
-log = 'results_3sec_mpc.txt'
-
+log = 'results_gtzan_3sec_mpc.txt'
+'''
 datasets = t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[2000,300,100],outs=50,corruption_levels=[.1, .2,.3],resultslog=log,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
 t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[1000,5000,200],outs=100,corruption_levels=[.1, .2, .3],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
 #t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[2000,1000,300],outs=100,corruption_levels=[.1, .1, .1],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
@@ -35,6 +35,19 @@ t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300],outs=10
 t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300],outs=100,corruption_levels=[.3],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
 t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300],outs=100,corruption_levels=[.35],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
 t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[100],outs=50,corruption_levels=[.2],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+datasets = t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[400,300,100],outs=50,corruption_levels=[.35, .35,.35],resultslog=log,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[400,300,100],outs=50,corruption_levels=[.4, .4,.4],reinput=datasets,resultslog=log,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300,100],outs=50,corruption_levels=[.4, .4],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300,100],outs=50,corruption_levels=[.45, .45],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300,100],outs=50,corruption_levels=[.5, .5],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+datasets = t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300],outs=100,corruption_levels=[.4],resultslog=log,reinput=None,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300],outs=100,corruption_levels=[.45],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300],outs=100,corruption_levels=[.5],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[300],outs=10,corruption_levels=[.35],resultslog=log,reinput=datasets,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+'''
+datasets = t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[400,300,100],outs=50,corruption_levels=[.45, .45,.45],resultslog=log,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./audio_snippets/GTZAN_3sec',batch_size=20,hidlay=[400,300,100],outs=50,corruption_levels=[.5, .5,.5],reinput=datasets,resultslog=log,dimx=33,dimy=18,pretraining_epochs=25,input_type='mpc',finetune_lr=0.1,pretrain_lr=0.001)
+
 reslog = open(log,'a+')
 reslog.write('------------------------------------------------------------------------------------------------------')
 reslog.close()

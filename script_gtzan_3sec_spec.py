@@ -1,6 +1,6 @@
 import train_stacked_ae as t
-log = 'results_all.txt'
-
+log = 'results_gtzan_3sec_spec.txt'
+'''
 #datasets = t.test_SdA(path='./spectrogram/3sec_50x20_gs',batch_size=20,hidlay=[2000,500,100],outs=50,corruption_levels=[.1, .2,.3],resultslog=log,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
 datasets = t.test_SdA(path='./spectrogram/3sec_50x20_gs',batch_size=20,hidlay=[2000,1000,500],outs=100,corruption_levels=[.1, .2, .3],resultslog=log,reinput=None,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
 t.test_SdA(path='./spectrogram/3sec_50x20_gs',batch_size=20,hidlay=[2000,1000,500],outs=100,corruption_levels=[.1, .1, .1],resultslog=log,reinput=datasets,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
@@ -35,6 +35,10 @@ t.test_SdA(path='./spectrogram/3sec_50x20_gs',batch_size=20,hidlay=[500],outs=10
 t.test_SdA(path='./spectrogram/3sec_50x20_gs',batch_size=20,hidlay=[500],outs=100,corruption_levels=[.3],resultslog=log,reinput=datasets,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
 t.test_SdA(path='./spectrogram/3sec_50x20_gs',batch_size=20,hidlay=[500],outs=100,corruption_levels=[.35],resultslog=log,reinput=datasets,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
 t.test_SdA(path='./spectrogram/3sec_50x20_gs',batch_size=20,hidlay=[100],outs=50,corruption_levels=[.2],resultslog=log,reinput=datasets,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
+'''
+datasets = t.test_SdA(path='./spectrogram/GTZAN_genre/3sec_50x20_gs',batch_size=20,hidlay=[600,300,100],outs=50,corruption_levels=[.4, .4,.4],resultslog=log,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./spectrogram/GTZAN_genre/3sec_50x20_gs',batch_size=20,hidlay=[600,300,100],outs=50,corruption_levels=[.45, .45, .45],resultslog=log,reinput=datasets,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
+t.test_SdA(path='./spectrogram/GTZAN_genre/3sec_50x20_gs',batch_size=20,hidlay=[600,300,100],outs=50,corruption_levels=[.5, .5, .5],resultslog=log,reinput=datasets,dimx=50,dimy=20,pretraining_epochs=25,input_type='spec',finetune_lr=0.1,pretrain_lr=0.001)
 reslog = open(log,'a+')
 reslog.write('------------------------------------------------------------------------------------------------------')
 reslog.close()

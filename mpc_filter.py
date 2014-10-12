@@ -21,6 +21,7 @@ def explore(path,ncep,dataset):
         sounds = glob.glob(path + '/*.au')  #find all files with .au file extension
     elif dataset == 'ismir':
         sounds = glob.glob(path + '/*.wav')  #find all files with .wave file extension
+        sounds.extend(glob.glob(path + '/*.wave'))
     else:
         print 'unrecognised dataset type'
         sys.exit()
